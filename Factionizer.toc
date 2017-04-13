@@ -1,15 +1,16 @@
-## Interface: 70100
-## Title: Factionizer
-## Version: 7.0.0-alpha
-## Author: gOOvER (Scheol), Malorne-EU
+## Interface: 70200
+## Title: Factionizer |cFFFFA0A0by A_Nolan|r
+## Version: 6.02.00.14 17.04.13
+## Author: A_Nolan, gOOvER (Gooverdra), Arygos-EU
+## X-Date: 2016-02-02
+## X-Category: Reputation
+## X-Website: http://wow.curseforge.com/addons/factionizer/
 ## URL: http://wow.curseforge.com/addons/factionizer/
 ## Description: Tells you what you can do to improve your faction
 ## Notes: Tells you what you can do to improve your factions
 ## SavedVariables: FIZ_Data
 ## SavedVariablesPerCharacter: FIZ_Suppressed
-## OptionalDeps: Ace3, LibQTip-1.0, LibStub, CallbackHandler-1.0
 
-embeds.xml
 content.lua
 mapping.lua
 locale.xml
