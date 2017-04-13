@@ -986,11 +986,11 @@ function FIZ:InitFactionMap(locale, guildName)
 	FIZ_FactionMapping = {}
 	FIZ_InitEnFactions()
 	if (guildName) then
-		FIZ:AddMapping(guildName, guildName)
+		FIZ_AddMapping(guildName, guildName)
 	end
 end
 
-function FIZ:AddMapping(english, localised)
+function FIZ_AddMapping(english, localised)
 --- f_am	FIZ:Printtest(english, localised,"map")
 	if (not FIZ_FactionMapping) then
 		FIZ_FactionMapping = {}
@@ -1019,7 +1019,7 @@ function FIZ:Content(faction, from, to, name, rep)
 	return 1
 end
 
-function FIZ:AddSpell(faction, from, to, name, rep, zone, limit)
+function FIZ_AddSpell(faction, from, to, name, rep, zone, limit)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1073,7 +1073,7 @@ function FIZ:AddSpell(faction, from, to, name, rep, zone, limit)
 	end	--]]--
 end
 
-function FIZ:AddMob(faction, from, to, name, rep, zone, limit)
+function FIZ_AddMob(faction, from, to, name, rep, zone, limit)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1124,7 +1124,7 @@ function FIZ:AddMob(faction, from, to, name, rep, zone, limit)
 	end
 end
 
-function FIZ:AddQuest(faction, from, to, name, rep, itemList, limitType)
+function FIZ_AddQuest(faction, from, to, name, rep, itemList, limitType)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1186,7 +1186,7 @@ function FIZ:AddQuest(faction, from, to, name, rep, itemList, limitType)
 	end
 end
 
-function FIZ:AddInstance(faction, from, to, name, rep, heroic)
+function FIZ_AddInstance(faction, from, to, name, rep, heroic)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1242,7 +1242,7 @@ function FIZ:AddInstance(faction, from, to, name, rep, heroic)
 	end
 end
 
-function FIZ:AddItems(faction, from, to, rep, itemList)
+function FIZ_AddItems(faction, from, to, rep, itemList)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1300,7 +1300,7 @@ function FIZ:AddItems(faction, from, to, rep, itemList)
 	end
 end
 
-function FIZ:AddGeneral(faction, from, to, name, rep, head, tip, tipList, flag)
+function FIZ_AddGeneral(faction, from, to, name, rep, head, tip, tipList, flag)
 
 --[[--	if not faction then return end
 	if not from then return end
