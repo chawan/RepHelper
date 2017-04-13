@@ -16,13 +16,13 @@ FIZ_ToExalted[6] = 21000;	-- working on Honored -> Revered, base offset 21k
 FIZ_ToExalted[7] = 0;	-- working on Revered -> Exalted, so no base offset
 FIZ_ToExalted[8] = 0;	-- already at Exalted -> no offset
 
-FIZ_ToBFF = {}	        --> Friendship levels:
-FIZ_ToBFF[0] = 42999;	--> 1 - Stranger: 0-8400
-FIZ_ToBFF[1] = 42000;	--> 2 - Acquaintance: 8400-16800
-FIZ_ToBFF[2] = 33600;	--> 3 - Buddy: 16800-25200
-FIZ_ToBFF[3] = 25200;	--> 4 - Friend: 25200-33600
-FIZ_ToBFF[4] = 16800;	--> 5 - Good Friend: 33600-42000
-FIZ_ToBFF[5] = 8400;	--> 6 - Best Friend: 42000-42999
+FIZ_ToBFF = {}	                    --> Friendship levels:
+FIZ_ToBFF["Stranger"] = 42999;	    --> 1 - Stranger: 0-8400
+FIZ_ToBFF["Acquaintance"] = 42000;	--> 2 - Acquaintance: 8400-16800
+FIZ_ToBFF["Buddy"] = 33600;	        --> 3 - Buddy: 16800-25200
+FIZ_ToBFF["Friend"] = 25200;	    --> 4 - Friend: 25200-33600
+FIZ_ToBFF["Good Friend"] = 16800;	--> 5 - Good Friend: 33600-42000
+FIZ_ToBFF["Best Friend"] = 8400;	--> 6 - Best Friend: 42000-42999
 
 -- Addon constants
 FIZ_NAME = "Factionizer"
@@ -3028,7 +3028,7 @@ function FIZ_ReputationDetailFrame_IsShown(faction,flag,flag2,i)
 -- ^ rfl _16_ 2
 end
 -- ^ R_D_F_IS v R_D_F
-function FIZ:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext)
+function FIZ:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF)
 	local name, description, _, _, _, _, atWarWith, canToggleAtWar, _, _, _, isWatched, _, _, _, _ = GetFactionInfo(faction);
 	local gender = UnitSex("player");
 	FIZ:BuildUpdateList()
@@ -3435,6 +3435,13 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 			toExalted = FIZ_ToExalted[standingID] + barMax - barValue;
 		end
 
+		local toBFF = 0
+		if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
+			FIZ:Print(factionStandingtext);
+			toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
+			FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+		end
+
 		factionRow.index = OBS_fi_i;
 
 		if (FIZ_Data.ShowMissing) then
@@ -3507,7 +3514,7 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 				FIZ_ReputationDetailFrame_IsShown(OBS_fi_I,flag,1)
 			end
 			if ( FIZ_ReputationDetailFrame:IsVisible() ) then 
-				FIZ:Rep_Detail_Frame(OBS_fi_i,standingID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext)
+				FIZ:Rep_Detail_Frame(OBS_fi_i,standingID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF)
 
 -- ^ rfl SBS 6.2
 -- ^ rfl SBS 6
@@ -3557,7 +3564,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 
 
 -- v rfl _16 line start 3
-	local colorIndex, isCappedFriendship, factionStandingtext = FIZ_Friend_Detail(factionID, standingID, factionRow);
+	local colorIndex, isCappedFriendship, factionStandingtext, isFriend = FIZ_Friend_Detail(factionID, standingID, factionRow);
 -- ^ rfl  _16_
 -- v rfl ORO 4
 	
@@ -3604,13 +3611,12 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 		toExalted = FIZ_ToExalted[standingID] + barMax - barValue;
 	end
 
-	--local toBFF = 0
-
-	--if (isCappedFriendship ~= true) then
-	--	FIZ:Print(factionStandingtext);
-	--	toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
-	--	FIZ:Print("toBFF: "..toBFF);
-	--end
+	local toBFF = 0
+	if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
+		FIZ:Print(factionStandingtext);
+		toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
+		FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+	end
 
 
 	if (FIZ_Data.ShowMissing) then
@@ -3684,7 +3690,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 			FIZ_ReputationDetailFrame_IsShown(factionIndex,flag,2)
 		end
 		if ( FIZ_ReputationDetailFrame:IsVisible() ) then 
-			FIZ:Rep_Detail_Frame(factionIndex,colorIndex,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext) 
+			FIZ:Rep_Detail_Frame(factionIndex,colorIndex,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext,toBFF) 
 -- ^ rfl ORO 6.1
 -- ^ rfl ORO 6
 -- v rfl _17 start line 4
