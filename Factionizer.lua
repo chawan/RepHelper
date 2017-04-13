@@ -3435,12 +3435,12 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 			toExalted = FIZ_ToExalted[standingID] + barMax - barValue;
 		end
 
-		local toBFF = 0
-		if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
-			FIZ:Print(factionStandingtext);
-			toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
-			FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
-		end
+		--local toBFF = 0
+		--if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
+		--	FIZ:Print(factionStandingtext);
+		--	toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
+		--	FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+		--end
 
 		factionRow.index = OBS_fi_i;
 
@@ -3612,11 +3612,11 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	end
 
 	local toBFF = 0
-	if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
-		FIZ:Print(factionStandingtext);
-		toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
-		FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
-	end
+	--if (isCappedFriendship ~= true and isFriend and FIZ_ToBFF[factionStandingtext] ~= nil) then
+	--	FIZ:Print(factionStandingtext);
+	--	toBFF = FIZ_ToBFF[factionStandingtext] + barMax - barValue;
+	--	FIZ:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+	--end
 
 
 	if (FIZ_Data.ShowMissing) then
