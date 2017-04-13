@@ -37,6 +37,27 @@ zone.UnGoro_Crater = 201				-- Un'Goro Crater
 zone.Valley_of_Trials = 889				-- Valley of Trials
 zone.Winterspring = 281					-- Winterspring
 
+-- The Broken Isles
+zone.Broken_Isles = 1007				-- The Broken Isles
+zone.Azuna = 1015						-- Azuna
+zone.Broken_Shore = 1021				-- Broken Shore
+zone.Dalaran = 1014						-- Dalaran
+zone.Eye_of_Azshara = 1098				-- Eye of Azshara
+zone.Highmountain = 1024				-- Highmountain
+zone.Stormheim = 1017					-- Stormheim
+zone.Suramar = 1033						-- Suramar
+zone.Valsharah = 1018					-- Valshara
+
+-- Class Order Halls
+zone.Hall_of_the_Guardian = 1058		-- Mage
+zone.Mardum_the_Shattered_Abyss = 1052	-- Demon Hunter
+zone.Netherlight_Temple = 1040			-- Priest
+zone.Skyhold = 1035						-- Warrior
+zone.The_Dreamgrove = 1077				-- Druid
+zone.The_Heart_of_Azeroth = 1057		-- Shaman
+zone.The_Wandering_Isle = 1044			-- Monk
+zone.Trueshot_Lodge = 1072				-- Hunter
+
 -- Eastern Kingdoms
 zone.Eastern_Kingdoms = 14				-- Eastern Kingdoms
 zone.Abyssal_Depths = 614				-- Abyssal Depths
@@ -321,6 +342,27 @@ zone.Upper_Blackrock_Spire = 995		-- Upper Blackrock Spire
 -- Draenor Raids
 zone.Highmaul = 994						-- Highmaul
 zone.Blackrock_Foundry = 988			-- Blackrock Foundry
+zone.Hellfire_Citadel = 1026			-- Hellfire Citadel
+
+-- Legion Dungeons
+zone.Black_Rook_Hold = 1081				-- Black Rook Hold
+zone.Court_of_Stars = 1087				-- Court of Stars
+zone.Darkheart_Thicket = 1067			-- 	Darkheart Thicket
+zone.Eye_of_Azshara = 1046				-- 	Eye of Azshara
+zone.Halls_of_Valor = 1041				-- Halls of Valor
+zone.Maw_of_Souls = 1042				-- Maw of Souls
+zone.Neltharions_Lair = 1055			-- Neltharion's Lair
+zone.The_Arcway = 1079					-- The Arcway
+zone.Vault_of_the_Wardens = 1045		-- Vault of the Wardens
+zone.Violet_Hold = 1066					-- Violet Hold
+zone.Return_to_Karazhan = 1115			-- Return to Karazhan
+zone.Cathedral_of_Eternal_Night = 1146	-- Cathedral of Eternal Night
+
+-- Legion Raids
+zone.The_Emerald_Nightmare = 1094		-- The Emerald Nightmare
+zone.Trial_of_Valor = 1114				-- Trial of Valor
+zone.The_Nighthold = 1088				-- The Nighthold
+zone.Tomb_of_Sargeras = 1085			-- Tomb of Sargeras
 
 
 	if (FIZ_IsAlliance) then
