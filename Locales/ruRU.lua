@@ -153,6 +153,7 @@ FIZ_TXT.repInQuest	= "Репутация в квестах"
 FIZ_TXT.factionGained	= "Увеличено за сессию"
 FIZ_TXT.noInfo	= "Информация по этой фракции/репутации не найдена."
 FIZ_TXT.toExalted	= "Нужно до превознесения"
+FIZ_TXT.toBestFriend = "Reputation to best friend"
 -- to chat	
 FIZ_TXT.stats	= " (Всего: %s%d, Осталось: %d)"
 -- config changed	

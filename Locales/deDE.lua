@@ -153,6 +153,7 @@ FIZ_TXT.repInQuest	= "Ruf durch Quests"
 FIZ_TXT.factionGained	= "Diesmal erhalten"
 FIZ_TXT.noInfo	= "Keine Informationen für diese Fraktion/Rufstufe verfügbar."
 FIZ_TXT.toExalted	= "Ruf bis Ehrfürchtig"
+FIZ_TXT.toBestFriend = "Reputation to best friend"
 -- to chat	
 FIZ_TXT.stats	= " (Gesamt: %s%d, übrig: %d)"
 -- config changed	

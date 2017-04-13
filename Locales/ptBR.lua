@@ -153,6 +153,7 @@ FIZ_TXT.repInQuest	= "Reputação em missões"
 FIZ_TXT.factionGained	= "Recebida nesta sessão"
 FIZ_TXT.noInfo	= "Nenhuma informação disponível para esta facção/reputação."
 FIZ_TXT.toExalted	= "Reputação até exaltado"
+FIZ_TXT.toBestFriend = "Reputation to best friend"
 -- to chat	
 FIZ_TXT.stats	= "(Total: %s%d, Rest.: %d)"
 -- config changed	
