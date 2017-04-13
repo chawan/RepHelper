@@ -3116,12 +3116,14 @@ function FIZ_Friend_Detail(factionID, standingID,factionRow)
 		colorIndex = 5;	-- always color friendships green
 		factionStandingtext = friendTextLevel;
 		factionRow.friendshipID = friendID;
+		isFriend = true;
 	else
 		factionStandingtext = GetText("FACTION_STANDING_LABEL"..standingID, gender);
 		factionRow.friendshipID = nil;
 		colorIndex = standingID;
+		isFriend = false;
 	end
-	return colorIndex, isCappedFriendship, factionStandingtext
+	return colorIndex, isCappedFriendship, factionStandingtext, isFriend
 end
 
 -----------------------------------
