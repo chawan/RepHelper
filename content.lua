@@ -362,7 +362,7 @@ zone.Cathedral_of_Eternal_Night = 1146	-- Cathedral of Eternal Night
 zone.The_Emerald_Nightmare = 1094		-- The Emerald Nightmare
 zone.Trial_of_Valor = 1114				-- Trial of Valor
 zone.The_Nighthold = 1088				-- The Nighthold
-zone.Tomb_of_Sargeras = 1085			-- Tomb of Sargeras
+zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 
 	if (FIZ_IsAlliance) then
