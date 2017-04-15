@@ -362,7 +362,7 @@ zone.Cathedral_of_Eternal_Night = 1146	-- Cathedral of Eternal Night
 zone.The_Emerald_Nightmare = 1094		-- The Emerald Nightmare
 zone.Trial_of_Valor = 1114				-- Trial of Valor
 zone.The_Nighthold = 1088				-- The Nighthold
-zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
+zone.Tomb_of_Sargeras = 1085			-- Tomb of Sargeras
 
 
 	if (FIZ_IsAlliance) then
@@ -2058,6 +2058,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1358, 1, 8, 38406, 350, {[122696] = 1})
 		FIZ_AddQuest(1358, 1, 8, 36803, 350, {[116817] = 1})
 		FIZ_AddQuest(1358, 1, 8, 36806, 350, {[116822] = 1})
+		FIZ_AddQuest(1358, 1, 8, 31443, 600, {[86542] = 1})
+		FIZ_AddQuest(1358, 1, 8, 31444, 600, {[86544] = 1})
+		FIZ_AddQuest(1358, 1, 8, 31446, 600, {[86545] = 1})
 	-- The Tillers (group)
 	-- The Tillers 1272
 		FIZ_AddGeneral(1272, 1, 8, "1", 50, "1", "0", nil, 0)
