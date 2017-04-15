@@ -1211,7 +1211,43 @@
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
-			</CheckButton>						
+			</CheckButton>
+
+			<CheckButton name="FIZ_EnableParagonBarBox" inherits="OptionsCheckButtonTemplate">						
+				<Size x="20" y="20"/>					
+				<Anchors>			
+					<Anchor point="TOPLEFT" relativeTo="FIZ_NoGuildSwitchBox" relativePoint="BOTTOMLEFT">				
+						<Offset x="-20" y="0"/>			
+					</Anchor>	
+				</Anchors>					
+				<HitRectInsets>					
+					<AbsInset left="0" right="-240" top="0" bottom="0"/>				
+				</HitRectInsets>					
+				<Layers>					
+					<Layer level="ARTWORK">				
+						<FontString name="$parentText" inherits="GameFontNormalSmall">			
+							<Anchors><Anchor point="LEFT" relativePoint="RIGHT"><Offset x="-2" y="0"/></Anchor></Anchors>		
+						</FontString>			
+					</Layer>				
+				</Layers>					
+				<Scripts>					
+					<OnClick>				
+						FIZ_Data.ShowParagonBar = self:GetChecked()			
+						if ( FIZ_Data.ShowParagonBar ) then			
+							PlaySound("igMainMenuOptionCheckBoxOn");		
+						else			
+							PlaySound("igMainMenuOptionCheckBoxOff");		
+						end			
+						ReputationFrame_Update()			
+					</OnClick>				
+					<OnEnter>				
+						FIZ_ShowHelpToolTip(self, self:GetName())			
+					</OnEnter>				
+					<OnLeave>				
+						GameTooltip:Hide();			
+					</OnLeave>				
+				</Scripts>					
+			</CheckButton>							
 		</Frames>							
 	</Frame>								
 									
@@ -1351,7 +1387,11 @@
 									
 			<Frame name="FIZ_OptionNoGuildSwitch" inherits="FIZ_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionSilentSwitch"><Offset x="0" y="-20"/></Anchor></Anchors>					
-			</Frame>						
+			</Frame>
+
+			<Frame name="FIZ_OptionEnableParagonBar" inherits="FIZ_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionNoGuildSwitch"><Offset x="-25" y="-20"/></Anchor></Anchors>					
+			</Frame>							
 		</Frames>							
 		<Scripts>							
 			<OnLoad>FIZ_OnLoadOptions(self)</OnLoad>						

@@ -79,6 +79,7 @@ FIZ_TXT.defaultChatFrame	= "기본적으로 채팅 프레임을 사용하여"
 FIZ_TXT.chatFrame	= "채팅 프레임 %d 개 (%s) 을 (를) 사용"
 FIZ_TXT.usingDefaultChatFrame	= "Now using default chat frame"
 FIZ_TXT.usingChatFrame	= "Now using chat frame"
+FIZ_TXT.EnableParagonBar = "Display paragon reputation in bars."
 -- various LUA	
 FIZ_TXT.options	= "Options"
 FIZ_TXT.orderByStanding	= "Order by Standing"
@@ -271,6 +272,8 @@ FIZ_TXT.elements.tip.FIZ_SilentSwitchBox	= "(채팅하는 메시지없이) 자�
 FIZ_TXT.elements.name.FIZ_GuildCapBox	= FIZ_TXT.guildCap
 FIZ_TXT.elements.name.FIZ_ChatFrameSlider	= "프레임 채팅"
 FIZ_TXT.elements.tip.FIZ_ChatFrameSlider	= "프레임 Factionizer는 메시지를 출력하는 대화를 선택합니다."
+FIZ_TXT.elements.name.FIZ_EnableParagonBarBox = FIZ_TXT.EnableParagonBar
+FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox  = "Enable this option to display your current paragon progress in the reputation bars."	
 	
 FIZ_TXT.elements.name.FIZ_OptionEnableMissing	= FIZ_TXT.elements.name.FIZ_EnableMissingBox
 FIZ_TXT.elements.tip.FIZ_OptionEnableMissing	= FIZ_TXT.elements.tip.FIZ_EnableMissingBox
@@ -314,4 +317,8 @@ FIZ_TXT.elements.name.FIZ_OptionGuildCapCB	= FIZ_TXT.elements.name.FIZ_GuildCapB
 FIZ_TXT.elements.tip.FIZ_OptionGuildCapCB	= FIZ_TXT.elements.tip.FIZ_GuildCapBox
 FIZ_TXT.elements.name.FIZ_OptionChatFrameSlider	= FIZ_TXT.elements.name.FIZ_ChatFrameSlider
 FIZ_TXT.elements.tip.FIZ_OptionChatFrameSlider	= FIZ_TXT.elements.tip.FIZ_ChatFrameSlider
+FIZ_TXT.elements.name.FIZ_OptionEnableParagonBar = FIZ_TXT.elements.name.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.tip.FIZ_OptionEnableParagonBar = FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.name.FIZ_OptionEnableParagonBarCB = FIZ_TXT.elements.name.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.tip.FIZ_OptionEnableParagonBarCB = FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox
 end

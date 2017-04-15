@@ -314,6 +314,7 @@ function FIZ:Init()
 	changed = changed + FIZ:InitVariable("SwitchFactionBar", true)
 	changed = changed + FIZ:InitVariable("SilentSwitch", true)
 	changed = changed + FIZ:InitVariable("NoGuildSwitch", true)
+	changed = changed + FIZ:InitVariable("ShowParagonBar", true)
 	if (changed > 0) then
 		StaticPopupDialogs["FIZ_CONFIG_CHANGED"] = {
 			text = FIZ_TXT.configQuestion,
@@ -350,6 +351,7 @@ function FIZ:Init()
 	FIZ_NoGuildSwitchBoxText:SetText(FIZ_TXT.noGuildSwitch)
 	FIZ_SilentSwitchBoxText:SetText(FIZ_TXT.silentSwitch)
 	FIZ_OrderByStandingCheckBoxText:SetText(FIZ_TXT.orderByStanding)
+	FIZ_EnableParagonBarBoxText:SetText(FIZ_TXT.EnableParagonBar)
 
 	---	FIZ_OnShowOptionFrame()
 	FIZ:ExtractSkills()
@@ -444,6 +446,8 @@ function FIZ_SlashHandler(msg)
 						FD_SH.SwitchFactionBar = true
 						FD_SH.NoGuildSwitch = false
 						FD_SH.SilentSwitch = false
+					elseif (wordsLower[1]=="paragon") then
+						FD_SH.ShowParagonBar = true
 					elseif (wordsLower[1]=="all") then
 						FD_SH.ShowMobs = true
 						FD_SH.ShowQuests = true
@@ -500,6 +504,8 @@ function FIZ_SlashHandler(msg)
 						FD_SH.SwitchFactionBar = false
 						FD_SH.NoGuildSwitch = false
 						FD_SH.SilentSwitch = false
+					elseif (wordsLower[1]=="paragon") then
+						FD_SH.ShowParagonBar = false
 					elseif (wordsLower[1]=="all") then
 						FD_SH.ShowMobs = false
 						FD_SH.ShowQuests = false
@@ -556,6 +562,8 @@ function FIZ_SlashHandler(msg)
 						FD_SH.SwitchFactionBar = not FD_SH.SwitchFactionBar
 						FD_SH.NoGuildSwitch = false
 						FD_SH.SilentSwitch = false
+					elseif (wordsLower[1]=="paragon") then
+						FD_SH.ShowParagonBar = not FD_SH.ShowParagonBar;
 					elseif (wordsLower[1]=="all") then
 						FD_SH.ShowMobs = not FD_SH.ShowMobs
 						FD_SH.ShowQuests = not FD_SH.ShowQuests
@@ -755,9 +763,9 @@ function FIZ:Help() --xxx
 	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz enable { mobs | quests | instances | items | all }", true)
 	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz disable { mobs | quests | instances | items | all }", true)
 	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz toggle { mobs | quests | instances | items | all }", true)
-	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz enable { missing | details | chat | suppress }", true)
-	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz disable { missing | details | chat | suppress }", true)
-	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz toggle { missing | details | chat | suppress }" , true)
+	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz enable { missing | details | chat | suppress | paragon }", true)
+	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz disable { missing | details | chat | suppress | paragon}", true)
+	FIZ:Print(FIZ_Help_COLOUR..FIZ_TXT.usage..":|r /fz toggle { missing | details | chat | suppress | paragon}" , true)
 end
 ------------------------------------------------------------
 function FIZ:About()
@@ -799,6 +807,7 @@ function FIZ:Status()
 	FIZ:Print("   "..FIZ_TXT.statSwitch..": "..FIZ_Help_COLOUR..FIZ:BoolToEnabled(FIZ_Data.SwitchFactionBar).."|r", true)
 	FIZ:Print("   "..FIZ_TXT.statNoGuildSwitch..": "..FIZ_Help_COLOUR..FIZ:BoolToEnabled(FIZ_Data.NoGuildSwitch).."|r", true)
 	FIZ:Print("   "..FIZ_TXT.statSilentSwitch..": "..FIZ_Help_COLOUR..FIZ:BoolToEnabled(FIZ_Data.SilentSwitch).."|r", true)
+	FIZ:Print("   "..FIZ_TXT.EnableParagonBar..": "..FIZ_Help_COLOUR..FIZ:BoolToEnabled(FIZ_Data.ShowParagonBar).."|r", true)
 end
 
 -----------------------------------
@@ -3281,7 +3290,7 @@ function FIZ_OnShowOptionFrame()
 	FIZ_NoGuildSwitchBox:SetChecked(FIZ_Data.NoGuildSwitch)
 	FIZ_SilentSwitchBox:SetChecked(FIZ_Data.SilentSwitch)
 	FIZ_OrderByStandingCheckBox:SetChecked(FIZ_Data.SortByStanding)
-
+	FIZ_EnableParagonBarBox:SetChecked(FIZ_Data.ShowParagonBar)
 end
 
 --------------------------
@@ -3304,7 +3313,7 @@ function FIZ_OnLoadOptions(panel)
 	FIZ_OptionSwitchFactionBarCBText:SetText(FIZ_TXT.switchFactionBar)
 	FIZ_OptionNoGuildSwitchCBText:SetText(FIZ_TXT.noGuildSwitch)
 	FIZ_OptionSilentSwitchCBText:SetText(FIZ_TXT.silentSwitch)
-
+	FIZ_OptionEnableParagonBarCBText:SetText(FIZ_TXT.EnableParagonBar)
 end
 
 ------------------------------------------------------------
@@ -3320,7 +3329,7 @@ function FIZ_OnShowOptions(self)
 		FIZ_OptionSwitchFactionBarCB:SetChecked(FIZ_Data.SwitchFactionBar)
 		FIZ_OptionNoGuildSwitchCB:SetChecked(FIZ_Data.NoGuildSwitch)
 		FIZ_OptionSilentSwitchCB:SetChecked(FIZ_Data.SilentSwitch)
-
+		FIZ_OptionEnableParagonBarCB:SetChecked(FIZ_Data.ShowParagonBar)
 	end
 end
 
@@ -3336,7 +3345,7 @@ function FIZ_OptionsOk()
 		FIZ_Data.SwitchFactionBar = FIZ_OptionSwitchFactionBarCB:GetChecked()
 		FIZ_Data.NoGuildSwitch = FIZ_OptionNoGuildSwitchCB:GetChecked()
 		FIZ_Data.SilentSwitch = FIZ_OptionSilentSwitchCB:GetChecked()
-
+		FIZ_Data.ShowParagonBar = FIZ_OptionEnableParagonBarCB:GetChecked()
 		ReputationFrame_Update()
 	end
 	FIZ_OptionsShown = nil
@@ -3395,10 +3404,10 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 -- ^ rfl  _16_
 -- v rfl SBS 4
 		-- Normalize Values
-
+		local isParagon = C_Reputation.IsFactionParagon(factionID);
 		local origBarValue = barValue
 
-		if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
+		if ( factionID and isParagon ) then
         	local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         	paragonFrame.factionID = factionID;
         	paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3417,12 +3426,19 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		if(standingID == 8 or isCappedFriendship) then
 			barMin,barMax,barValue = 0,1,1;
 		end
+-- Set reputation bar to paragon values if user option is activated and faction is at paragon rep
+		if(factionID and isParagon and FIZ_Data.ShowParagonBar) then
+			local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+		end
 
 		barMax = barMax - barMin;
 		barValue = barValue - barMin;
 		barMin = 0;
 
-		if(isCapped or isCappedFriendship) then
+		if(isParagon and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
+			factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
+		elseif(isCapped or isCappedFriendship) then
 			factionRow.rolloverText = nil;
 		elseif(FIZ_Data.ShowMissing ~= true) then
 			factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
@@ -3446,17 +3462,23 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 
 		factionRow.index = OBS_fi_i;
 
-		if (FIZ_Data.ShowMissing) then
-			if ((barMax-barValue) ~= 0) then
-				factionRow.standingText = factionStandingtext.." ("..barMax - barValue..")";
-			else
-				factionRow.standingText = factionStandingtext;
-			end
+	if (FIZ_Data.ShowMissing) then
+		if ((barMax-barValue) ~= 0 and isParagon and FIZ_Data.ShowParagonBar) then
+			factionRow.standingText = "Paragon".." ("..barMax - barValue..")";
+		elseif ((barMax-barValue) ~= 0) then
+			factionRow.standingText = factionStandingtext.." ("..barMax - barValue..")";
 		else
--- ^ rfl SBS 3.1
 			factionRow.standingText = factionStandingtext;
--- v rfl SBS 3.2
 		end
+	else
+-- ^ rfl SBS 3.1
+		if(isParagon and FIZ_Data.ShowParagonBar) then
+			factionRow.standingText = "Paragon";
+		else
+			factionRow.standingText = factionStandingtext;
+		end
+-- v rfl SBS 3.2
+	end
 -- ^ rfl SBS 3.2
 -- ^ rfl SBS 3
 -- v rfl SBS 5
@@ -3536,6 +3558,8 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 	end
 
 end
+
+
 -- ^ rfl SBS
 function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
 -- v rfl ORO set 2 start
@@ -3570,10 +3594,10 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 -- ^ rfl  _16_
 -- v rfl ORO 4
 	
-
+	local isParagon = C_Reputation.IsFactionParagon(factionID);
 	local origBarValue = barValue
 
-	if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
+	if ( factionID and isParagon ) then
         local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         paragonFrame.factionID = factionID;
         paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3592,12 +3616,20 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	if(standingID == 8 or isCappedFriendship) then
 		barMin,barMax,barValue = 0,1,1;
 	end
+-- Set reputation bar to paragon values if user option is activated and faction is at paragon rep
+	if(factionID and isParagon and FIZ_Data.ShowParagonBar) then
+		local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+		barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+	end
+
 -- Normalize Values
 	barMax = barMax - barMin;
 	barValue = barValue - barMin;
 	barMin = 0;
 
-	if(isCapped or isCappedFriendship) then
+	if(isParagon and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
+		factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
+	elseif(isCapped or isCappedFriendship) then
 		factionRow.rolloverText = nil;
 	elseif(FIZ_Data.ShowMissing ~= true) then
 		factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
@@ -3622,20 +3654,27 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 
 
 	if (FIZ_Data.ShowMissing) then
-		if ((barMax-barValue) ~= 0) then
+		if ((barMax-barValue) ~= 0 and isParagon and FIZ_Data.ShowParagonBar) then
+			factionRow.standingText = "Paragon".." ("..barMax - barValue..")";
+		elseif ((barMax-barValue) ~= 0) then
 			factionRow.standingText = factionStandingtext.." ("..barMax - barValue..")";
 		else
 			factionRow.standingText = factionStandingtext;
 		end
 	else
 -- ^ rfl SBS 3.1
-		factionRow.standingText = factionStandingtext;
+		if(isParagon and FIZ_Data.ShowParagonBar) then
+			factionRow.standingText = "Paragon";
+		else
+			factionRow.standingText = factionStandingtext;
+		end
 -- v rfl SBS 3.2
 	end
 -- ^ rfl ORO 3.2
 -- ^ rfl ORO 3
 -- v rfl ORO 5
 -- v rfl ORO 5.1
+	
 	factionStanding:SetText(factionRow.standingText);
 -- ^ rfl ORO 5.1
 	if ( isCappedFriendship ) then

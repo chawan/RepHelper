@@ -80,6 +80,7 @@ FIZ_TXT.defaultChatFrame	= "Использовать окно чата по ум
 FIZ_TXT.chatFrame	= "Использовать окно чата: %d (%s)"
 FIZ_TXT.usingDefaultChatFrame	= "Используется окно чата по умолчанию"
 FIZ_TXT.usingChatFrame	= "Используется окно чата"
+FIZ_TXT.EnableParagonBar = "Display paragon reputation in bars."
 -- various LUA	
 FIZ_TXT.options	= "Опции"
 FIZ_TXT.orderByStanding	= "Сортировать по репе"
@@ -274,6 +275,8 @@ FIZ_TXT.elements.tip.FIZ_SilentSwitchBox	= "Включите этот парам
 FIZ_TXT.elements.name.FIZ_GuildCapBox	= FIZ_TXT.guildCap
 FIZ_TXT.elements.name.FIZ_ChatFrameSlider	= "Вкладка чата"
 FIZ_TXT.elements.tip.FIZ_ChatFrameSlider	= "Выберите, в какой вкладке чата Factionizer печатает свои сообщения"
+FIZ_TXT.elements.name.FIZ_EnableParagonBarBox = FIZ_TXT.EnableParagonBar
+FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox  = "Enable this option to display your current paragon progress in the reputation bars."	
 	
 FIZ_TXT.elements.name.FIZ_OptionEnableMissing	= FIZ_TXT.elements.name.FIZ_EnableMissingBox
 FIZ_TXT.elements.tip.FIZ_OptionEnableMissing	= FIZ_TXT.elements.tip.FIZ_EnableMissingBox
@@ -317,6 +320,10 @@ FIZ_TXT.elements.name.FIZ_OptionGuildCapCB	= FIZ_TXT.elements.name.FIZ_GuildCapB
 FIZ_TXT.elements.tip.FIZ_OptionGuildCapCB	= FIZ_TXT.elements.tip.FIZ_GuildCapBox
 FIZ_TXT.elements.name.FIZ_OptionChatFrameSlider	= FIZ_TXT.elements.name.FIZ_ChatFrameSlider
 FIZ_TXT.elements.tip.FIZ_OptionChatFrameSlider	= FIZ_TXT.elements.tip.FIZ_ChatFrameSlider
+FIZ_TXT.elements.name.FIZ_OptionEnableParagonBar = FIZ_TXT.elements.name.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.tip.FIZ_OptionEnableParagonBar = FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.name.FIZ_OptionEnableParagonBarCB = FIZ_TXT.elements.name.FIZ_EnableParagonBarBox
+FIZ_TXT.elements.tip.FIZ_OptionEnableParagonBarCB = FIZ_TXT.elements.tip.FIZ_EnableParagonBarBox
 end	
 	
 	
