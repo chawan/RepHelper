@@ -2195,6 +2195,11 @@ zone.Tomb_of_Sargeras = 1085			-- Tomb of Sargeras
 		FIZ_AddQuest(1435, 1, 8, 32708, 300)
 		FIZ_AddMob(1435, 1, 5, 1, 30, zone.Throne_of_Thunder)
 		FIZ_AddMob(1435, 1, 8, 3, 30, zone.Throne_of_Thunder)
+
+	-- Legion Factions
+	-- Conjurer Margoss 1975
+		FIZ_AddItems(1975, 1, 8, 50, {[138777] = 1})
+		FIZ_AddItems(1975, 1, 8, 500, {[138777] = 10})
 	
 	-- Dead Factions
 	-- Shen'dralar 809
