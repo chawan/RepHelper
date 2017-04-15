@@ -945,6 +945,7 @@ end
 
 function FIZ:InitFactor(FIZ_IsHuman,faction)
 --- Thanks Gwalkmaur for the heads up
+	--FIZ:Print("Faction: "..faction);
 	local factor=1.0
 	-- Race check
 		if FIZ_IsHuman then factor = factor + 0.1 end
@@ -1137,8 +1138,9 @@ function FIZ_AddQuest(faction, from, to, name, rep, itemList, limitType)
 	if (from > to) then return end								--]]--
 	if FIZ:Content(faction, from, to, name, rep) ~=1 then return end
 
-	rep = rep * FIZ:InitFactor(FIZ_IsHuman,FIZ_faction)
 	faction = string.lower(FIZ:InitFaction(FIZ_GuildName,faction))
+	rep = rep * FIZ:InitFactor(FIZ_IsHuman,FIZ_faction)
+	
 	--- f_aq	FIZ:Printtest(faction,FIZ_faction,"quest")
 
 	for standing = from,to do
