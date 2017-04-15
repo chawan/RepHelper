@@ -3404,10 +3404,9 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 -- ^ rfl  _16_
 -- v rfl SBS 4
 		-- Normalize Values
-		local isParagon = C_Reputation.IsFactionParagon(factionID);
 		local origBarValue = barValue
 
-		if ( factionID and isParagon ) then
+		if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
         	local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         	paragonFrame.factionID = factionID;
         	paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3427,7 +3426,7 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 			barMin,barMax,barValue = 0,1,1;
 		end
 -- Set reputation bar to paragon values if user option is activated and faction is at paragon rep
-		if(factionID and isParagon and FIZ_Data.ShowParagonBar) then
+		if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 			local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
 			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
 		end
@@ -3436,7 +3435,7 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		barValue = barValue - barMin;
 		barMin = 0;
 
-		if(isParagon and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
+		if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
 			factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
 		elseif(isCapped or isCappedFriendship) then
 			factionRow.rolloverText = nil;
@@ -3463,7 +3462,7 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		factionRow.index = OBS_fi_i;
 
 	if (FIZ_Data.ShowMissing) then
-		if ((barMax-barValue) ~= 0 and isParagon and FIZ_Data.ShowParagonBar) then
+		if ((barMax-barValue) ~= 0 and factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 			factionRow.standingText = "Paragon".." ("..barMax - barValue..")";
 		elseif ((barMax-barValue) ~= 0) then
 			factionRow.standingText = factionStandingtext.." ("..barMax - barValue..")";
@@ -3472,7 +3471,7 @@ function FIZ:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		end
 	else
 -- ^ rfl SBS 3.1
-		if(isParagon and FIZ_Data.ShowParagonBar) then
+		if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 			factionRow.standingText = "Paragon";
 		else
 			factionRow.standingText = factionStandingtext;
@@ -3594,10 +3593,9 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 -- ^ rfl  _16_
 -- v rfl ORO 4
 	
-	local isParagon = C_Reputation.IsFactionParagon(factionID);
 	local origBarValue = barValue
 
-	if ( factionID and isParagon ) then
+	if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
         local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         paragonFrame.factionID = factionID;
         paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3617,7 +3615,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 		barMin,barMax,barValue = 0,1,1;
 	end
 -- Set reputation bar to paragon values if user option is activated and faction is at paragon rep
-	if(factionID and isParagon and FIZ_Data.ShowParagonBar) then
+	if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 		local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
 		barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
 	end
@@ -3627,7 +3625,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	barValue = barValue - barMin;
 	barMin = 0;
 
-	if(isParagon and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
+	if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar and FIZ_Data.ShowMissing ~= true) then
 		factionRow.rolloverText = HIGHLIGHT_FONT_COLOR_CODE.." "..format(REPUTATION_PROGRESS_FORMAT, barValue, barMax)..FONT_COLOR_CODE_CLOSE;
 	elseif(isCapped or isCappedFriendship) then
 		factionRow.rolloverText = nil;
@@ -3654,7 +3652,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 
 
 	if (FIZ_Data.ShowMissing) then
-		if ((barMax-barValue) ~= 0 and isParagon and FIZ_Data.ShowParagonBar) then
+		if ((barMax-barValue) ~= 0 and factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 			factionRow.standingText = "Paragon".." ("..barMax - barValue..")";
 		elseif ((barMax-barValue) ~= 0) then
 			factionRow.standingText = factionStandingtext.." ("..barMax - barValue..")";
@@ -3663,7 +3661,7 @@ function FIZ:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 		end
 	else
 -- ^ rfl SBS 3.1
-		if(isParagon and FIZ_Data.ShowParagonBar) then
+		if(factionID and C_Reputation.IsFactionParagon(factionID) and FIZ_Data.ShowParagonBar) then
 			factionRow.standingText = "Paragon";
 		else
 			factionRow.standingText = factionStandingtext;
