@@ -485,14 +485,14 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1419, 1, 8, 5, 1)
 	-- Outlands (Burning Crusade)
 	-- Honor Hold 946
-		FIZ_AddInstance(946, 4, 5, 797, 600, FALSE)
-		FIZ_AddInstance(946, 6, 8, 797, 2000, TRUE)
-		FIZ_AddInstance(946, 4, 5, 725, 750, FALSE)
-		FIZ_AddInstance(946, 6, 8, 725, 2700, TRUE)
+		FIZ_AddInstance(946, 4, 5, 797, 600, false)
+		FIZ_AddInstance(946, 6, 8, 797, 2000, true)
+		FIZ_AddInstance(946, 4, 5, 725, 750, false)
+		FIZ_AddInstance(946, 6, 8, 725, 2700, true)
 		--FIZ_AddMob(946, 4, 7, 725, 5) This NPC is not in game. http://www.wowhead.com/npc=725
 		--FIZ_AddMob(946, 4, 8, 725, 15) This NPC is not in game. http://www.wowhead.com/npc=725
-		FIZ_AddInstance(946, 4, 8, 710, 1600, FALSE)
-		FIZ_AddInstance(946, 4, 8, 710, 2900, TRUE)
+		FIZ_AddInstance(946, 4, 8, 710, 1600, false)
+		FIZ_AddInstance(946, 4, 8, 710, 2900, true)
 		FIZ_AddMob(946, 4, 7, FIZ_TXT.Mob.MoshOgg_Spellcrafter, 5, zone.Northern_Stranglethorn) -- Mosh'Ogg Spellcrafter ID=710
 		FIZ_AddMob(946, 4, 8, FIZ_TXT.Mob.MoshOgg_Spellcrafter, 15, zone.Northern_Stranglethorn) -- Mosh'Ogg Spellcrafter ID=710
 		FIZ_AddQuest(946, 4, 7, 13410, 150)
@@ -536,8 +536,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1037, 4, 8, 13862, 125)
 		FIZ_AddQuest(1037, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1037, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1037, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1037, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1037, 4, 8, 1, 800, true)
 	-- Explorer's League 1068
 		FIZ_AddQuest(1068, 4, 8, 11391, 125)
 	---- spillover from 1126
@@ -568,8 +568,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1068, 4, 8, 13862, 125)
 		FIZ_AddQuest(1068, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1068, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1068, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1068, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1068, 4, 8, 1, 800, true)
 	-- The Frostborn 1126
 		FIZ_AddQuest(1126, 4, 8, 12869, 125)
 	---- spillover from 1068
@@ -600,8 +600,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1126, 4, 8, 13862, 125)
 		FIZ_AddQuest(1126, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1126, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1126, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1126, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1126, 4, 8, 1, 800, true)
 	-- The Silver Covenant 1094
 		FIZ_AddQuest(1094, 4, 8, 13757, 125, {[44981] = 1})
 		FIZ_AddQuest(1094, 4, 8, 13759, 125)
@@ -632,8 +632,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1094, 4, 8, 13862, 125)
 		FIZ_AddQuest(1094, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1094, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1094, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1094, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1094, 4, 8, 1, 800, true)
 	-- Valiance Expedition 1050
 		FIZ_AddQuest(1050, 4, 8, 11153, 125)
 		FIZ_AddQuest(1050, 4, 8, 13309, 125)
@@ -664,8 +664,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1050, 4, 8, 13862, 125)
 		FIZ_AddQuest(1050, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1050, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1050, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1050, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1050, 4, 8, 1, 800, true)
 	-- Cataclysm
 	-- Wildhammer Clan 1174
 	---- from zone Twilight Highlands
@@ -958,14 +958,14 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1374, 1, 8, 5, 1)
 	-- 0 Outlands (Burning Crusade)
 	-- Thrallmar 947
-		FIZ_AddInstance(947, 4, 5, 797, 600, FALSE)
-		FIZ_AddInstance(947, 6, 8, 797, 2000, TRUE)
-		FIZ_AddInstance(947, 4, 5, 725, 750, FALSE)
-		FIZ_AddInstance(947, 6, 8, 725, 2700, TRUE)
+		FIZ_AddInstance(947, 4, 5, 797, 600, false)
+		FIZ_AddInstance(947, 6, 8, 797, 2000, true)
+		FIZ_AddInstance(947, 4, 5, 725, 750, false)
+		FIZ_AddInstance(947, 6, 8, 725, 2700, true)
 		FIZ_AddMob(947, 4, 7, 725, 5)
 		FIZ_AddMob(947, 4, 8, 725, 15)
-		FIZ_AddInstance(947, 4, 8, 710, 1600, FALSE)
-		FIZ_AddInstance(947, 4, 8, 710, 2900, TRUE)
+		FIZ_AddInstance(947, 4, 8, 710, 1600, false)
+		FIZ_AddInstance(947, 4, 8, 710, 2900, true)
 		FIZ_AddMob(947, 4, 7, 710, 5)
 		FIZ_AddMob(947, 4, 8, 710, 15)
 		FIZ_AddQuest(947, 4, 7, 13410, 150)
@@ -1006,8 +1006,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1052, 4, 8, 13862, 125)
 		FIZ_AddQuest(1052, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1052, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1052, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1052, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1052, 4, 8, 1, 800, true)
 	-- The Hand of Vengeance 1067
 	---- spillover from 1052
 		FIZ_AddQuest(1067, 4, 8, 12170, 62.5)
@@ -1034,8 +1034,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1067, 4, 8, 13862, 125)
 		FIZ_AddQuest(1067, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1067, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1067, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1067, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1067, 4, 8, 1, 800, true)
 	-- The Sunreavers 1124
 		FIZ_AddQuest(1124, 4, 8, 13757, 125, {[44981] = 1})
 		FIZ_AddQuest(1124, 4, 8, 13625, 125)
@@ -1061,8 +1061,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1124, 4, 8, 13862, 125)
 		FIZ_AddQuest(1124, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1124, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1124, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1124, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1124, 4, 8, 1, 800, true)
 
 	-- Warsong Offensive 1085
 		FIZ_AddQuest(1085, 4, 8, 12284, 125)
@@ -1089,8 +1089,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1085, 4, 8, 13862, 125)
 		FIZ_AddQuest(1085, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1085, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1085, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1085, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1085, 4, 8, 1, 800, true)
 	-- The Taunka 1064
 	---- spillover from 1052
 		FIZ_AddQuest(1064, 4, 8, 12170, 62.5)
@@ -1117,8 +1117,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1064, 4, 8, 13862, 125)
 		FIZ_AddQuest(1064, 4, 8, 13811, 125)
 	---- spillover from dungeon
-		FIZ_AddInstance(1064, 4, 8, 1, 400, FALSE)
-		FIZ_AddInstance(1064, 4, 8, 1, 800, TRUE)
+		FIZ_AddInstance(1064, 4, 8, 1, 400, false)
+		FIZ_AddInstance(1064, 4, 8, 1, 800, true)
 	-- Cataclysm
 	-- Dragonmaw Clan 1172
 	---- from zone Twilight Highlands
@@ -1506,17 +1506,17 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(990, 4, 8, 0, 375, zone.Hyjal_Summit)
 		FIZ_AddMob(990, 4, 8, "Archimonde", 1500, zone.Hyjal_Summit)
 	-- The Violet Eye 967
-		FIZ_AddInstance(967, 4, 8, 734, 6000, FALSE)
+		FIZ_AddInstance(967, 4, 8, 734, 6000, false)
 		FIZ_AddMob(967, 4, 8, 0, 250, zone.Karazhan)
 		FIZ_AddMob(967, 4, 8, 0, 15, zone.Karazhan)
 	-- Outlands (Burning Crusade)
 	-- Cenarion Expedition 942
-		FIZ_AddInstance(942, 4, 5, 728, 650, FALSE)
-		FIZ_AddInstance(942, 6, 8, 728, 650, TRUE)
-		FIZ_AddInstance(942, 4, 5, 726, 1000, FALSE)
-		FIZ_AddInstance(942, 6, 8, 726, 1000, TRUE)
-		FIZ_AddInstance(942, 4, 8, 727, 1662, FALSE)
-		FIZ_AddInstance(942, 4, 8, 727, 2319, TRUE)
+		FIZ_AddInstance(942, 4, 5, 728, 650, false)
+		FIZ_AddInstance(942, 6, 8, 728, 650, true)
+		FIZ_AddInstance(942, 4, 5, 726, 1000, false)
+		FIZ_AddInstance(942, 6, 8, 726, 1000, true)
+		FIZ_AddInstance(942, 4, 8, 727, 1662, false)
+		FIZ_AddInstance(942, 4, 8, 727, 2319, true)
 		FIZ_AddQuest(942, 4, 5, 9802, 250, {[24401] = 10})
 		FIZ_AddQuest(942, 4, 6, 9875, 500)
 
@@ -1530,10 +1530,10 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(942, 4, 4, "Darkcrest Slaver", 5, zone.Zangarmarsh)
 		FIZ_AddMob(942, 4, 4, "Terrorclaw", 7, zone.Zangarmarsh)
 	-- Keepers of Time 989
-		FIZ_AddInstance(989, 4, 8, 734, 1133, FALSE)
-		FIZ_AddInstance(989, 4, 8, 734, 2445, TRUE)
-		FIZ_AddInstance(989, 4, 8, 733, 1110, FALSE)
-		FIZ_AddInstance(989, 4, 8, 733, 1725, TRUE)
+		FIZ_AddInstance(989, 4, 8, 734, 1133, false)
+		FIZ_AddInstance(989, 4, 8, 734, 2445, true)
+		FIZ_AddInstance(989, 4, 8, 733, 1110, false)
+		FIZ_AddInstance(989, 4, 8, 733, 1725, true)
 	-- Netherwing 1015
 		FIZ_AddQuest(1015, 4, 8, 11050, 250)
 		FIZ_AddQuest(1015, 4, 8, 11017, 250, "nil", FIZ_LIMIT_TYPE_Herb)
@@ -1565,8 +1565,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1031, 4, 8, "Terokk", 500, zone.Terokkar_Forest)
 	-- Sporeggar 970
 		FIZ_AddMob(970, 3, 6, "Bog Lords, Bog Giants", 15)
-		FIZ_AddInstance(970, 3, 7, 726, 15, FALSE)
-		FIZ_AddInstance(970, 3, 7, 726, 45, TRUE)
+		FIZ_AddInstance(970, 3, 7, 726, 15, false)
+		FIZ_AddInstance(970, 3, 7, 726, 45, true)
 		FIZ_AddQuest(970, 3, 4, 9739, 750)
 		FIZ_AddQuest(970, 3, 5, 9743, 750)
 		FIZ_AddQuest(970, 3, 5, 9744, 750)
@@ -1575,8 +1575,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(970, 4, 8, 9807, 750)
 		FIZ_AddQuest(970, 5, 8, 29692, 750)
 	-- The Consortium 933
-		FIZ_AddInstance(933, 4, 5, 732, 1200, FALSE)
-		FIZ_AddInstance(933, 6, 8, 732, 2400, TRUE)
+		FIZ_AddInstance(933, 4, 5, 732, 1200, false)
+		FIZ_AddInstance(933, 6, 8, 732, 2400, true)
 		FIZ_AddQuest(933, 4, 4, 9882, 250)
 		FIZ_AddQuest(933, 4, 4, 9915, 250)
 		FIZ_AddQuest(933, 5, 8, 9892, 250)
@@ -1587,12 +1587,12 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(933, 4, 8, 99, 350)
 	-- Shattrath City
 	-- Lower City 1011
-		FIZ_AddInstance(1011, 4, 5, 722, 750, FALSE)
-		FIZ_AddInstance(1011, 6, 8, 722, 750, TRUE)
-		FIZ_AddInstance(1011, 4, 8, 723, 1080, FALSE)
-		FIZ_AddInstance(1011, 4, 8, 723, 1250, TRUE)
-		FIZ_AddInstance(1011, 4, 8, 724, 2000, FALSE)
-		FIZ_AddInstance(1011, 4, 8, 724, 2700, TRUE)
+		FIZ_AddInstance(1011, 4, 5, 722, 750, false)
+		FIZ_AddInstance(1011, 6, 8, 722, 750, true)
+		FIZ_AddInstance(1011, 4, 8, 723, 1080, false)
+		FIZ_AddInstance(1011, 4, 8, 723, 1250, true)
+		FIZ_AddInstance(1011, 4, 8, 724, 2000, false)
+		FIZ_AddInstance(1011, 4, 8, 724, 2700, true)
 		FIZ_AddQuest(1011, 4, 5, 10917, 250)
 	-- Shattered Sun Offensive 1077
 		FIZ_AddQuest(1077, 4, 8, 11875, 250, "nil", FIZ_LIMIT_TYPE_Gather)
@@ -1615,9 +1615,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1077, 4, 8, 11548, 150)
 		FIZ_AddQuest(1077, 4, 8, 11521, 350)
 		FIZ_AddQuest(1077, 4, 8, 11546, 250)
-		FIZ_AddInstance(1077, 4, 7, 798, 1640, FALSE)
+		FIZ_AddInstance(1077, 4, 7, 798, 1640, false)
 
-		FIZ_AddInstance(1077, 4, 8, 798, 2503, TRUE)
+		FIZ_AddInstance(1077, 4, 8, 798, 2503, true)
 	-- The Aldor 932
 		FIZ_AddQuest(932, 1, 3, 10017, 250, {[25802] = 8})
 		FIZ_AddQuest(932, 4, 5, 10326, 250, {[29425] = 10})
@@ -1645,12 +1645,12 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(935, 4, 5, 10024, 125, {[25744] = 8})
 		FIZ_AddQuest(935, 4, 5, 10420, 175, {[29740] = 1})
 		FIZ_AddQuest(935, 4, 5, 10416, 175, {[29739] = 1})
-		FIZ_AddInstance(935, 4, 8, 730, 1620, FALSE)
-		FIZ_AddInstance(935, 4, 8, 730, 3000, TRUE)
-		FIZ_AddInstance(935, 4, 8, 729, 2000, FALSE)
-		FIZ_AddInstance(935, 4, 8, 729, 3000, TRUE)
-		FIZ_AddInstance(935, 4, 8, 731, 1800, FALSE)
-		FIZ_AddInstance(935, 4, 8, 731, 3000, TRUE)
+		FIZ_AddInstance(935, 4, 8, 730, 1620, false)
+		FIZ_AddInstance(935, 4, 8, 730, 3000, true)
+		FIZ_AddInstance(935, 4, 8, 729, 2000, false)
+		FIZ_AddInstance(935, 4, 8, 729, 3000, true)
+		FIZ_AddInstance(935, 4, 8, 731, 1800, false)
+		FIZ_AddInstance(935, 4, 8, 731, 3000, true)
 	-- Northrend (WotLK)
 	-- Argent Crusade 1106
 		FIZ_AddQuest(1106, 4, 8, 13302, 325)
@@ -1693,8 +1693,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1098, 4, 8, 13811, 325)
 	end
 	-- The Ashen Verdict 1156
-		FIZ_AddInstance(1156, 4, 8, 604, 2070, FALSE)
-		FIZ_AddInstance(1156, 4, 8, 604, 1005, FALSE)
+		FIZ_AddInstance(1156, 4, 8, 604, 2070, false)
+		FIZ_AddInstance(1156, 4, 8, 604, 1005, false)
 	-- The Kalu'ak 1073
 		FIZ_AddQuest(1073, 4, 8, 11945, 500)
 		FIZ_AddQuest(1073, 4, 8, 11960, 500)
@@ -1715,8 +1715,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1091, 4, 8, 12372, 325)
 		FIZ_AddQuest(1091, 4, 8, 13414, 325)
 		FIZ_AddItems(1091, 4, 8, 520, {[44710] = 1})
-		FIZ_AddInstance(1091, 4, 8, 5, 800, FALSE)
-		FIZ_AddInstance(1091, 4, 8, 5, 2000, TRUE)
+		FIZ_AddInstance(1091, 4, 8, 5, 800, false)
+		FIZ_AddInstance(1091, 4, 8, 5, 2000, true)
 	-- Frenzyheart Tribe 1104
 		FIZ_AddQuest(1104, 1, 5, 12582, 51000)
 		FIZ_AddQuest(1104, 6, 8, 12703, 500)
@@ -1807,8 +1807,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1158, 4, 8, 29147, 150)
 		FIZ_AddQuest(1158, 4, 8, 29164, 150)
 		FIZ_AddQuest(1158, 4, 8, 29125, 150)
-		FIZ_AddInstance(1158, 4, 8, 5, 1000, FALSE)
-		FIZ_AddInstance(1158, 4, 8, 5, 1800, TRUE)
+		FIZ_AddInstance(1158, 4, 8, 5, 1000, false)
+		FIZ_AddInstance(1158, 4, 8, 5, 1800, true)
 		FIZ_AddMob(1158, 1, 8, 1, 10, 5)
 		FIZ_AddMob(1158, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1158, 1, 8, 4, 150, 5)
