@@ -496,6 +496,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(946, 4, 7, FIZ_TXT.Mob.MoshOgg_Spellcrafter, 5, zone.Northern_Stranglethorn) -- Mosh'Ogg Spellcrafter ID=710
 		FIZ_AddMob(946, 4, 8, FIZ_TXT.Mob.MoshOgg_Spellcrafter, 15, zone.Northern_Stranglethorn) -- Mosh'Ogg Spellcrafter ID=710
 		FIZ_AddQuest(946, 4, 7, 13410, 150)
+		-- Timewalking Commendation
+		FIZ_AddItems(946, 1, 8, 500, {[129948] = 1})
 	-- Kurenai 978
 		FIZ_AddQuest(978, 4, 8, 10476, 500, {[25433] = 10})
 		FIZ_AddQuest(978, 4, 8, 11502, 500)
@@ -538,6 +540,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	---- spillover from dungeon
 		FIZ_AddInstance(1037, 4, 8, 1, 400, false)
 		FIZ_AddInstance(1037, 4, 8, 1, 800, true)
+	---- Timewalking Commendation
+		FIZ_AddItems(1037, 1, 8, 500, {[129955] = 1})
 	-- Explorer's League 1068
 		FIZ_AddQuest(1068, 4, 8, 11391, 125)
 	---- spillover from 1126
@@ -680,6 +684,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1174, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1174, 1, 8, 4, 150, 5)
 		FIZ_AddMob(1174, 1, 8, 4, 250, 6)
+		-- Timewalking Commendation
+		FIZ_AddItems(1174, 1, 8, 500, {[133151] = 1})
 	-- Baradin's Wardens 1177
 	---- from zone Tol Barad
 	------ Tol Barad Peninsula
@@ -765,6 +771,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1376, 1, 8, 32172, 200)
 		FIZ_AddQuest(1376, 1, 8, 32170, 200)
 		FIZ_AddQuest(1376, 1, 8, 32171, 200)
+	---- Timewalking Commendation
+		FIZ_AddItems(1376, 1, 8, 300, {[143944] = 1})
 	-- 0
 	-- Kirin Tor Offensive 1387
 		FIZ_AddQuest(1387, 4, 8, 32571, 150)
@@ -837,6 +845,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1387, 4, 8, 32572, 150)
 		FIZ_AddQuest(1387, 4, 8, 32575, 150)
 		FIZ_AddQuest(1387, 4, 8, 32583, 200)
+		-- Timewalking Commendation
+		FIZ_AddItems(1387, 1, 8, 300, {[143940] = 1})
 	end
 	if (FIZ_IsHorde) then
 	-- Hord Cities
@@ -969,6 +979,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(947, 4, 7, 710, 5)
 		FIZ_AddMob(947, 4, 8, 710, 15)
 		FIZ_AddQuest(947, 4, 7, 13410, 150)
+		-- Timewalking Commendation
+		FIZ_AddItems(947, 1, 8, 500, {[129947] = 1})
 	-- The Mag'har 941
 		FIZ_AddQuest(941, 4, 8, 10479, 500, {[25433] = 10})
 		FIZ_AddQuest(941, 4, 8, 11503, 500)
@@ -1008,6 +1020,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	---- spillover from dungeon
 		FIZ_AddInstance(1052, 4, 8, 1, 400, false)
 		FIZ_AddInstance(1052, 4, 8, 1, 800, true)
+	---- Timewalking Commendation
+		FIZ_AddItems(1052, 1, 8, 500, {[129954] = 1})
 	-- The Hand of Vengeance 1067
 	---- spillover from 1052
 		FIZ_AddQuest(1067, 4, 8, 12170, 62.5)
@@ -1133,6 +1147,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1172, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1172, 1, 8, 4, 150, 5)
 		FIZ_AddMob(1172, 1, 8, 4, 250, 6)
+		-- Timewalking Commendation
+		FIZ_AddItems(1172, 1, 8, 500, {[133150] = 1})
 	-- Hellscream's Reach 1178
 	---- from zone Tol Barad
 	------ Tol Barad Peninsula
@@ -1225,6 +1241,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1375, 1, 8, 32172, 200)
 		FIZ_AddQuest(1375, 1, 8, 32170, 200)
 		FIZ_AddQuest(1375, 1, 8, 32171, 200)
+		-- Timewalking Commendation
+		FIZ_AddItems(1375, 1, 8, 300, {[143943] = 1})
 	-- Isle of Thunder
 	-- Sunreaver Onslaught 1388
 		FIZ_AddQuest(1388, 4, 8, 32571, 150)
@@ -1302,6 +1320,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1388, 4, 8, 32233, 150)
 		FIZ_AddQuest(1388, 4, 8, 32232, 150)
 		FIZ_AddQuest(1388, 4, 8, 32583, 200)
+		-- Timewalking Commendation
+		FIZ_AddItems(1388, 1, 8, 300, {[143939] = 1})
 	end
 	-- Steamwheedle Cartel
 	-- Booty Bay 21
@@ -1529,11 +1549,15 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(942, 4, 4, "Darkcrest Sorceress", 5, zone.Zangarmarsh)
 		FIZ_AddMob(942, 4, 4, "Darkcrest Slaver", 5, zone.Zangarmarsh)
 		FIZ_AddMob(942, 4, 4, "Terrorclaw", 7, zone.Zangarmarsh)
+		-- Timewalking Commendation
+		FIZ_AddItems(942, 1, 8, 500, {[129949] = 1})
 	-- Keepers of Time 989
 		FIZ_AddInstance(989, 4, 8, 734, 1133, false)
 		FIZ_AddInstance(989, 4, 8, 734, 2445, true)
 		FIZ_AddInstance(989, 4, 8, 733, 1110, false)
 		FIZ_AddInstance(989, 4, 8, 733, 1725, true)
+		-- Timewalking Commendation
+		FIZ_AddItems(989, 1, 8, 500, {[129950] = 1})
 	-- Netherwing 1015
 		FIZ_AddQuest(1015, 4, 8, 11050, 250)
 		FIZ_AddQuest(1015, 4, 8, 11017, 250, "nil", FIZ_LIMIT_TYPE_Herb)
@@ -1585,6 +1609,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(933, 7, 8, 10973, 500)
 		FIZ_AddQuest(933, 4, 8, 99, 250)
 		FIZ_AddQuest(933, 4, 8, 99, 350)
+		-- Timewalking Commendation
+		FIZ_AddItems(933, 1, 8, 500, {[129945] = 1})
 	-- Shattrath City
 	-- Lower City 1011
 		FIZ_AddInstance(1011, 4, 5, 722, 750, false)
@@ -1594,6 +1620,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddInstance(1011, 4, 8, 724, 2000, false)
 		FIZ_AddInstance(1011, 4, 8, 724, 2700, true)
 		FIZ_AddQuest(1011, 4, 5, 10917, 250)
+		-- Timewalking Commendation
+		FIZ_AddItems(1011, 1, 8, 500, {[129951] = 1})
 	-- Shattered Sun Offensive 1077
 		FIZ_AddQuest(1077, 4, 8, 11875, 250, "nil", FIZ_LIMIT_TYPE_Gather)
 		FIZ_AddQuest(1077, 4, 8, 11877, 250)
@@ -1651,12 +1679,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddInstance(935, 4, 8, 729, 3000, true)
 		FIZ_AddInstance(935, 4, 8, 731, 1800, false)
 		FIZ_AddInstance(935, 4, 8, 731, 3000, true)
+		-- Timewalking Commendation
+		FIZ_AddItems(935, 1, 8, 500, {[129946] = 1})
 	-- Northrend (WotLK)
 	-- Argent Crusade 1106
 		FIZ_AddQuest(1106, 4, 8, 13302, 325)
 		FIZ_AddQuest(1106, 4, 8, 12587, 455)
 		FIZ_AddQuest(1106, 4, 8, 12604, 650)
 		FIZ_AddItems(1106, 4, 8, 520, {[44711] = 1})
+		-- Timewalking Commendation
+		FIZ_AddItems(1106, 1, 8, 500, {[129942] = 1})
 		FIZ_AddSpell(1106, 1, 8, 5, 1000)
 		FIZ_AddSpell(1106, 1, 8, 5, 1800)
 	if (FIZ_IsDeathKnight) then
@@ -1675,6 +1707,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddItems(1090, 4, 8, 520, {[43950] = 1})
 		FIZ_AddSpell(1090, 1, 8, 5, 1000)
 		FIZ_AddSpell(1090, 1, 8, 5, 1800)
+		-- Timewalking Commendation
+		FIZ_AddItems(1090, 1, 8, 500, {[129940] = 1})
 	-- Knights of the Ebon Blade 1098
 		FIZ_AddQuest(1098, 4, 8, 12813, 325)
 		FIZ_AddQuest(1098, 4, 8, 12838, 325)
@@ -1692,6 +1726,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1098, 4, 8, 13862, 325)
 		FIZ_AddQuest(1098, 4, 8, 13811, 325)
 	end
+		-- Timewalking Commendation
+		FIZ_AddItems(1098, 1, 8, 500, {[129941] = 1})
 	-- The Ashen Verdict 1156
 		FIZ_AddInstance(1156, 4, 8, 604, 2070, false)
 		FIZ_AddInstance(1156, 4, 8, 604, 1005, false)
@@ -1710,6 +1746,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1119, 6, 8, 13003, 650)
 		FIZ_AddQuest(1119, 7, 8, 13046, 455)
 		FIZ_AddItems(1119, 4, 8, 520, {[49702] = 1})
+		-- Timewalking Commendation
+		FIZ_AddItems(1119, 1, 8, 500, {[129943] = 1})
 	-- The Wyrmrest Accord 1091
 		FIZ_AddQuest(1091, 4, 8, 11940, 325)
 		FIZ_AddQuest(1091, 4, 8, 12372, 325)
@@ -1717,6 +1755,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddItems(1091, 4, 8, 520, {[44710] = 1})
 		FIZ_AddInstance(1091, 4, 8, 5, 800, false)
 		FIZ_AddInstance(1091, 4, 8, 5, 2000, true)
+		-- Timewalking Commendation
+		FIZ_AddItems(1091, 1, 8, 500, {[129944] = 1})
 	-- Frenzyheart Tribe 1104
 		FIZ_AddQuest(1104, 1, 5, 12582, 51000)
 		FIZ_AddQuest(1104, 6, 8, 12703, 500)
@@ -1813,6 +1853,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1158, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1158, 1, 8, 4, 150, 5)
 		FIZ_AddMob(1158, 1, 8, 4, 250, 6)
+		-- Timewalking Commendation
+		FIZ_AddItems(1158, 1, 8, 500, {[133152] = 1})
 	-- Ramkahen 1173
 		FIZ_AddSpell(1173, 1, 8, 5, 1000)
 		FIZ_AddSpell(1173, 1, 8, 5, 1800)
@@ -1822,6 +1864,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1173, 1, 8, 4, 250, 6)
 		FIZ_AddQuest(1173, 4, 8, 28250, 150)
 		FIZ_AddQuest(1173, 4, 8, 28736, 250)
+		-- Timewalking Commendation
+		FIZ_AddItems(1173, 1, 8, 500, {[133154] = 1})
 	-- The Earthen Ring 1135
 		FIZ_AddSpell(1135, 1, 8, 5, 1000)
 		FIZ_AddSpell(1135, 1, 8, 5, 1800)
@@ -1829,6 +1873,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1135, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1135, 1, 8, 4, 150, 5)
 		FIZ_AddMob(1135, 1, 8, 4, 250, 6)
+		-- Timewalking Commendation
+		FIZ_AddItems(1135, 1, 8, 500, {[133159] = 1})
 	-- Therazane 1171
 		FIZ_AddSpell(1171, 1, 8, 5, 1000)
 		FIZ_AddSpell(1171, 1, 8, 5, 1800)
@@ -1846,6 +1892,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1171, 1, 8, 1, 15, 6)
 		FIZ_AddMob(1171, 1, 8, 4, 150, 5)
 		FIZ_AddMob(1171, 1, 8, 4, 250, 6)
+		-- Timewalking Commendation
+		FIZ_AddItems(1171, 1, 8, 500, {[133160] = 1})
 	-- Mist of Pandaria
 	-- Golden Lotus 1269
 		FIZ_AddQuest(1269, 1, 8, 30261, 350)
@@ -1861,6 +1909,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1269, 1, 8, "All rare mobs", 400, zone.Vale_of_Eternal_Blossoms)
 		FIZ_AddMob(1269, 1, 8, "Jade Colossus", 100, zone.Vale_of_Eternal_Blossoms)
 		FIZ_AddMob(1269, 1, 8, "Milau", 60, zone.Vale_of_Eternal_Blossoms)
+		-- Timewalking Commendation
+		FIZ_AddItems(1269, 1, 8, 300, {[143937] = 1})
 	-- Shado-Pan 1270
 		FIZ_AddQuest(1270, 1, 8, 31198, 250)
 		FIZ_AddQuest(1270, 1, 8, 31114, 250)
@@ -1890,9 +1940,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1270, 1, 8, 31117, 250)
 		FIZ_AddQuest(1270, 1, 8, 31062, 250)
 		FIZ_AddQuest(1270, 1, 8, 32650, 300)
+		-- Timewalking Commendation
+		FIZ_AddItems(1270, 1, 8, 300, {[143936] = 1})
 	-- The August Celestials 1341
 		FIZ_AddItems(1341, 1, 8, 1000, {[86592] = 1})
 		FIZ_AddQuest(1341, 1, 8, 32657, 1000)
+		-- Timewalking Commendation
+		FIZ_AddItems(1341, 1, 8, 300, {[143938] = 1})
 
 	------ Krasarang Wilds
 		FIZ_AddQuest(1341, 1, 8, 30740, 250)
@@ -1945,6 +1999,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1341, 1, 8, 30952, 300)
 	-- The Klaxxi 1337
 		FIZ_AddItems(1337, 4, 8, 250, {[87903] = 5})
+		-- Timewalking Commendation
+		FIZ_AddItems(1337, 1, 8, 300, {[143935] = 1})
 		FIZ_AddQuest(1337, 4, 8, 99, 780)
 		FIZ_AddQuest(1337, 4, 8, 99, 260)
 		FIZ_AddQuest(1337, 4, 8, 99, 390)
@@ -1979,6 +2035,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1337, 1, 8, 32659, 350)
 	-- Order of the Cloud Serpent 1271
 		FIZ_AddItems(1271, 1, 8, 1000, {[86592] = 1})
+		-- Timewalking Commendation
+		FIZ_AddItems(1271, 1, 8, 300, {[143942] = 1})
 		FIZ_AddQuest(1271, 4, 8, 99, 780)
 		FIZ_AddQuest(1271, 4, 8, 99, 780)
 		FIZ_AddQuest(1271, 4, 8, 99, 780)
@@ -2049,6 +2107,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1302, 1, 8, 30701, 500)
 		FIZ_AddQuest(1302, 1, 8, 30585, 500)
 		FIZ_AddQuest(1302, 1, 8, 30598, 500)
+		-- Timewalking Commendation
+		FIZ_AddItems(1302, 1, 8, 300, {[143946] = 1})
 	-- Nat Pagle 1358 
 		FIZ_AddQuest(1358, 1, 8, 36804, 350, {[116820] = 1})
 		FIZ_AddQuest(1358, 1, 8, 39283, 350, {[127994] = 1})
@@ -2064,6 +2124,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	-- The Tillers (group)
 	-- The Tillers 1272
 		FIZ_AddGeneral(1272, 1, 8, "1", 50, "1", "0", nil, 0)
+		-- Timewalking Commendation
+		FIZ_AddItems(1272, 1, 8, 300, {[143941] = 1})
 
 	------ Farmer Yoon
 	-------- Main
@@ -2188,6 +2250,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddMob(1492, 1, 7, "Ordon Fire-Watcher", 10, zone.Timeless_Isle)
 		FIZ_AddMob(1492, 1, 7, "Ordon Oathguard", 10, zone.Timeless_Isle)
 		FIZ_AddMob(1492, 1, 7, "Ordon Candlekeeper", 5, zone.Timeless_Isle)
+		-- Timewalking Commendation
+		FIZ_AddItems(1492, 1, 8, 500, {[143947] = 1})
 	-- Shado-Pan Assault 1435
 		FIZ_AddQuest(1435, 1, 8, 32640, 300, {[94221] = 3})
 		FIZ_AddQuest(1435, 1, 8, 32641, 300, {[94221] = 3})
@@ -2195,6 +2259,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		FIZ_AddQuest(1435, 1, 8, 32708, 300)
 		FIZ_AddMob(1435, 1, 5, 1, 30, zone.Throne_of_Thunder)
 		FIZ_AddMob(1435, 1, 8, 3, 30, zone.Throne_of_Thunder)
+		-- Timewalking Commendation
+		FIZ_AddItems(1435, 1, 8, 300, {[143945] = 1})
 
 	-- Legion Factions
 	-- Conjurer Margoss 1975
