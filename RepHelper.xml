@@ -1342,7 +1342,7 @@
 	</Frame>								
 									
 	<!-->Interface options frame<-->								
-	<Frame name="FactionizerOptions">								
+	<Frame name="RepHelperOptions">								
 		<Layers>							
 			<Layer level="OVERLAY">						
 				<FontString name="$parentHeader" inherits="GameFontNormal" justifyH="LEFT">					
