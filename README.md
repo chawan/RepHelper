@@ -30,4 +30,4 @@ This addon is made to help you reach Exalted with your factions by giving you ca
 /rph <COMMANDS>
 
 ## License
-GPLv3: [https://www.gnu.org/licenses/gpl-3.0.en.html]() or see the [license file](https://github.com/chawan/RepHelper/blob/master/LICENSE)
+GPLv3: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html ) or see the [license file](https://github.com/chawan/RepHelper/blob/master/LICENSE)
