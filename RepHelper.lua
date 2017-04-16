@@ -1,5 +1,5 @@
 ----------------------------------------------------------
--- Factionizer, a reputation management tool 6.02.00.12 16.02.02 42278.8086288194 --
+-- RepHelper | A World of Warcraft addon to help you manage your reputation and Factions. --
 -------------------------------------------------------
 ---------------------------
 -- _00_ Variables Set up --
