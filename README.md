@@ -17,7 +17,7 @@ Thank you to all those who contributed to the previous addon in any way.
 
 ## Contribute
 
-Contributions to the addon are always welcome, to contribute you can make a [pull request](https://github.com/chawan/RepHelper/pulls) or simply open a [new issue](https://github.com/chawan/RepHelper/issues/new).
+Contributions/suggestions and bug reports/fixes to the addon are always welcome, to contribute you can make a [pull request](https://github.com/chawan/RepHelper/pulls) or simply open a [new issue](https://github.com/chawan/RepHelper/issues/new).
 
 ## Installation
 The easiest way to install this addon is via the [Twitch Client](https://mods.curse.com/client) by either searching in the client, or via the Curse website (LINK)  
