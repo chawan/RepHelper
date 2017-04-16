@@ -1,5 +1,5 @@
 # RepHelper
-An World of Warcraft addon to help you manage your reputation and Factions.
+A World of Warcraft addon to help you manage your reputation and Factions.
 
 ## History/Base
 This addon is initially based on the out-dated addon Factionizer.
@@ -18,7 +18,7 @@ Thank you to all those who contributed to the previous addon in any way.
 
 ## Installation
 The easiest way to install this addon is via the Curse Client by either searching in the client, or via their website (LINK)
-If you want to manuall install this addon, extract the contents in this directory: PATH\World of Warcraft\Interface\AddOns\
+If you want to manually install this addon, extract the contents in this directory: PATH\World of Warcraft\Interface\AddOns\
 
 ## Features
 This addon is made to help you reach Exalted with your factions by giving you calculated tips on how to obtain the rep most efficently.
