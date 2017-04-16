@@ -1,5 +1,5 @@
 # RepHelper
-An World of Warcraft addon to help you manage your reputation and Factions
+An World of Warcraft addon to help you manage your reputation and Factions.
 
 ## History/Base
 This addon is initially based on the out-dated addon Factionizer.
@@ -10,7 +10,11 @@ Factionizer on Curse: <https://mods.curse.com/addons/wow/factionizer>
 
 Thank you to all those who contributed to the previous addon in any way.
 
-## Sources
+## Information Sources
+* [Wowjuju (No longer available)](http://www.wowjuju.com/)
+* [Wowhead](http://www.wowhead.com)
+* [Wowwiki](http://www.wowwiki.com)
+* [Wowpedia](http://wow.gamepedia.com)
 
 ## Installation
 The easiest way to install this addon is via the Curse Client by either searching in the client, or via their website (LINK)
