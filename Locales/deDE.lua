@@ -3,7 +3,7 @@
 if (GetLocale() == "deDE") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "Optionen zeigen"
 BINDING_NAME_SHOWDETAILS	= "Ruf-Detailfenster zeigen"
 	

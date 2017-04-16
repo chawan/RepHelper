@@ -3,7 +3,7 @@
 if (GetLocale() =="itIT") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "Visualizza finestra opzioni"
 BINDING_NAME_SHOWDETAILS	= "Visualizza finestra dettagli reputazione"
 	

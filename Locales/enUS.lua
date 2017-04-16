@@ -3,7 +3,7 @@
 		
 		
 -- Binding names		
-BINDING_HEADER_FACTIONIZER	= "RepHelper"	
+BINDING_HEADER_REPHELPER	= "RepHelper"	
 BINDING_NAME_SHOWCONFIG	= "Show options window"	
 BINDING_NAME_SHOWDETAILS	= "Show reputation detail window"	
 		

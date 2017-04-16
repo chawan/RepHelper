@@ -3,7 +3,7 @@
 if (GetLocale() =="koKR") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "옵션 창에서보기"
 BINDING_NAME_SHOWDETAILS	= "명성 세부 정보 창 표시"
 	
@@ -220,7 +220,7 @@ RPH_TXT.elements.name	= {}
 RPH_TXT.elements.tip	= {}
 	
 RPH_TXT.elements.name.RPH_OptionsButton	= RPH_TXT.options
-RPH_TXT.elements.tip.RPH_OptionsButton	= "Factionizer를 구성하는 창을 엽니 다."
+RPH_TXT.elements.tip.RPH_OptionsButton	= "RepHelper를 구성하는 창을 엽니 다."
 RPH_TXT.elements.name.RPH_OrderByStandingCheckBox	= RPH_TXT.orderByStanding
 RPH_TXT.elements.tip.RPH_OrderByStandingCheckBox	= "이 확인란을 선택하지 않으면 파벌 목록은 논리적 알파벳 순서로 그룹화 기본 블리자드 정렬로 표시됩니다. 이 상자를 선택하면, 파벌 목록 서에 의해 정렬됩니다. |cFFFAA0A0 비활성 r 파벌이 상자를 선택 취소하고 목록의 맨 아래로 이동을 볼 수 있습니다."
 	
@@ -271,7 +271,7 @@ RPH_TXT.elements.name.RPH_SilentSwitchBox	= RPH_TXT.silentSwitch
 RPH_TXT.elements.tip.RPH_SilentSwitchBox	= "(채팅하는 메시지없이) 자동 평판 줄을 전환하려면이 설정을 사용합니다."
 RPH_TXT.elements.name.RPH_GuildCapBox	= RPH_TXT.guildCap
 RPH_TXT.elements.name.RPH_ChatFrameSlider	= "프레임 채팅"
-RPH_TXT.elements.tip.RPH_ChatFrameSlider	= "프레임 Factionizer는 메시지를 출력하는 대화를 선택합니다."
+RPH_TXT.elements.tip.RPH_ChatFrameSlider	= "프레임 RepHelper는 메시지를 출력하는 대화를 선택합니다."
 RPH_TXT.elements.name.RPH_EnableParagonBarBox = RPH_TXT.EnableParagonBar
 RPH_TXT.elements.tip.RPH_EnableParagonBarBox  = "Enable this option to display your current paragon progress in the reputation bars."	
 	

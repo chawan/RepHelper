@@ -3,7 +3,7 @@
 if (GetLocale() =="frFR") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "Afficher les options fenêtre"
 BINDING_NAME_SHOWDETAILS	= "Fenêtre Montrer détail réputation"
 	

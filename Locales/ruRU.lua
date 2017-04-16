@@ -3,7 +3,7 @@
 if (GetLocale() =="ruRU") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "Показать окно опций"
 BINDING_NAME_SHOWDETAILS	= "Отображение детальной информации о репутации"
 	

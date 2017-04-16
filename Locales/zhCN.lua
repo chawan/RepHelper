@@ -3,7 +3,7 @@
 if (GetLocale() =="zhCN") then	
 	
 -- Binding names	
-BINDING_HEADER_FACTIONIZER	= "RepHelper"
+BINDING_HEADER_REPHELPER	= "RepHelper"
 BINDING_NAME_SHOWCONFIG	= "显示选项“窗口"
 BINDING_NAME_SHOWDETAILS	= "显示声誉细节窗口"
 	
@@ -220,7 +220,7 @@ RPH_TXT.elements.name	= {}
 RPH_TXT.elements.tip	= {}
 	
 RPH_TXT.elements.name.RPH_OptionsButton	= RPH_TXT.options
-RPH_TXT.elements.tip.RPH_OptionsButton	= "打开窗口配置Factionizer。"
+RPH_TXT.elements.tip.RPH_OptionsButton	= "打开窗口配置RepHelper。"
 RPH_TXT.elements.name.RPH_OrderByStandingCheckBox	= RPH_TXT.orderByStanding
 RPH_TXT.elements.tip.RPH_OrderByStandingCheckBox	= "如果不选中此框，派列表显示默认（暴雪）排序，分组逻辑和字母顺序排列。\r\n\r\n如果选中此复选框，派列表排序站在\r\ n\ r \ n要查看| cFFFAA0A0无效|r派系，取消选中此框和列表的底部。"
 	
@@ -271,7 +271,7 @@ RPH_TXT.elements.name.RPH_SilentSwitchBox	= RPH_TXT.silentSwitch
 RPH_TXT.elements.tip.RPH_SilentSwitchBox	= "启用此设置静默信誉栏切换（没有消息聊天）。"
 RPH_TXT.elements.name.RPH_GuildCapBox	= RPH_TXT.guildCap
 RPH_TXT.elements.name.RPH_ChatFrameSlider	= "聊天帧"
-RPH_TXT.elements.tip.RPH_ChatFrameSlider	= "选择聊天框架Factionizer打印其消息。"
+RPH_TXT.elements.tip.RPH_ChatFrameSlider	= "选择聊天框架RepHelper打印其消息。"
 RPH_TXT.elements.name.RPH_EnableParagonBarBox = RPH_TXT.EnableParagonBar
 RPH_TXT.elements.tip.RPH_EnableParagonBarBox  = "Enable this option to display your current paragon progress in the reputation bars."	
 	
