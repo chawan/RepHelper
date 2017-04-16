@@ -1,6 +1,6 @@
 ## Interface: 70200
 ## Title: RepHelper
-## Version: @project-version@
+## Version: 7.2.0.1
 ## Author: Chawan, Marabon
 ## URL: http://wow.curseforge.com/addons/RepHelper/
 ## Description: RepHelper helps you manage your reputation and Factions.
