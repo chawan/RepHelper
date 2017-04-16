@@ -16,7 +16,7 @@ Thank you to all those who contributed to the previous addon in any way.
 * [Wowpedia](http://wow.gamepedia.com)
 
 ## Installation
-The easiest way to install this addon is via the Curse Client by either searching in the client, or via their website (LINK)  
+The easiest way to install this addon is via the Twitch Client by either searching in the client, or via the Curse website (LINK)  
 If you want to manually install this addon, extract the contents in this directory: PATH\World of Warcraft\Interface\AddOns\
 
 ## Features
