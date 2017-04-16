@@ -1,12 +1,12 @@
 <Bindings>
-	<Binding name="SHOWCONFIG" header="FACTIONIZER" runOnUp="true">
+	<Binding name="SHOWCONFIG" header="REPHELPER" runOnUp="true">
 		if ( keystate == "down" ) then
-			FIZ_ToggleConfigWindow()
+			RPH_ToggleConfigWindow()
 		end
 	</Binding>
-	<Binding name="SHOWDETAILS" header="FACTIONIZER" runOnUp="true">
+	<Binding name="SHOWDETAILS" header="REPHELPER" runOnUp="true">
 		if ( keystate == "down" ) then
-			FIZ_ToggleDetailWindow()
+			RPH_ToggleDetailWindow()
 		end
 	</Binding>
 </Bindings>

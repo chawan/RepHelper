@@ -1,0 +1,14 @@
+## Interface: 70200
+## Title: RepHelper
+## Version: 6.02.00.14 17.04.13
+## Author: Chawan, Marabon
+## URL: http://wow.curseforge.com/addons/RepHelper/
+## Description: Tells you what you can do to improve your faction
+## Notes: Tells you what you can do to improve your factions
+## SavedVariables: RPH_Data
+## SavedVariablesPerCharacter: RPH_Suppressed
+
+content.lua
+mapping.lua
+locale.xml
+RepHelper.xml

@@ -2,14 +2,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"								
 	xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">								
 									
-	<Script file="Factionizer.lua"/>								
+	<Script file="RepHelper.lua"/>								
 									
 <!--> ============================================================================================================== <-->									
-	<Frame name="Factionizer">								
+	<Frame name="RepHelper">								
 		<Scripts>							
-			<OnLoad>FIZ_OnLoad(self)</OnLoad>						
-			<OnEvent>FIZ_OnEvent(self, event, ...)</OnEvent>						
-			<OnUpdate>FIZ_OnUpdate(self)</OnUpdate>						
+			<OnLoad>RPH_OnLoad(self)</OnLoad>						
+			<OnEvent>RPH_OnEvent(self, event, ...)</OnEvent>						
+			<OnUpdate>RPH_OnUpdate(self)</OnUpdate>						
 		</Scripts>							
 	</Frame>								
 									
@@ -20,12 +20,12 @@
 	<Font name="DetailFontGrey" inherits="GameFontNormalSmall" virtual="true">								
 		<Color r="0.5" g="0.5" b="0.5"/>							
 	</Font>								
-	<Button name="FIZ_UpdateEntryTemplate" hidden="true" virtual="true">								
+	<Button name="RPH_UpdateEntryTemplate" hidden="true" virtual="true">								
 		<Size x="360" y="16"/>							
 		<Layers>							
 			<Layer level="OVERLAY">						
 				<!-->Expand/Collaps button<-->					
-				<Texture name="$parentTexture" file="Interface\Addons\Factionizer\Textures\UI-MinusButton-UP-Green.tga">					
+				<Texture name="$parentTexture" file="Interface\Addons\RepHelper\Textures\UI-MinusButton-UP-Green.tga">					
 					<Size x="16" y="16"/><Anchors><Anchor point="LEFT"><Offset x="3" y="0"/></Anchor></Anchors>				
 				</Texture>					
 				<!-->Label text [X]<-->					
@@ -62,15 +62,15 @@
 		<Scripts>							
 			<OnLoad>self:RegisterForClicks("LeftButtonUp", "RightButtonUp")</OnLoad>						
 			<OnEnter>
-				FIZ_ShowLineToolTip(self)
+				RPH_ShowLineToolTip(self)
 			</OnEnter>						
 			<OnLeave>GameTooltip:Hide()</OnLeave>						
-			<!--<OnClick>FIZ_UpdateEntryClick(self)</OnClick>-->						
-			<OnMouseUp>FIZ_MouseButtonUp(self, button)</OnMouseUp>						
+			<!--<OnClick>RPH_UpdateEntryClick(self)</OnClick>-->						
+			<OnMouseUp>RPH_MouseButtonUp(self, button)</OnMouseUp>						
 		</Scripts>							
 	</Button>
 	<!-- Hidden tooltip to get quest information instead of using GameTooltip, prevents tooltip closing when rep frame updates -->
-	<GameTooltip name="FIZ_HiddenQuestTooltip" inherits="GameTooltipTemplate">
+	<GameTooltip name="RPH_HiddenQuestTooltip" inherits="GameTooltipTemplate">
 		<Scripts>
 			<OnLoad>
 				self:SetOwner(WorldFrame, "ANCHOR_NONE");
@@ -86,7 +86,7 @@
 	</Button>								
 									
 <!--v set 1-->									
-	<Frame name="FIZ_ReputationDetailFrame" parent="ReputationFrame" enableMouse="true" hidden="true">								
+	<Frame name="RPH_ReputationDetailFrame" parent="ReputationFrame" enableMouse="true" hidden="true">								
 		<Size x="412" y="520"/>							
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationFrame" relativePoint="TOPRIGHT"><Offset x="0" y="0"/></Anchor></Anchors>							
 		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">							
@@ -96,164 +96,164 @@
 		</Backdrop>							
 		<Layers>							
 			<Layer level="ARTWORK">						
-				<FontString name="FIZ_ReputationDetailFactionName" inherits="GameFontNormal" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailFactionName" inherits="GameFontNormal" justifyH="LEFT">					
 					<Size x="0" y="12"/>				
 					<Anchors><Anchor point="TOPLEFT"><Offset x="20" y="-21"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailFactionDescription" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailFactionDescription" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="170" y="0"/><Anchors>				
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailFactionName" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailFactionName" relativePoint="BOTTOMLEFT">				
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<Texture name="FIZ_DetailBg" file="Interface\PaperDollInfoFrame\UI-Character-Reputation-DetailBackground">					
+				<Texture name="RPH_DetailBg" file="Interface\PaperDollInfoFrame\UI-Character-Reputation-DetailBackground">					
 					<Size x="256" y="128"/>				
 					<Anchors><Anchor point="TOPLEFT"><Offset x="11" y="-12"/></Anchor></Anchors>				
 				</Texture>					
 <!--^ set 1-->									
-				<Texture name="FIZ_DetailBg2" file="Interface\PaperDollInfoFrame\UI-Character-Reputation-DetailBackground">					
+				<Texture name="RPH_DetailBg2" file="Interface\PaperDollInfoFrame\UI-Character-Reputation-DetailBackground">					
 					<Size x="278" y="128"/>				
-					<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_DetailBg" relativePoint="TOPRIGHT"><Offset x="-70" y="0"/></Anchor></Anchors>				
+					<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_DetailBg" relativePoint="TOPRIGHT"><Offset x="-70" y="0"/></Anchor></Anchors>				
 				</Texture>					
-				<FontString name="FIZ_ReputationDetailStandingName" inherits="GameFontNormalSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingName" inherits="GameFontNormalSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/>				
-					<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_DetailBg2" relativePoint="TOPLEFT"><Offset x="10" y="-10"/></Anchor></Anchors>				
+					<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_DetailBg2" relativePoint="TOPLEFT"><Offset x="10" y="-10"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingNeeded" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingNeeded" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingName" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingName" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingCurrent" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingCurrent" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingNeeded" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingNeeded" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingMissing" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingMissing" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingCurrent" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingCurrent" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-7"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingBag" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingBag" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingMissing" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingMissing" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingBagBank" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingBagBank" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingBag" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingBag" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingQuests" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingQuests" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingBagBank" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingBagBank" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingGained" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingGained" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingQuests" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingQuests" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-5"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingToExaltedHeader" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailStandingToExaltedHeader" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailStandingGained" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailStandingGained" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
 									
-				<FontString name="FIZ_ReputationDetailStandingNextValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingNextValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOP" relativeTo="FIZ_ReputationDetailStandingName" relativePoint="TOP"><Offset x="0" y="0"/></Anchor>			
-						<Anchor point="RIGHT" relativeTo="FIZ_ReputationDetailFrame" relativePoint="RIGHT"><Offset x="-40" y="0"/></Anchor>			
+						<Anchor point="TOP" relativeTo="RPH_ReputationDetailStandingName" relativePoint="TOP"><Offset x="0" y="0"/></Anchor>			
+						<Anchor point="RIGHT" relativeTo="RPH_ReputationDetailFrame" relativePoint="RIGHT"><Offset x="-40" y="0"/></Anchor>			
 					</Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingNeededValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingNeededValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOP" relativeTo="FIZ_ReputationDetailStandingNeeded" relativePoint="TOP"><Offset x="0" y="0"/></Anchor>			
-						<Anchor point="RIGHT" relativeTo="FIZ_ReputationDetailFrame" relativePoint="RIGHT"><Offset x="-15" y="0"/></Anchor>			
+						<Anchor point="TOP" relativeTo="RPH_ReputationDetailStandingNeeded" relativePoint="TOP"><Offset x="0" y="0"/></Anchor>			
+						<Anchor point="RIGHT" relativeTo="RPH_ReputationDetailFrame" relativePoint="RIGHT"><Offset x="-15" y="0"/></Anchor>			
 					</Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingCurrentValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingCurrentValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingNeededValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingNeededValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingMissingValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingMissingValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingCurrentValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingCurrentValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-7"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingBagValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingBagValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingMissingValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingMissingValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingBagBankValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingBagBankValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-							<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingBagValue" relativePoint="BOTTOMRIGHT">		
+							<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingBagValue" relativePoint="BOTTOMRIGHT">		
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingQuestsValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingQuestsValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingBagBankValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingBagBankValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingGainedValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingGainedValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingQuestsValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingQuestsValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-5"/></Anchor></Anchors>				
 				</FontString>					
-				<FontString name="FIZ_ReputationDetailStandingToExaltedValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
+				<FontString name="RPH_ReputationDetailStandingToExaltedValue" inherits="GameFontHighlightSmall" justifyH="RIGHT">					
 					<Size x="0" y="10"/><Anchors>				
-						<Anchor point="TOPRIGHT" relativeTo="FIZ_ReputationDetailStandingGainedValue" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="TOPRIGHT" relativeTo="RPH_ReputationDetailStandingGainedValue" relativePoint="BOTTOMRIGHT">			
 					<Offset x="0" y="-2"/></Anchor></Anchors>				
 				</FontString>					
 									
-				<FontString name="FIZ_ReputationDetailFactionName" inherits="GameFontNormal" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailFactionName" inherits="GameFontNormal" justifyH="LEFT">					
 					<Size x="0" y="12"/><Anchors><Anchor point="TOPLEFT"><Offset x="20" y="-21"/></Anchor></Anchors>				
 				</FontString>					
 <!--v set 2-->									
 			</Layer>						
 			<Layer level="OVERLAY">						
-				<Texture name="FIZ_ReputationDetailCorner" file="Interface\DialogFrame\UI-DialogBox-Corner">					
+				<Texture name="RPH_ReputationDetailCorner" file="Interface\DialogFrame\UI-DialogBox-Corner">					
 					<Size x="32" y="32"/><Anchors><Anchor point="TOPRIGHT"><Offset x="-6" y="-7"/></Anchor></Anchors>				
 				</Texture>					
-				<Texture name="FIZ_ReputationDetailDivider" file="Interface\DialogFrame\UI-DialogBox-Divider">					
+				<Texture name="RPH_ReputationDetailDivider" file="Interface\DialogFrame\UI-DialogBox-Divider">					
 					<Size x="522" y="32"/><Anchors><Anchor point="TOPLEFT"><Offset x="9" y="-131"/></Anchor></Anchors>				
 				</Texture>					
 <!--^ set 2-->									
-				<Texture name="FIZ_ReputationDetailDivider2" file="Interface\DialogFrame\UI-DialogBox-Divider">					
+				<Texture name="RPH_ReputationDetailDivider2" file="Interface\DialogFrame\UI-DialogBox-Divider">					
 					<Size x="522" y="32"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="0"/></Anchor></Anchors>				
 				</Texture>					
-				<Texture name="FIZ_ReputationDetailDivider3" file="Interface\DialogFrame\UI-DialogBox-Divider">					
+				<Texture name="RPH_ReputationDetailDivider3" file="Interface\DialogFrame\UI-DialogBox-Divider">					
 					<Size x="522" y="32"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-193"/></Anchor></Anchors>				
 				</Texture>					
 									
-				<FontString name="FIZ_NoInformationText" inherits="GameFontHighlight" justifyH="LEFT">					
+				<FontString name="RPH_NoInformationText" inherits="GameFontHighlight" justifyH="LEFT">					
 					<Size x="360" y="20"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">			
 					<Offset x="15" y="15"/></Anchor></Anchors>				
 				</FontString>					
 									
 				<!--					
-				<Texture name="FIZ_ReputationDetailVDivider" file="Interface\DialogFrame\UI-DialogBox-Divider">					
+				<Texture name="RPH_ReputationDetailVDivider" file="Interface\DialogFrame\UI-DialogBox-Divider">					
 					<Size x="16" y="128"/><Anchors>				
-						<Anchor point="BOTTOMLEFT" relativeTo="FIZ_ReputationDetailDivider" relativePoint="BOTTOMRIGHT">			
+						<Anchor point="BOTTOMLEFT" relativeTo="RPH_ReputationDetailDivider" relativePoint="BOTTOMRIGHT">			
 					<Offset x="-75" y="0"/></Anchor></Anchors>				
 				</Texture>					
 				-->					
-				<FontString name="FIZ_ReputationDetailSuppressHint" inherits="GameFontHighlightSmall" justifyH="LEFT">					
+				<FontString name="RPH_ReputationDetailSuppressHint" inherits="GameFontHighlightSmall" justifyH="LEFT">					
 					<Size x="210" y="0"/><Anchors>				
-						<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">			
+						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">			
 					<Offset x="10" y="-40"/></Anchor></Anchors>				
 				</FontString>					
 <!--v set 3-->									
 			</Layer>						
 		</Layers>							
 		<Frames>							
-			<Button name="FIZ_ReputationDetailCloseButton" inherits="UIPanelCloseButton">						
+			<Button name="RPH_ReputationDetailCloseButton" inherits="UIPanelCloseButton">						
 				<Anchors><Anchor point="TOPRIGHT"><Offset x="-3" y="-3"/></Anchor></Anchors>					
 <!--^ set 3-->									
 				<Scripts>					
@@ -264,9 +264,9 @@
 				</Scripts>					
 <!--v set 4-->									
 			</Button>						
-			<CheckButton name="FIZ_ReputationDetailAtWarCheckBox">						
+			<CheckButton name="RPH_ReputationDetailAtWarCheckBox">						
 				<Size x="26" y="26"/><Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider" relativePoint="BOTTOMLEFT">				
 					<Offset x="10" y="20"/></Anchor></Anchors>				
 				<Layers>					
 					<Layer level="ARTWORK">				
@@ -303,9 +303,9 @@
 				</CheckedTexture>					
 				<DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ReputationDetailInactiveCheckBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ReputationDetailInactiveCheckBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="26" y="26"/><Anchors>					
-					<Anchor point="LEFT" relativeTo="FIZ_ReputationDetailAtWarCheckBoxText" relativePoint="RIGHT">				
+					<Anchor point="LEFT" relativeTo="RPH_ReputationDetailAtWarCheckBoxText" relativePoint="RIGHT">				
 					<Offset x="3" y="0"/></Anchor></Anchors>				
 				<HitRectInsets>					
 					<AbsInset left="0" right="0" top="0" bottom="0"/>				
@@ -330,9 +330,9 @@
 					<OnLeave function="GameTooltip_Hide"/>				
 				</Scripts>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ReputationDetailMainScreenCheckBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ReputationDetailMainScreenCheckBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="26" y="26"/><Anchors>					
-					<Anchor point="LEFT" relativeTo="FIZ_ReputationDetailInactiveCheckBoxText" relativePoint="RIGHT">				
+					<Anchor point="LEFT" relativeTo="RPH_ReputationDetailInactiveCheckBoxText" relativePoint="RIGHT">				
 					<Offset x="3" y="0"/></Anchor></Anchors>				
 				<HitRectInsets>					
 					<AbsInset left="0" right="0" top="0" bottom="0"/>				
@@ -360,73 +360,73 @@
 			</CheckButton>						
 <!--^ set 4-->									
 <!--v set 5-->									
-			<ScrollFrame name="FIZ_UpdateListScrollFrame" inherits="FauxScrollFrameTemplate">						
+			<ScrollFrame name="RPH_UpdateListScrollFrame" inherits="FauxScrollFrameTemplate">						
 				<Size x="360" y="208"/><Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">				
 					<Offset x="5" y="15"/></Anchor></Anchors>				
 				<Scripts>					
 					<OnVerticalScroll>				
-						FauxScrollFrame_OnVerticalScroll(self, offset, 16, FIZ_UpdateList_Update);			
+						FauxScrollFrame_OnVerticalScroll(self, offset, 16, RPH_UpdateList_Update);			
 					</OnVerticalScroll>				
 				</Scripts>					
 			</ScrollFrame>						
-			<Button name="FIZ_UpdateEntry1" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateListScrollFrame" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>					
+			<Button name="RPH_UpdateEntry1" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateListScrollFrame" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry2" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry1" relativePoint="BOTTOMLEFT"/></Anchors>					
+			<Button name="RPH_UpdateEntry2" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry1" relativePoint="BOTTOMLEFT"/></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry3" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry2" relativePoint="BOTTOMLEFT"/></Anchors>					
+			<Button name="RPH_UpdateEntry3" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry2" relativePoint="BOTTOMLEFT"/></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry4" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry3" relativePoint="BOTTOMLEFT"/></Anchors>					
+			<Button name="RPH_UpdateEntry4" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry3" relativePoint="BOTTOMLEFT"/></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry5" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry4" relativePoint="BOTTOMLEFT"/></Anchors>					
+			<Button name="RPH_UpdateEntry5" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry4" relativePoint="BOTTOMLEFT"/></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry6" inherits="FIZ_UpdateEntryTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry5" relativePoint="BOTTOMLEFT"/></Anchors>					
+			<Button name="RPH_UpdateEntry6" inherits="RPH_UpdateEntryTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry5" relativePoint="BOTTOMLEFT"/></Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry7" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry7" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry6" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry6" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry8" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry8" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry7" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry7" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry9" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry9" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry8" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry8" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry10" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry10" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry9" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry9" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry11" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry11" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry10" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry10" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry12" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry12" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry11" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry11" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
-			<Button name="FIZ_UpdateEntry13" inherits="FIZ_UpdateEntryTemplate">						
+			<Button name="RPH_UpdateEntry13" inherits="RPH_UpdateEntryTemplate">						
 				<Anchors>					
-				<Anchor point="TOPLEFT" relativeTo="FIZ_UpdateEntry12" relativePoint="BOTTOMLEFT"/>					
+				<Anchor point="TOPLEFT" relativeTo="RPH_UpdateEntry12" relativePoint="BOTTOMLEFT"/>					
 				</Anchors>					
 			</Button>						
 									
-			<CheckButton name="FIZ_ShowQuestButton" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowQuestButton" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/><Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 					<Offset x="10" y="20"/></Anchor></Anchors>				
 				<HitRectInsets>					
 					<AbsInset left="0" right="-80" top="0" bottom="0"/>				
@@ -440,27 +440,27 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowQuests = self:GetChecked()			
-						if ( FIZ_Data.ShowQuests ) then			
+						RPH_Data.ShowQuests = self:GetChecked()			
+						if ( RPH_Data.ShowQuests ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ShowInstancesButton" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowInstancesButton" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="110" y="20"/>			
 								</Anchor>	
 				</Anchors>					
@@ -476,27 +476,27 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowInstances = self:GetChecked()			
-						if ( FIZ_Data.ShowInstances ) then			
+						RPH_Data.ShowInstances = self:GetChecked()			
+						if ( RPH_Data.ShowInstances ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ShowMobsButton" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowMobsButton" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="10" y="0"/>			
 								</Anchor>	
 				</Anchors>					
@@ -512,27 +512,27 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowMobs = self:GetChecked()			
-						if ( FIZ_Data.ShowMobs ) then			
+						RPH_Data.ShowMobs = self:GetChecked()			
+						if ( RPH_Data.ShowMobs ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ShowItemsButton" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowItemsButton" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="110" y="0"/>			
 								</Anchor>	
 				</Anchors>					
@@ -548,27 +548,27 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowItems = self:GetChecked()			
-						if ( FIZ_Data.ShowItems ) then			
+						RPH_Data.ShowItems = self:GetChecked()			
+						if ( RPH_Data.ShowItems ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
-			<CheckButton name="FIZ_ShowGeneralButton" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowGeneralButton" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="10" y="-20"/>			
 								</Anchor>	
 				</Anchors>					
@@ -584,17 +584,17 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowGeneral = self:GetChecked()			
-						if ( FIZ_Data.ShowGeneral ) then			
+						RPH_Data.ShowGeneral = self:GetChecked()			
+						if ( RPH_Data.ShowGeneral ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -602,90 +602,90 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<Button name="FIZ_ShowAllButton" inherits="SmallFontButton">						
+			<Button name="RPH_ShowAllButton" inherits="SmallFontButton">						
 				<Size x="80" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="230" y="20"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowQuests = true			
-						FIZ_Data.ShowMobs = true			
-						FIZ_Data.ShowInstances = true			
-						FIZ_Data.ShowItems = true			
+						RPH_Data.ShowQuests = true			
+						RPH_Data.ShowMobs = true			
+						RPH_Data.ShowInstances = true			
+						RPH_Data.ShowItems = true			
 						PlaySound("igMainMenuOptionCheckBoxOn");			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</Button>						
-			<Button name="FIZ_ShowNoneButton" inherits="SmallFontButton">						
+			<Button name="RPH_ShowNoneButton" inherits="SmallFontButton">						
 				<Size x="80" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
 						<Offset x="230" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowQuests = nil			
-						FIZ_Data.ShowMobs = nil			
-						FIZ_Data.ShowInstances = nil			
-						FIZ_Data.ShowItems = nil			
+						RPH_Data.ShowQuests = nil			
+						RPH_Data.ShowMobs = nil			
+						RPH_Data.ShowInstances = nil			
+						RPH_Data.ShowItems = nil			
 						PlaySound("igMainMenuOptionCheckBoxOff");			
-						FIZ:BuildUpdateList()			
-						FIZ_UpdateList_Update()			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</Button>						
-			<Button name="FIZ_ExpandButton" inherits="SmallFontButton">						
+			<Button name="RPH_ExpandButton" inherits="SmallFontButton">						
 				<Size x="80" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ShowAllButton" relativePoint="TOPRIGHT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ShowAllButton" relativePoint="TOPRIGHT">				
 						<Offset x="5" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
 						PlaySound("igMainMenuOptionCheckBoxOn");			
-						FIZ_ShowUpdateEntries(true)			
+						RPH_ShowUpdateEntries(true)			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</Button>						
-			<Button name="FIZ_CollapseButton" inherits="SmallFontButton">						
+			<Button name="RPH_CollapseButton" inherits="SmallFontButton">						
 				<Size x="80" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ShowNoneButton" relativePoint="TOPRIGHT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ShowNoneButton" relativePoint="TOPRIGHT">				
 						<Offset x="5" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
 						PlaySound("igMainMenuOptionCheckBoxOff");			
-						FIZ_ShowUpdateEntries(false)			
+						RPH_ShowUpdateEntries(false)			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -693,40 +693,40 @@
 				</Scripts>					
 			</Button>						
 									
-			<Button name="FIZ_SupressNoneFactionButton" inherits="SmallFontButton">						
+			<Button name="RPH_SupressNoneFactionButton" inherits="SmallFontButton">						
 				<Size x="165" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ShowNoneButton" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ShowNoneButton" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
 						PlaySound("igMainMenuOptionCheckBoxOff");			
-						FIZ:SupressNone(false)			
+						RPH:SupressNone(false)			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
 					</OnLeave>				
 				</Scripts>					
 			</Button>						
-			<Button name="FIZ_SupressNoneGlobalButton" inherits="SmallFontButton">						
+			<Button name="RPH_SupressNoneGlobalButton" inherits="SmallFontButton">						
 				<Size x="165" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPLEFT" relativeTo="FIZ_SupressNoneFactionButton" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_SupressNoneFactionButton" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
 						PlaySound("igMainMenuOptionCheckBoxOff");			
-						FIZ:SupressNone(true)			
+						RPH:SupressNone(true)			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -734,20 +734,20 @@
 				</Scripts>					
 			</Button>						
 									
-			<Button name="FIZ_ClearSessionGainButton" inherits="SmallFontButton">						
+			<Button name="RPH_ClearSessionGainButton" inherits="SmallFontButton">						
 				<Size x="220" y="20" />					
 				<Anchors>					
-					<Anchor point="TOPRIGHT" relativeTo="FIZ_SupressNoneGlobalButton" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPRIGHT" relativeTo="RPH_SupressNoneGlobalButton" relativePoint="BOTTOMLEFT">				
 						<Offset x="-5" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
 						PlaySound("igMainMenuOptionCheckBoxOff");			
-						FIZ:ClearSessionGain()			
+						RPH:ClearSessionGain()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -760,7 +760,7 @@
 									
 									
 <!--> ============================================================================================================== <-->									
-	<Button name="FIZ_OptionsButton" parent="ReputationFrame" inherits="UIPanelButtonTemplate">								
+	<Button name="RPH_OptionsButton" parent="ReputationFrame" inherits="UIPanelButtonTemplate">								
 		<Size x="80" y="20" />							
 		<Anchors>							
 			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" >						
@@ -774,18 +774,18 @@
 		</Layers>							
 		<Scripts>							
 			<OnClick>						
-				if(FIZ_OptionsFrame:IsVisible()) then					
+				if(RPH_OptionsFrame:IsVisible()) then					
 					PlaySound("igMainMenuOptionCheckBoxOff");				
-					FIZ_OptionsFrame:Hide();				
+					RPH_OptionsFrame:Hide();				
 				else					
 					PlaySound("igMainMenuOptionCheckBoxOn");				
 					ReputationDetailFrame:Hide();				
-					FIZ_ReputationDetailFrame:Hide();				
-					FIZ_OptionsFrame:Show();				
+					RPH_ReputationDetailFrame:Hide();				
+					RPH_OptionsFrame:Show();				
 				end					
 			</OnClick>						
 			<OnEnter>						
-				FIZ_ShowHelpToolTip(self, self:GetName())					
+				RPH_ShowHelpToolTip(self, self:GetName())					
 			</OnEnter>						
 			<OnLeave>						
 				GameTooltip:Hide();					
@@ -794,7 +794,7 @@
 	</Button>								
 									
 <!--> ============================================================================================================== <-->									
-	<CheckButton name="FIZ_OrderByStandingCheckBox" parent="ReputationFrame" inherits="OptionsCheckButtonTemplate">								
+	<CheckButton name="RPH_OrderByStandingCheckBox" parent="ReputationFrame" inherits="OptionsCheckButtonTemplate">								
 		<Size x="26" y="26"/>							
 		<Anchors>							
 			<Anchor point="TOPLEFT" relativePoint="TOPLEFT">						
@@ -806,8 +806,8 @@
 		</HitRectInsets>							
 		<Scripts>							
 			<OnClick>						
-				FIZ_Data.SortByStanding = self:GetChecked()					
-				if ( FIZ_Data.SortByStanding ) then					
+				RPH_Data.SortByStanding = self:GetChecked()					
+				if ( RPH_Data.SortByStanding ) then					
 					PlaySound("igMainMenuOptionCheckBoxOn");				
 				else					
 					PlaySound("igMainMenuOptionCheckBoxOff");				
@@ -815,7 +815,7 @@
 				ReputationFrame_Update()					
 			</OnClick>						
 			<OnEnter>						
-				FIZ_ShowHelpToolTip(self, self:GetName())					
+				RPH_ShowHelpToolTip(self, self:GetName())					
 			</OnEnter>						
 			<OnLeave>						
 				GameTooltip:Hide();					
@@ -824,16 +824,16 @@
 	</CheckButton>								
 									
 <!--> ============================================================================================================== <-->									
-	<FontString name="FIZ_OptionText" inherits="GameFontNormal" justifyH="RIGHT" virtual="true">								
+	<FontString name="RPH_OptionText" inherits="GameFontNormal" justifyH="RIGHT" virtual="true">								
 		<Color r="0.68" g="0.80" b="1"/>							
 		<Size x="250" y="25"/>							
 		<Scripts>							
-			<OnEnter>FIZ_ShowHelpToolTip(self, self:GetName())</OnEnter>						
+			<OnEnter>RPH_ShowHelpToolTip(self, self:GetName())</OnEnter>						
 			<OnLeave>GameTooltip:Hide()</OnLeave>						
 		</Scripts>							
 	</FontString>								
 									
-	<Frame name="FIZ_OptionsFrame" hidden="true" parent="ReputationFrame">								
+	<Frame name="RPH_OptionsFrame" hidden="true" parent="ReputationFrame">								
 		<Size x="450" y="350" />							
 		<Anchors>							
 			<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">						
@@ -893,7 +893,7 @@
 			</Button>						
 									
 									
-			<CheckButton name="FIZ_EnableMissingBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_EnableMissingBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
 					<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">				
@@ -912,8 +912,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowMissing = self:GetChecked()			
-						if ( FIZ_Data.ShowMissing ) then			
+						RPH_Data.ShowMissing = self:GetChecked()			
+						if ( RPH_Data.ShowMissing ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -921,7 +921,7 @@
 						ReputationFrame_Update()		
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -929,10 +929,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_ExtendDetailsBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ExtendDetailsBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_EnableMissingBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_EnableMissingBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
@@ -948,15 +948,15 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ExtendDetails = self:GetChecked()			
-						if ( FIZ_Data.ExtendDetails ) then			
+						RPH_Data.ExtendDetails = self:GetChecked()			
+						if ( RPH_Data.ExtendDetails ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -964,10 +964,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_GainToChatBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_GainToChatBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ExtendDetailsBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ExtendDetailsBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
@@ -983,15 +983,15 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.WriteChatMessage = self:GetChecked()			
-						if ( FIZ_Data.WriteChatMessage ) then			
+						RPH_Data.WriteChatMessage = self:GetChecked()			
+						if ( RPH_Data.WriteChatMessage ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -999,10 +999,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_NoGuildGainBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_NoGuildGainBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_GainToChatBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_GainToChatBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="20" y="0"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1018,15 +1018,15 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.NoGuildGain = self:GetChecked()			
-						if ( FIZ_Data.NoGuildGain ) then			
+						RPH_Data.NoGuildGain = self:GetChecked()			
+						if ( RPH_Data.NoGuildGain ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1034,10 +1034,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_SupressOriginalGainBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_SupressOriginalGainBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_NoGuildGainBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_NoGuildGainBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="-20" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1053,15 +1053,15 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.SuppressOriginalChat = self:GetChecked()			
-						if ( FIZ_Data.SuppressOriginalChat ) then			
+						RPH_Data.SuppressOriginalChat = self:GetChecked()			
+						if ( RPH_Data.SuppressOriginalChat ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
 						end			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1069,10 +1069,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_ShowPreviewRepBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_ShowPreviewRepBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_SupressOriginalGainBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_SupressOriginalGainBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1088,8 +1088,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowPreviewRep = self:GetChecked()			
-						if ( FIZ_Data.ShowPreviewRep ) then			
+						RPH_Data.ShowPreviewRep = self:GetChecked()			
+						if ( RPH_Data.ShowPreviewRep ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -1097,7 +1097,7 @@
 						ReputationFrame_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1105,10 +1105,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_SwitchFactionBarBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_SwitchFactionBarBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_ShowPreviewRepBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_ShowPreviewRepBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="-5"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1124,8 +1124,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.SwitchFactionBar = self:GetChecked()			
-						if ( FIZ_Data.SwitchFactionBar ) then			
+						RPH_Data.SwitchFactionBar = self:GetChecked()			
+						if ( RPH_Data.SwitchFactionBar ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -1133,7 +1133,7 @@
 						ReputationFrame_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1141,10 +1141,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_SilentSwitchBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_SilentSwitchBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_SwitchFactionBarBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_SwitchFactionBarBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="20" y="0"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1160,8 +1160,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.SilentSwitch = self:GetChecked()			
-						if ( FIZ_Data.SilentSwitch ) then			
+						RPH_Data.SilentSwitch = self:GetChecked()			
+						if ( RPH_Data.SilentSwitch ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -1169,7 +1169,7 @@
 						ReputationFrame_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1177,10 +1177,10 @@
 				</Scripts>					
 			</CheckButton>						
 									
-			<CheckButton name="FIZ_NoGuildSwitchBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_NoGuildSwitchBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_SilentSwitchBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_SilentSwitchBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="0" y="0"/>			
 								</Anchor>	
 				</Anchors>					
@@ -1196,8 +1196,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.NoGuildSwitch = self:GetChecked()			
-						if ( FIZ_Data.NoGuildSwitch ) then			
+						RPH_Data.NoGuildSwitch = self:GetChecked()			
+						if ( RPH_Data.NoGuildSwitch ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -1205,7 +1205,7 @@
 						ReputationFrame_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1213,10 +1213,10 @@
 				</Scripts>					
 			</CheckButton>
 
-			<CheckButton name="FIZ_EnableParagonBarBox" inherits="OptionsCheckButtonTemplate">						
+			<CheckButton name="RPH_EnableParagonBarBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 				<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="FIZ_NoGuildSwitchBox" relativePoint="BOTTOMLEFT">				
+					<Anchor point="TOPLEFT" relativeTo="RPH_NoGuildSwitchBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="-20" y="0"/>			
 					</Anchor>	
 				</Anchors>					
@@ -1232,8 +1232,8 @@
 				</Layers>					
 				<Scripts>					
 					<OnClick>				
-						FIZ_Data.ShowParagonBar = self:GetChecked()			
-						if ( FIZ_Data.ShowParagonBar ) then			
+						RPH_Data.ShowParagonBar = self:GetChecked()			
+						if ( RPH_Data.ShowParagonBar ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
@@ -1241,7 +1241,7 @@
 						ReputationFrame_Update()			
 					</OnClick>				
 					<OnEnter>				
-						FIZ_ShowHelpToolTip(self, self:GetName())			
+						RPH_ShowHelpToolTip(self, self:GetName())			
 					</OnEnter>				
 					<OnLeave>				
 						GameTooltip:Hide();			
@@ -1252,7 +1252,7 @@
 	</Frame>								
 									
 <!--> ============================================================================================================== <-->									
-	<StatusBar name="FIZ_PreviewBarTemplate" virtual="true" drawLayer="BACKGROUND" minValue="0" maxValue="1" defaultValue="0">								
+	<StatusBar name="RPH_PreviewBarTemplate" virtual="true" drawLayer="BACKGROUND" minValue="0" maxValue="1" defaultValue="0">								
 		<Size x="101" y="5"/>							
 		<HitRectInsets>							
 			<AbsInset left="-2" right="-2" top="-2" bottom="-2"/>						
@@ -1260,58 +1260,58 @@
 		<BarTexture file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>							
 	</StatusBar>								
 									
-	<StatusBar name="FIZ_StatusBar1" parent="ReputationBar1" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar1" parent="ReputationBar1" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar1ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar2" parent="ReputationBar2" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar2" parent="ReputationBar2" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar2ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar3" parent="ReputationBar3" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar3" parent="ReputationBar3" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar3ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar4" parent="ReputationBar4" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar4" parent="ReputationBar4" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar4ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar5" parent="ReputationBar5" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar5" parent="ReputationBar5" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar5ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
 									
-	<StatusBar name="FIZ_StatusBar6" parent="ReputationBar6" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar6" parent="ReputationBar6" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar6ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar7" parent="ReputationBar7" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar7" parent="ReputationBar7" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar7ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar8" parent="ReputationBar8" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar8" parent="ReputationBar8" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar8ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar9" parent="ReputationBar9" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar9" parent="ReputationBar9" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar9ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar10" parent="ReputationBar10" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar10" parent="ReputationBar10" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar10ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
 									
-	<StatusBar name="FIZ_StatusBar11" parent="ReputationBar11" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar11" parent="ReputationBar11" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar11ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar12" parent="ReputationBar12" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar12" parent="ReputationBar12" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar12ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar13" parent="ReputationBar13" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar13" parent="ReputationBar13" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar13ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar14" parent="ReputationBar14" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar14" parent="ReputationBar14" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar14ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
-	<StatusBar name="FIZ_StatusBar15" parent="ReputationBar15" inherits="FIZ_PreviewBarTemplate">								
+	<StatusBar name="RPH_StatusBar15" parent="ReputationBar15" inherits="RPH_PreviewBarTemplate">								
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationBar15ReputationBar" relativePoint="TOPLEFT"><Offset x="0" y="0"/></Anchor></Anchors>							
 	</StatusBar>								
 									
 <!--> ============================================================================================================== <-->									
 									
 	<!-- Template for a single option "box" containing a checkbox (lifted off Auctionator) -->								
-	<Frame name="FIZ_SingleOptionTemplate" virtual="true">								
+	<Frame name="RPH_SingleOptionTemplate" virtual="true">								
 		<Size y="40" />							
 		<Anchors>							
 			<Anchor point="LEFT" ><Offset x="20"/></Anchor>						
@@ -1319,7 +1319,7 @@
 		</Anchors>							
 									
 		<Scripts>							
-			<OnEnter>FIZ_ShowHelpToolTip(self, self:GetName())</OnEnter>						
+			<OnEnter>RPH_ShowHelpToolTip(self, self:GetName())</OnEnter>						
 			<OnLeave>GameTooltip:Hide()</OnLeave>						
 		</Scripts>							
 									
@@ -1334,7 +1334,7 @@
 					</Layer>				
 				</Layers>					
 				<Scripts>					
-					<OnEnter>FIZ_ShowHelpToolTip(self, self:GetName())</OnEnter>				
+					<OnEnter>RPH_ShowHelpToolTip(self, self:GetName())</OnEnter>				
 					<OnLeave>GameTooltip:Hide()</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
@@ -1351,57 +1351,57 @@
 			</Layer>						
 		</Layers>							
 		<Frames>							
-			<Frame name="FIZ_OptionEnableMissing" inherits="FIZ_SingleOptionTemplate">						
+			<Frame name="RPH_OptionEnableMissing" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOP"><Offset y="-10"/></Anchor></Anchors>					
 			</Frame>						
 									
 									
-			<Frame name="FIZ_OptionExtendDetails" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionEnableMissing"><Offset y="-30"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionExtendDetails" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionEnableMissing"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
 									
 									
-			<Frame name="FIZ_OptionGainToChat" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionExtendDetails"><Offset y="-30"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionGainToChat" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionExtendDetails"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionNoGuildGain" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionGainToChat"><Offset x="25" y="-20"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionNoGuildGain" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionGainToChat"><Offset x="25" y="-20"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionSupressOriginalGain" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionNoGuildGain"><Offset x="-25" y="-30"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionSupressOriginalGain" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionNoGuildGain"><Offset x="-25" y="-30"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionShowPreviewRep" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionSupressOriginalGain"><Offset y="-30"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionShowPreviewRep" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionSupressOriginalGain"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionSwitchFactionBar" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionShowPreviewRep"><Offset y="-30"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionSwitchFactionBar" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionShowPreviewRep"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionSilentSwitch" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionSwitchFactionBar"><Offset x="25" y="-20"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionSilentSwitch" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionSwitchFactionBar"><Offset x="25" y="-20"/></Anchor></Anchors>					
 			</Frame>						
 									
-			<Frame name="FIZ_OptionNoGuildSwitch" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionSilentSwitch"><Offset x="0" y="-20"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionNoGuildSwitch" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionSilentSwitch"><Offset x="0" y="-20"/></Anchor></Anchors>					
 			</Frame>
 
-			<Frame name="FIZ_OptionEnableParagonBar" inherits="FIZ_SingleOptionTemplate">						
-				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="FIZ_OptionNoGuildSwitch"><Offset x="-25" y="-20"/></Anchor></Anchors>					
+			<Frame name="RPH_OptionEnableParagonBar" inherits="RPH_SingleOptionTemplate">						
+				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionNoGuildSwitch"><Offset x="-25" y="-20"/></Anchor></Anchors>					
 			</Frame>							
 		</Frames>							
 		<Scripts>							
-			<OnLoad>FIZ_OnLoadOptions(self)</OnLoad>						
-			<OnShow>FIZ_OnShowOptions(self)</OnShow>						
+			<OnLoad>RPH_OnLoadOptions(self)</OnLoad>						
+			<OnShow>RPH_OnShowOptions(self)</OnShow>						
 		</Scripts>							
 	</Frame>								
 									
 <!--> ============================================================================================================== <-->									
 <!--									
-	<Frame name="FIZ_GuildFactionBar" parent="GuildFactionBar">								
+	<Frame name="RPH_GuildFactionBar" parent="GuildFactionBar">								
 		<Layers>							
 			<Layer level="ARTWORK">						
 				<Texture name="$parentCapMarker" file="Interface\GuildFrame\GuildFrame" hidden="true">					
@@ -1423,9 +1423,9 @@
 			</Layer>						
 		</Layers>							
 		<Scripts>							
-			<OnLoad>FIZ_OnLoadGuildFactionBar(self)</OnLoad>						
+			<OnLoad>RPH_OnLoadGuildFactionBar(self)</OnLoad>						
 			<OnEnter>						
-				FIZ_ShowHelpToolTip(self, self:GetName())					
+				RPH_ShowHelpToolTip(self, self:GetName())					
 			</OnEnter>						
 			<OnLeave>						
 				GameTooltip:Hide();					
