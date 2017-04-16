@@ -4,8 +4,7 @@ A World of Warcraft addon to help you manage your reputation and Factions.
 ## History/Base
 This addon is initially based on the out-dated addon Factionizer.
 
-Factionizer on Github: <https://github.com/gOOvER/Factionizer>
-
+Factionizer on Github: <https://github.com/gOOvER/Factionizer>  
 Factionizer on Curse: <https://mods.curse.com/addons/wow/factionizer>
 
 Thank you to all those who contributed to the previous addon in any way.
