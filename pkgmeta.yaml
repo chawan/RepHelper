@@ -1,0 +1,5 @@
+package-as: RepHelper
+
+ignore:
+  -README.md
+  -LICENSE
