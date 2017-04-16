@@ -19,8 +19,6 @@ Thank you to all those who contributed to the previous addon in any way.
 
 Contributions to the addon are always welcome, to contribute you can make a [pull request](https://github.com/chawan/RepHelper/pulls) or simply open a [new issue](https://github.com/chawan/RepHelper/issues/new).
 
-## Contribute
-
 ## Installation
 The easiest way to install this addon is via the [Twitch Client](https://mods.curse.com/client) by either searching in the client, or via the Curse website (LINK)  
 If you want to manually install this addon, extract the contents in this directory: PATH\World of Warcraft\Interface\AddOns\
