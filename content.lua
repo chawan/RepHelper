@@ -2284,6 +2284,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1900, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Court of Farondins Emissary", 1500, "Court of Farondins Emissary", "Completing 4x Court of Farondis world quests while the emissary is available will grant you 1500 rep")
 
 	-- Dreamweavers 1883
 		-- Insignia reputation tokens
@@ -2292,6 +2293,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1883, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Dreamweavers Emissary", 1500, "Dreamweavers Emissary", "Completing 4x Dreamweavers world quests while the emissary is available will grant you 1500 rep")
 
 	-- Highmountain Tribe 1828
 		-- Insignia reputation tokens
@@ -2300,6 +2302,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1828, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Highmountain Tribe Emissary", 1500, "Highmountain Tribe Emissary", "Completing 4x Highmountain Tribe world quests while the emissary is available will grant you 1500 rep")
 
 	-- The Nightfallen 1859
 		-- Insignia reputation tokens
@@ -2308,6 +2311,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1859, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1859, 1, 8, "The Nightfallen Emissary", 1500, "The Nightfallen Emissary", "Completing 4x Nightfallen world quests while the emissary is available will grant you 1500 rep")
 
 	-- The Wardens 1894
 		-- Insignia reputation tokens
@@ -2316,6 +2320,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1894, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1894, 1, 8, "The Wardens Emissary", 1500, "The Wardens Emissary", "Completing 4x Wardens world quests while the emissary is available will grant you 1500 rep")
 
 	-- Valarjar 1948
 		-- Insignia reputation tokens
@@ -2324,6 +2329,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(1948, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Valarjar Emissary", 1500, "Valarjar Emissary", "Completing 4x Valarjar world quests while the emissary is available will grant you 1500 rep")
 
 	-- Conjurer Margoss 1975
 		-- Insignia reputation tokens
