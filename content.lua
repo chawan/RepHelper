@@ -1998,7 +1998,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(1341, 1, 8, 30956, 350)
 		RPH_AddQuest(1341, 1, 8, 30952, 300)
 	-- The Klaxxi 1337
-		RPH_AddItems(1337, 4, 8, 250, {[87903] = 5})
+		RPH_AddQuest(1337, 4, 8, 31603, 250, {[87903] = 5})
 		-- Timewalking Commendation
 		RPH_AddItems(1337, 1, 8, 300, {[143935] = 1})
 		RPH_AddQuest(1337, 4, 8, 99, 780)
@@ -2274,40 +2274,64 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(2045, 1, 8, 46736, 150, {[1342] = 100})
 		RPH_AddQuest(2045, 1, 8, 46735, 150, {[1342] = 100})
 
+		-- World Quest
+		RPH_AddGeneral(2045, 1, 8, "World Quests", 75, "World Quests", "Completing world quests on the Broken Shore will grant you reputation.")
+
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
 		RPH_AddItems(1900, 1, 8, 250, {[146937] = 1})
 		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(1900, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
 
 	-- Dreamweavers 1883
 		-- Insignia reputation tokens
 		RPH_AddItems(1883, 1, 8, 250, {[146936] = 1})
 		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1})
 
+		-- World Quest
+		RPH_AddGeneral(1883, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+
 	-- Highmountain Tribe 1828
 		-- Insignia reputation tokens
 		RPH_AddItems(1828, 1, 8, 250, {[146938] = 1})
 		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(1828, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
 
 	-- The Nightfallen 1859
 		-- Insignia reputation tokens
 		RPH_AddItems(1859, 1, 8, 250, {[146940] = 1})
 		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1})
 
+		-- World Quest
+		RPH_AddGeneral(1859, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+
 	-- The Wardens 1894
 		-- Insignia reputation tokens
 		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1})
 		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(1894, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
 
 	-- Valarjar 1948
 		-- Insignia reputation tokens
 		RPH_AddItems(1948, 1, 8, 250, {[146935] = 1})
 		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1})
 
+		-- World Quest
+		RPH_AddGeneral(1948, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+
 	-- Conjurer Margoss 1975
 		-- Insignia reputation tokens
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(1975, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
 	
 	-- Dead Factions
 	-- Shen'dralar 809
