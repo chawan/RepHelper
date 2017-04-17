@@ -2275,7 +2275,12 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(2045, 1, 8, 46735, 150, {[1342] = 100})
 
 		-- World Quest
-		RPH_AddGeneral(2045, 1, 8, "World Quests", 75, "World Quests", "Completing world quests on the Broken Shore will grant you reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Elite World Quests", 75, "Elite World Quests", "Completing elite world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Epic Elite World Quests", 500, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 500 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Completing raid world quests with this faction will grant you 500 reputation.")
 
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
@@ -2286,7 +2291,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 75, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 75 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Elite World Quests", 250, "Elite World Quests", "Completing elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
@@ -2342,9 +2347,6 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- Insignia reputation tokens
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 1})
-
-		-- World Quest
-		RPH_AddGeneral(1975, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
 	
 	-- Dead Factions
 	-- Shen'dralar 809
