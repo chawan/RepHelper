@@ -2263,9 +2263,38 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1435, 1, 8, 300, {[143945] = 1})
 
 	-- Legion Factions
+
+	-- Armies of Legionfall 2045
+		RPH_AddItems(2045, 1, 8, 250, {[146949] = 1})
+		RPH_AddItems(2045, 1, 8, 750, {[147727] = 1})
+
+	-- Court of Farondis 1900
+		RPH_AddItems(1900, 1, 8, 250, {[146937] = 1})
+		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1})
+
+	-- Dreamweavers 1883
+		RPH_AddItems(1883, 1, 8, 250, {[146936] = 1})
+		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1})
+
+	-- Highmountain Tribe 1828
+		RPH_AddItems(1828, 1, 8, 250, {[146938] = 1})
+		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1})
+
+	-- The Nightfallen 1859
+		RPH_AddItems(1859, 1, 8, 250, {[146940] = 1})
+		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1})
+
+	-- The Wardens 1894
+		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1})
+		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1})
+
+	-- Valarjar 1948
+		RPH_AddItems(1948, 1, 8, 250, {[146935] = 1})
+		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1})
+
 	-- Conjurer Margoss 1975
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
-		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
+		RPH_AddItems(1975, 1, 8, 500, {[138777] = 1})
 	
 	-- Dead Factions
 	-- Shen'dralar 809
