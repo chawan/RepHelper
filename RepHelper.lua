@@ -2249,7 +2249,9 @@ function RPH:BuildUpdateList() --xxx
 								FUL_II.hasList = nil
 								FUL_II.listShown = nil
 								FUL_II.isShown = FUL_I.listShown
-								FUL_II.name = RPH:InitItemName(item).." ("..fg_sid_x_d.items[item].."x)"
+								local tempItemName = RPH:InitItemName(item)
+								FUL_II.name = tempItemName.." ("..fg_sid_x_d.items[item].."x)"
+								FUL_I.name = tempItemName
 
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, fg_sid_x_d.items[item].."x", RPH:InitItemName(item))
 
