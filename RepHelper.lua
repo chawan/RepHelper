@@ -224,7 +224,7 @@ function RPH_OnEvent(self, event, ...)
 		end
 
 	elseif ( event == "PLAYER_DIFFICULTY_CHANGED") then -- ccc
-			RPH:Print("PLAYER_DIFFICULTY_CHANGED", nil) 
+			--RPH:Print("PLAYER_DIFFICULTY_CHANGED", nil) 
 
 	elseif ( event == "CHAT_MSG_SKILL") or
 		( event == "CHAT_MSG_SPELL_TRADESKILLS") or
