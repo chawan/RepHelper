@@ -2283,12 +2283,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Elite World Quests", 250, "Elite World Quests", "Completing elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Court of Farondins Emissary", 1500, "Court of Farondins Emissary", "Completing 4x Court of Farondis world quests while the emissary is available will grant you 1500 rep")
 
