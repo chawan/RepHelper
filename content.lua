@@ -2291,7 +2291,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 75, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Elite World Quests", 250, "Elite World Quests", "Completing elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
@@ -2304,7 +2304,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1883, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1883, 1, 8, "Dreamweavers Emissary", 1500, "Dreamweavers Emissary", "Completing 4x Dreamweavers world quests while the emissary is available will grant you 1500 rep")
 
 	-- Highmountain Tribe 1828
@@ -2313,7 +2319,14 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1828, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Epic World Quest", 75, "Epic World Quests", "Completing Normal world quests with this faction will grant you 75-350 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1828, 1, 8, "Highmountain Tribe Emissary", 1500, "Highmountain Tribe Emissary", "Completing 4x Highmountain Tribe world quests while the emissary is available will grant you 1500 rep")
 
 	-- The Nightfallen 1859
@@ -2322,7 +2335,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1859, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150-250 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250-350 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Epic Elite World Quests", 500, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 500 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Dungeon World Quests", 500, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 500 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Raid World Quests", 500, "Raid World Quests", "Completing Raid world quests with this faction will grant you 500 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1859, 1, 8, "The Nightfallen Emissary", 1500, "The Nightfallen Emissary", "Completing 4x Nightfallen world quests while the emissary is available will grant you 1500 rep")
 
 	-- The Wardens 1894
@@ -2331,7 +2350,12 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1894, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Epic Elite World Quests", 350, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 350 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250-500 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1894, 1, 8, "The Wardens Emissary", 1500, "The Wardens Emissary", "Completing 4x Wardens world quests while the emissary is available will grant you 1500 rep")
 
 	-- Valarjar 1948
@@ -2340,7 +2364,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1948, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150-250 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250-500 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(1948, 1, 8, "Valarjar Emissary", 1500, "Valarjar Emissary", "Completing 4x Valarjar world quests while the emissary is available will grant you 1500 rep")
 
 	-- Conjurer Margoss 1975
