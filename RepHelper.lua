@@ -1862,7 +1862,7 @@ function RPH:BuildUpdateList() --xxx
 							local FUL_I = RPH_UpdateList[index]
 							local bul_name = RPH:InitMapName(fg_sid_x_d.name)
 							FUL_I.type = RPH_TXT.instanceShort
-							FUL_I.times = toDo.."x"
+							FUL_I.times = math.ceil(toDo).."x"
 							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
@@ -1904,7 +1904,7 @@ function RPH:BuildUpdateList() --xxx
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.mobShort
-							FUL_I.times = toDo.."x"
+							FUL_I.times = math.ceil(toDo).."x"
 							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
@@ -2020,7 +2020,7 @@ function RPH:BuildUpdateList() --xxx
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.questShort
-							FUL_I.times = toDo.."x"
+							FUL_I.times = math.ceil(toDo).."x"
 							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
@@ -2080,7 +2080,7 @@ function RPH:BuildUpdateList() --xxx
 									RPH_UpdateList[itemIndex] = {}
 									local FUL_II = RPH_UpdateList[itemIndex]
 									FUL_II.type = ""
-									FUL_II.times = (fg_sid_x_d.items[item] * toDo).."x"
+									FUL_II.times = math.ceil((fg_sid_x_d.items[item] * toDo)).."x"
 									FUL_II.rep = nil
 									FUL_II.index = itemIndex
 									FUL_II.belongsTo = index
@@ -2179,7 +2179,7 @@ function RPH:BuildUpdateList() --xxx
 					RPH_UpdateList[index] = {}
 					local FUL_I = RPH_UpdateList[index]
 					FUL_I.type = RPH_TXT.questShort
-					FUL_I.times = toDo.."x"
+					FUL_I.times = math.ceil(toDo).."x"
 					FUL_I.rep = string.format("%d", sum)
 					FUL_I.index = index
 					FUL_I.belongsTo = nil
@@ -2214,7 +2214,7 @@ function RPH:BuildUpdateList() --xxx
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.itemsShort
-							FUL_I.times = toDo.."x"
+							FUL_I.times = math.ceil(toDo).."x"
 							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
@@ -2242,7 +2242,7 @@ function RPH:BuildUpdateList() --xxx
 								RPH_UpdateList[itemIndex] = {}
 								local FUL_II = RPH_UpdateList[itemIndex]
 								FUL_II.type = ""
-								FUL_II.times = (fg_sid_x_d.items[item] * toDo).."x"
+								FUL_II.times = math.ceil((fg_sid_x_d.items[item] * toDo)).."x"
 								FUL_II.rep = nil
 								FUL_II.index = itemIndex
 								FUL_II.belongsTo = index
@@ -2325,7 +2325,7 @@ function RPH:BuildUpdateList() --xxx
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.generalShort
-							FUL_I.times = toDo.."x"
+							FUL_I.times = math.ceil(toDo).."x"
 							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
