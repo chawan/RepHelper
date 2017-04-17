@@ -894,7 +894,11 @@ function RPH:InitItemName(fiitem,amt)
 	end
 
 	if not item_name then
-		item_name=fiitem
+		item_name=GetCurrencyInfo(fiitem)
+	end
+
+	if not item_name then
+		item_name = fiitem
 	end
 	return item_name
 end
