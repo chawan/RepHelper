@@ -11,6 +11,7 @@ Thank you to all those who contributed to the previous addon in any way.
 
 ## Information Sources
 * [Wowjuju (No longer available)](http://www.wowjuju.com/)
+* [WowDB](http://www.wowdb.com)
 * [Wowhead](http://www.wowhead.com)
 * [Wowwiki](http://www.wowwiki.com)
 * [Wowpedia](http://wow.gamepedia.com)

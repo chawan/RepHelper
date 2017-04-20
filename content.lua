@@ -1380,6 +1380,20 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- WoD Factions
 		-- Frostwolf Orcs 1445
 		RPH_AddItems(1445, 1, 8, 1000, {[128315] = 1})
+		-- Stonefury Cliffs
+		RPH_AddMob(1445, 1, 8, "Bloodmaul Brute/Dire Boar/Frostbender in Stonefury Cliffs", 5, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Bloodmaul Gladiator in Stonefury Cliffs", 5, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Bloodmaul Geomancer/Magma Shaper/Taskmaster in Stonefury Cliffs", 8, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Bloodmaul Bonecrusher in Stonefury Cliffs", 16, zone.Frostfire_Ridge);
+		-- Magnarok
+		RPH_AddMob(1445, 1, 8, "Frostfire Cragstomper in Magnarok", 8, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Vicious Acidmaw in Magnarok", 8, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Icecrag Mountainbreaker in Magnarok", 16, zone.Frostfire_Ridge);
+		-- Iron Siegeworks
+		RPH_AddMob(1445, 1, 8, "Grom'kar Deadeye/Enforcer/Footsoldier in Iron Siegeworks", 5, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Grom'kar Shocktrooper/Warforger in Iron Siegeworks", 5, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Grom'kar Crippler/Pulverizer in Iron Siegeworks", 16, zone.Frostfire_Ridge);
+		RPH_AddMob(1445, 1, 8, "Iron Berserker/Crag-Leaper/Gladiator/Talon in Iron Siegeworks", 5, zone.Frostfire_Ridge);
 		-- Vol'jin's Spear 1681
 		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
@@ -1395,11 +1409,11 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- Laughing Skull Orcs 1708
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
 		-- The Pit
-		RPH_AddMob(1708, 1, 8, "Iron Laborer in The Pit", 5, zone.Talador);
-		RPH_AddMob(1708, 1, 8, "Iron Enforcer/Deadshot/Cauterizer in The Pit", 15, zone.Talador);
-		RPH_AddMob(1708, 1, 8, "Iron Bloodburner/Bulwark/Warden/Reinforcement in The Pit", 15, zone.Talador);
+		RPH_AddMob(1708, 1, 8, "Iron Laborer in The Pit", 5, zone.Gorgrond);
+		RPH_AddMob(1708, 1, 8, "Iron Enforcer/Deadshot/Cauterizer in The Pit", 15, zone.Gorgrond);
+		RPH_AddMob(1708, 1, 8, "Iron Bloodburner/Bulwark/Warden/Reinforcement in The Pit", 15, zone.Gorgrond);
 		-- Everbloom Wilds
-		RPH_AddMob(1708, 1, 8, "Everbloom Shaper/Wasp/Waterspeaker in Everbloom Wilds", 5, zone.Talador);
+		RPH_AddMob(1708, 1, 8, "Everbloom Shaper/Wasp/Waterspeaker in Everbloom Wilds", 5, zone.Gorgrond);
 		-- Vol'jin's Headhunters 1848
 		RPH_AddItems(1848, 1, 8, 1000, {[128315] = 1})
 		RPH_AddGeneral(1848, 1, 8, "Vol'mar command table random daily quest", 500, "Vol'mar command table random daily quest", "Random daily that awards 500 reputation")
