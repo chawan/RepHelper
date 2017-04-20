@@ -2349,6 +2349,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	RPH_AddQuest(1711, 1, 8, 37520, 500, {[120172] = 1})
 	-- Order of the Awakened 1849
 	RPH_AddItems(1849, 1, 8, 1000, {[128315] = 1})
+	RPH_AddQuest(1849, 1, 8, 39433, 1500, {[128346] = 10})
 	-- The Saberstalkers 1850
 	RPH_AddItems(1850, 1, 8, 1000, {[128315] = 1})
 	RPH_AddQuest(1850, 1, 8, 39565, 3500)
