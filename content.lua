@@ -850,6 +850,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- WoD Factions
 		-- Council of Exarchs 1731
+		-- Pillars of Fate 
 		RPH_AddItems(1731, 1, 8, 1000, {[128315] = 1})
 		RPH_AddMob(1731, 1, 8, "Void Alpha at Pillars of Fate", 1, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Shadowmoon Warrior/Defiler/Voidtwister at Pillars of Fate", 5, zone.Shadowmoon_Valley);
@@ -858,6 +859,14 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddMob(1731, 1, 8, "Shadowmoon Deathcaller at Pillars of Fate", 8, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Void Horror at Pillars of Fate", 16, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Voidreaver Urnae (Rare mob) at Pillars of Fate", 50, zone.Shadowmoon_Valley);
+		--Socrethar's Rise
+		RPH_AddMob(1731, 1, 8, "Sargerei Binder/Worker/Initiate at Socrethar's Rise", 5, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Sargerei Acolyte/Demonspeaker at Socrethar's Rise", 5, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Shadowglen Thornshooter at Socrethar's Rise", 5, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Sargerei Darkblade at Socrethar's Rise", 8, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Nightshade Consort at Socrethar's Rise", 8, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Sargerei Demonlord at Socrethar's Rise", 16, zone.Shadowmoon_Valley);
+		RPH_AddMob(1731, 1, 8, "Master Sergeant Milgra / Demidos (Rare mobs) at Socrethar's Rise", 50, zone.Shadowmoon_Valley);
 		-- Wrynn's Vanguard 1682
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
 		-- Sha'tari Defense 1710
