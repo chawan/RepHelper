@@ -1401,7 +1401,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddGeneral(1681, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
 		RPH_AddQuest(1681, 1, 8, 36884, 2500, {[112119] = 1})
 		RPH_AddQuest(1681, 1, 8, 36041, 2500, {[112121] = 1})
-		RPH_AddQuest(1681 1, 8, 36033, 2500, {[112124] = 1})
+		RPH_AddQuest(1681, 1, 8, 36033, 2500, {[112124] = 1})
 		RPH_AddQuest(1681, 1, 8, 36034, 2500, {[112126] = 1})
 		RPH_AddQuest(1681, 1, 8, 36040, 2500, {[112127] = 1})
 		RPH_AddQuest(1681, 1, 8, 36042, 2500, {[112131] = 1})
