@@ -852,7 +852,6 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- Council of Exarchs 1731
 		-- Pillars of Fate 
 		RPH_AddItems(1731, 1, 8, 1000, {[128315] = 1})
-		RPH_AddMob(1731, 1, 8, "Void Alpha at Pillars of Fate", 1, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Shadowmoon Warrior/Defiler/Voidtwister at Pillars of Fate", 5, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Skeletal Ancestor/Reanimated Bones/Shadowmoon Void Augur at Pillars of Fate", 5, zone.Shadowmoon_Valley);
 		RPH_AddMob(1731, 1, 8, "Void Fragment at Pillars of Fate", 5, zone.Shadowmoon_Valley);
@@ -874,6 +873,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddMob(1731, 1, 8, "Darktide Machinist/Windstalker at Darktide Roost", 8, zone.Shadowmoon_Valley);
 		-- Wrynn's Vanguard 1682
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
+		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
+		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
+		RPH_AddQuest(1682, 1, 8, 35927, 2500, {[112015 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35942, 2500, {[112113 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35941, 2500, {[112120 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35940, 2500, {[112122 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35939, 2500, {[112123 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35938, 2500, {[112125 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35937, 2500, {[112128 = 1]})
+
 		-- Sha'tari Defense 1710
 		RPH_AddItems(1710, 1, 8, 1000, {[128315] = 1})
 		-- Hand of the Prophet 1847
@@ -1359,6 +1368,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1445, 1, 8, 1000, {[128315] = 1})
 		-- Vol'jin's Spear 1681
 		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
+		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
+		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
+		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
+		RPH_AddQuest(1682, 1, 8, 36884, 2500, {[112119 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36041, 2500, {[112121 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36033, 2500, {[112124 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36034, 2500, {[112126 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36040, 2500, {[112127 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36042, 2500, {[112131 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36038, 2500, {[112113 = 1]})
 		-- Laughing Skull Orcs 1708
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
 		-- Vol'jin's Headhunters 1848
