@@ -1396,16 +1396,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddMob(1445, 1, 8, "Iron Berserker/Crag-Leaper/Gladiator/Talon in Iron Siegeworks", 5, zone.Frostfire_Ridge);
 		-- Vol'jin's Spear 1681
 		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
-		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
-		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
-		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
-		RPH_AddQuest(1682, 1, 8, 36884, 2500, {[112119] = 1})
-		RPH_AddQuest(1682, 1, 8, 36041, 2500, {[112121] = 1})
-		RPH_AddQuest(1682, 1, 8, 36033, 2500, {[112124] = 1})
-		RPH_AddQuest(1682, 1, 8, 36034, 2500, {[112126] = 1})
-		RPH_AddQuest(1682, 1, 8, 36040, 2500, {[112127] = 1})
-		RPH_AddQuest(1682, 1, 8, 36042, 2500, {[112131] = 1})
-		RPH_AddQuest(1682, 1, 8, 36038, 2500, {[112113] = 1})
+		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
+		RPH_AddGeneral(1681, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
+		RPH_AddGeneral(1681, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
+		RPH_AddQuest(1681, 1, 8, 36884, 2500, {[112119] = 1})
+		RPH_AddQuest(1681, 1, 8, 36041, 2500, {[112121] = 1})
+		RPH_AddQuest(1681 1, 8, 36033, 2500, {[112124] = 1})
+		RPH_AddQuest(1681, 1, 8, 36034, 2500, {[112126] = 1})
+		RPH_AddQuest(1681, 1, 8, 36040, 2500, {[112127] = 1})
+		RPH_AddQuest(1681, 1, 8, 36042, 2500, {[112131] = 1})
+		RPH_AddQuest(1681, 1, 8, 36038, 2500, {[112113] = 1})
 		-- Laughing Skull Orcs 1708
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
 		-- The Pit
