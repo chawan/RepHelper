@@ -1394,6 +1394,12 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(1682, 1, 8, 36038, 2500, {[112113] = 1})
 		-- Laughing Skull Orcs 1708
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
+		-- The Pit
+		RPH_AddMob(1708, 1, 8, "Iron Laborer in The Pit", 5, zone.Talador);
+		RPH_AddMob(1708, 1, 8, "Iron Enforcer/Deadshot/Cauterizer in The Pit", 15, zone.Talador);
+		RPH_AddMob(1708, 1, 8, "Iron Bloodburner/Bulwark/Warden/Reinforcement in The Pit", 15, zone.Talador);
+		-- Everbloom Wilds
+		RPH_AddMob(1708, 1, 8, "Everbloom Shaper/Wasp/Waterspeaker in Everbloom Wilds", 5, zone.Talador);
 		-- Vol'jin's Headhunters 1848
 		RPH_AddItems(1848, 1, 8, 1000, {[128315] = 1})
 		RPH_AddGeneral(1848, 1, 8, "Vol'mar command table random daily quest", 500, "Vol'mar command table random daily quest", "Random daily that awards 500 reputation")
