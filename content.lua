@@ -2336,6 +2336,17 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	RPH_AddMob(1515, 1, 8, "Skyreach Labormaster at Skettis", 5, ZONE.Spires_of_Arak)
 	-- Steamwheedle Preservation Society 1711
 	RPH_AddItems(1711, 1, 8, 1000, {[128315] = 1})
+	RPH_AddQuest(1711, 1, 8, 35147, 250, {[118099] = 20})
+	RPH_AddQuest(1711, 1, 8, 35125, 350, {[118100] = 1})
+	RPH_AddQuest(1711, 1, 8, 37210, 500, {[118654] = 1})
+	RPH_AddQuest(1711, 1, 8, 37211, 500, {[118655] = 1})
+	RPH_AddQuest(1711, 1, 8, 37221, 500, {[118656] = 1})
+	RPH_AddQuest(1711, 1, 8, 37222, 500, {[118657] = 1})
+	RPH_AddQuest(1711, 1, 8, 37223, 500, {[118658] = 1})
+	RPH_AddQuest(1711, 1, 8, 37224, 500, {[118659] = 1})
+	RPH_AddQuest(1711, 1, 8, 37225, 500, {[118660] = 1})
+	RPH_AddQuest(1711, 1, 8, 37226, 500, {[118661] = 1})
+	RPH_AddQuest(1711, 1, 8, 37520, 500, {[120172] = 1})
 	-- Order of the Awakened 1849
 	RPH_AddItems(1849, 1, 8, 1000, {[128315] = 1})
 	-- The Saberstalkers 1850
