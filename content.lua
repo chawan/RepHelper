@@ -887,6 +887,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1710, 1, 8, 1000, {[128315] = 1})
 		-- Hand of the Prophet 1847
 		RPH_AddItems(1847, 1, 8, 1000, {[128315] = 1})
+		RPH_AddGeneral(1847, 1, 8, "Lion's Watch command table random daily quest", 500, "Lion's Watch command table random daily quest", "Random daily that awards 500 reputation")
+		RPH_AddQuest(1847, 1, 8, 39574, 250)
+		RPH_AddGeneral(1847, 1, 8, "Vindicator Krethos random daily quest", 250, "Vindicator Krethos random daily quest", "Random daily that awards 250 reputation")
 	end
 	if (RPH_IsHorde) then
 	-- Hord Cities
@@ -1382,6 +1385,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
 		-- Vol'jin's Headhunters 1848
 		RPH_AddItems(1848, 1, 8, 1000, {[128315] = 1})
+		RPH_AddGeneral(1848, 1, 8, "Vol'mar command table random daily quest", 500, "Vol'mar command table random daily quest", "Random daily that awards 500 reputation")
+		RPH_AddQuest(1848, 1, 8, 39526, 250)
+		RPH_AddGeneral(1848, 1, 8, "Shadow Hunter Denjai random daily quest", 250, "Shadow Hunter Denjai random daily quest", "Random daily that awards 250 reputation")
 	end
 	-- Steamwheedle Cartel
 	-- Booty Bay 21
