@@ -875,13 +875,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
 		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
 		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
-		RPH_AddQuest(1682, 1, 8, 35927, 2500, {[112015 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35942, 2500, {[112113 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35941, 2500, {[112120 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35940, 2500, {[112122 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35939, 2500, {[112123 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35938, 2500, {[112125 = 1]})
-		RPH_AddQuest(1682, 1, 8, 35937, 2500, {[112128 = 1]})
+		RPH_AddQuest(1682, 1, 8, 35927, 2500, {[112015] = 1})
+		RPH_AddQuest(1682, 1, 8, 35942, 2500, {[112113] = 1})
+		RPH_AddQuest(1682, 1, 8, 35941, 2500, {[112120] = 1})
+		RPH_AddQuest(1682, 1, 8, 35940, 2500, {[112122] = 1})
+		RPH_AddQuest(1682, 1, 8, 35939, 2500, {[112123] = 1})
+		RPH_AddQuest(1682, 1, 8, 35938, 2500, {[112125] = 1})
+		RPH_AddQuest(1682, 1, 8, 35937, 2500, {[112128] = 1})
 
 		-- Sha'tari Defense 1710
 		RPH_AddItems(1710, 1, 8, 1000, {[128315] = 1})
@@ -1371,13 +1371,13 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
 		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
 		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
-		RPH_AddQuest(1682, 1, 8, 36884, 2500, {[112119 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36041, 2500, {[112121 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36033, 2500, {[112124 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36034, 2500, {[112126 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36040, 2500, {[112127 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36042, 2500, {[112131 = 1]})
-		RPH_AddQuest(1682, 1, 8, 36038, 2500, {[112113 = 1]})
+		RPH_AddQuest(1682, 1, 8, 36884, 2500, {[112119] = 1})
+		RPH_AddQuest(1682, 1, 8, 36041, 2500, {[112121] = 1})
+		RPH_AddQuest(1682, 1, 8, 36033, 2500, {[112124] = 1})
+		RPH_AddQuest(1682, 1, 8, 36034, 2500, {[112126] = 1})
+		RPH_AddQuest(1682, 1, 8, 36040, 2500, {[112127] = 1})
+		RPH_AddQuest(1682, 1, 8, 36042, 2500, {[112131] = 1})
+		RPH_AddQuest(1682, 1, 8, 36038, 2500, {[112113] = 1})
 		-- Laughing Skull Orcs 1708
 		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
 		-- Vol'jin's Headhunters 1848
@@ -2325,6 +2325,15 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	-- WoD Factions
 	-- Arakkoa Outcasts 1515
 	RPH_AddItems(1515, 1, 8, 1000, {[128315] = 1})
+	RPH_AddMob(1515, 1, 8, "Amorphic Cognitor at Lost Veil Anzu", 5, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Befuddled Relic-Seeker at Lost Veil Anzu", 5, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 7, "Highmaul Skullcrusher at Lost Veil Anzu", 5,ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Infected Plunderer at Lost Veil Anzu", 5, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Darting Swift Feather at Skettis", 1, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Flighted Storm-Spinner at Skettis", 5, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Skyreach Dawnbreaker at Skettis", 16, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Skyreach Dreadtalon at Skettis", 5, ZONE.Spires_of_Arak)
+	RPH_AddMob(1515, 1, 8, "Skyreach Labormaster at Skettis", 5, ZONE.Spires_of_Arak)
 	-- Steamwheedle Preservation Society 1711
 	RPH_AddItems(1711, 1, 8, 1000, {[128315] = 1})
 	-- Order of the Awakened 1849
