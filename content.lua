@@ -2351,6 +2351,23 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	RPH_AddItems(1849, 1, 8, 1000, {[128315] = 1})
 	-- The Saberstalkers 1850
 	RPH_AddItems(1850, 1, 8, 1000, {[128315] = 1})
+	RPH_AddQuest(1850, 1, 8, 39565, 3500)
+	-- Tooth and Claw quest
+	if RPH_IsHorde then
+		RPH_AddQuest(1850, 1, 8, 39529, 1500, {[124099] = 100})
+	end
+	if RPH_IsAlliance then
+		RPH_AddQuest(1850, 1, 8, 39582, 1500, {[124099] = 100})
+	end
+
+	RPH_AddMob(1850, 1, 8, "Blackfang Hunter", 25, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Prowler", 25, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Savage", 25, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Shaman", 25, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Soulslicer (Rare elite)", 500, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Gloomtalon (Rare elite)", 500, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Krell the Serene (Rare elite)", 500, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "The Blackfang (Rare elite)", 500, ZONE.Tanaan_Jungle)
 
 	-- Legion Factions
 	-- Armies of Legionfall 2045
