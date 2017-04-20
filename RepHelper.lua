@@ -1100,8 +1100,8 @@ function RPH_AddMob(faction, from, to, name, rep, zone, limit)
 	if (from > to) then return end								--]]--
 	if RPH:Content(faction, from, to, name, rep) ~=1 then return end
 
-	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	faction = string.lower(RPH:InitFaction(RPH_GuildName,faction))
+	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	--- f_amo	RPH:Printtest(faction,RPH_faction,"mob")
 
 	for standing = from,to do
@@ -1214,8 +1214,9 @@ function RPH_AddInstance(faction, from, to, name, rep, heroic)
 	if (from > to) then return end								--]]--
 	if RPH:Content(faction, from, to, name, rep) ~=1 then return end
 
-	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	faction = string.lower(RPH:InitFaction(RPH_GuildName,faction))
+	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
+	
 	--- f_ain	RPH:Printtest(faction,RPH_faction,"inst")
 
 	for standing = from,to do
@@ -1270,8 +1271,9 @@ function RPH_AddItems(faction, from, to, rep, itemList)
 	if (from > to) then return end								--]]--
 	if RPH:Content(faction, from, to, itemList, rep) ~=1 then return end
 
-	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	faction = string.lower(RPH:InitFaction(RPH_GuildName,faction))
+	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
+	
 	--- f_ait	RPH:Printtest(faction,RPH_faction,"item")
 
 	local itemString = ""
@@ -1328,8 +1330,8 @@ function RPH_AddGeneral(faction, from, to, name, rep, head, tip, tipList, flag)
 	if (from > to) then return end								--]]--
 	if RPH:Content(faction, from, to, name, rep) ~=1 then return end
 
-	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	faction = string.lower(RPH:InitFaction(RPH_GuildName,faction))
+	rep = rep * RPH:InitFactor(RPH_IsHuman,RPH_faction)
 	--- f_ag	RPH:Printtest(faction,RPH_faction,"gen") 
 	local tipString = ""
 
@@ -3583,13 +3585,11 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 -- v rfl ORO 2
 
 	if ( isCollapsed ) then
-
 		factionButton:SetNormalTexture("Interface\\Buttons\\UI-PlusButton-Up");
 	else
 		factionButton:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-Up");
 	end
 	factionRow.index = factionIndex;
-
 	factionRow.isCollapsed = isCollapsed;
 -- ^ rfl ORO 2
 

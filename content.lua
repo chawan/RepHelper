@@ -847,6 +847,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(1387, 4, 8, 32583, 200)
 		-- Timewalking Commendation
 		RPH_AddItems(1387, 1, 8, 300, {[143940] = 1})
+
+		-- WoD Factions
+		-- Council of Exarchs 1731
+		RPH_AddItems(1731, 1, 8, 1000, {[128315] = 1})
+		-- Wrynn's Vanguard 1682
+		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
+		-- Sha'tari Defense 1710
+		RPH_AddItems(1710, 1, 8, 1000, {[128315] = 1})
+		-- Hand of the Prophet 1847
+		RPH_AddItems(1847, 1, 8, 1000, {[128315] = 1})
 	end
 	if (RPH_IsHorde) then
 	-- Hord Cities
@@ -1322,6 +1332,16 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(1388, 4, 8, 32583, 200)
 		-- Timewalking Commendation
 		RPH_AddItems(1388, 1, 8, 300, {[143939] = 1})
+
+		-- WoD Factions
+		-- Frostwolf Orcs 1445
+		RPH_AddItems(1445, 1, 8, 1000, {[128315] = 1})
+		-- Vol'jin's Spear 1681
+		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
+		-- Laughing Skull Orcs 1708
+		RPH_AddItems(1708, 1, 8, 1000, {[128315] = 1})
+		-- Vol'jin's Headhunters 1848
+		RPH_AddItems(1848, 1, 8, 1000, {[128315] = 1})
 	end
 	-- Steamwheedle Cartel
 	-- Booty Bay 21
@@ -2262,8 +2282,17 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- Timewalking Commendation
 		RPH_AddItems(1435, 1, 8, 300, {[143945] = 1})
 
+	-- WoD Factions
+	-- Arakkoa Outcasts 1515
+	RPH_AddItems(1515, 1, 8, 1000, {[128315] = 1})
+	-- Steamwheedle Preservation Society 1711
+	RPH_AddItems(1711, 1, 8, 1000, {[128315] = 1})
+	-- Order of the Awakened 1849
+	RPH_AddItems(1849, 1, 8, 1000, {[128315] = 1})
+	-- The Saberstalkers 1850
+	RPH_AddItems(1850, 1, 8, 1000, {[128315] = 1})
+	
 	-- Legion Factions
-
 	-- Armies of Legionfall 2045
 		-- Insignia reputation tokens
 		RPH_AddItems(2045, 1, 8, 250, {[146949] = 1})
