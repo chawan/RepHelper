@@ -885,6 +885,17 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- Sha'tari Defense 1710
 		RPH_AddItems(1710, 1, 8, 1000, {[128315] = 1})
+		-- Shattrath
+		RPH_AddMob(1710, 1, 8, "Vicious Felhunter/Observer/Voidwalker in Shattrath", 5, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Sargerei Summoner/Huntsman/Felbringer/Soul-Twister/ in Shattrath", 5, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Sargerei Fiendmaster in Shattrath", 5, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Conniving Shadowblade / Council Soulspeaker in Shattrath", 5, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Sargerei Discordant/Ritualist/Soulspewer/Fiendspeaker/ in Shattrath", 8, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Sargerei Destructor in Shattrath", 8, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Conniving Deathblade / Council Felcaller in Shattrath", 8, zone.Talador);
+		RPH_AddMob(1710, 1, 8, "Rune Ritualist in Shattrath", 15, zone.Talador);
+		-- Bladefury Hold
+		RPH_AddMob(1710, 1, 8, "Grom'kar Blademaster/Bulwark/deadeye/Punisher in Bladefury Hold", 5, zone.Talador);
 		-- Hand of the Prophet 1847
 		RPH_AddItems(1847, 1, 8, 1000, {[128315] = 1})
 		RPH_AddGeneral(1847, 1, 8, "Lion's Watch command table random daily quest", 500, "Lion's Watch command table random daily quest", "Random daily that awards 500 reputation")
