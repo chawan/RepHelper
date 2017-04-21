@@ -761,10 +761,10 @@
 									
 <!--> ============================================================================================================== <-->									
 	<Button name="RPH_OptionsButton" parent="ReputationFrame" inherits="BrowserButtonTemplate">								
-		<Size x="25" y="25" />							
+		<Size x="27" y="27" />							
 		<Anchors>							
 			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" >						
-				<Offset x="-20" y="-20" />					
+				<Offset x="-2" y="-22" />					
 			</Anchor>						
 		</Anchors>							
 		<Layers>
@@ -807,7 +807,7 @@
 			</Anchor>						
 		</Anchors>							
 		<HitRectInsets>							
-			<AbsInset left="0" right="-240" top="0" bottom="0"/>						
+			<AbsInset left="0" right="-150" top="0" bottom="0"/>						
 		</HitRectInsets>							
 		<Scripts>							
 			<OnClick>						
