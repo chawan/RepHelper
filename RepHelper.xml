@@ -760,17 +760,22 @@
 									
 									
 <!--> ============================================================================================================== <-->									
-	<Button name="RPH_OptionsButton" parent="ReputationFrame" inherits="UIPanelButtonTemplate">								
-		<Size x="80" y="20" />							
+	<Button name="RPH_OptionsButton" parent="ReputationFrame" inherits="BrowserButtonTemplate">								
+		<Size x="25" y="25" />							
 		<Anchors>							
 			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" >						
 				<Offset x="-20" y="-20" />					
 			</Anchor>						
 		</Anchors>							
-		<Layers>							
-			<Layer level="BORDER">						
-				<FontString name="$parentText" inherits="GameFontNormal" justifyH="CENTER"/>					
-			</Layer>						
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon" file="Interface\Buttons\UI-OptionsButton">
+					<Size x="14" y="14"	/>
+					<Anchors>
+						<Anchor point="CENTER" />
+					</Anchors>
+				</Texture>
+			</Layer>					
 		</Layers>							
 		<Scripts>							
 			<OnClick>						

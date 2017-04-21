@@ -338,7 +338,6 @@ function RPH:Init()
 	RPH_Data.Version = RPH_VNMBR
 
 	-- Set up UI
-	RPH_OptionsButtonText:SetText(RPH_TXT.options)
 	RPH_OptionsFrameTitle:SetText(RPH_NAME.." "..RPH_TXT.options)
 
 	RPH_EnableMissingBoxText:SetText(RPH_TXT.showMissing)
