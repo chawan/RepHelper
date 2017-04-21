@@ -1451,9 +1451,9 @@ function RPH_ReputationFrame_Update() --rfl
 		if ( factionIndex <= numFactions ) then
 -- v rfl _9_ rep Main window
 			if RPH_Data.SortByStanding then
-				RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
+				RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
 			else
-				RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
+				RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
 			end
 -- ^ rfl _9_ Rep Main Window
 		else
@@ -3372,7 +3372,7 @@ end
 --------------------------
 -- _20_ rep Main window
 --------------------------
-function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
+function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground, lfgBonusFactionID)
 -- v rfl SBS set 2 start
 
 	local OBS_fi = RPH_Entries[factionIndex]
@@ -3567,7 +3567,7 @@ end
 
 
 -- ^ rfl SBS
-function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
+function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
 -- v rfl ORO set 2 start
 
 
