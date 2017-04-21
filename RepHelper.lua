@@ -3505,6 +3505,13 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		factionRow.LFGBonusRepButton:SetShown(canBeLFGBonus);
 		factionRow.LFGBonusRepButton:SetChecked(lfgBonusFactionID == factionID);
 		factionRow.LFGBonusRepButton:SetEnabled(lfgBonusFactionID ~= factionID);
+		if ( showLFGPulse and not SHOWED_LFG_PULSE and not lfgBonusFactionID ) then
+        	factionRow.LFGBonusRepButton.Glow:Show();
+        	factionRow.LFGBonusRepButton.GlowAnim:Play();
+    	else
+        	factionRow.LFGBonusRepButton.Glow:Hide();
+        	factionRow.LFGBonusRepButton.GlowAnim:Stop();
+    	end
 -- ^ rfl SBS 5
 		local previewValue = 0
 		if (RPH_Data.ShowPreviewRep) then
@@ -3695,6 +3702,14 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	factionRow.LFGBonusRepButton:SetShown(canBeLFGBonus);
 	factionRow.LFGBonusRepButton:SetChecked(lfgBonusFactionID == factionID);
 	factionRow.LFGBonusRepButton:SetEnabled(lfgBonusFactionID ~= factionID);
+
+	if ( showLFGPulse and not SHOWED_LFG_PULSE and not lfgBonusFactionID ) then
+        factionRow.LFGBonusRepButton.Glow:Show();
+        factionRow.LFGBonusRepButton.GlowAnim:Play();
+    else
+        factionRow.LFGBonusRepButton.Glow:Hide();
+        factionRow.LFGBonusRepButton.GlowAnim:Stop();
+    end
 -- ^ rfl ORO 5
 	local previewValue = 0
 	if (RPH_Data.ShowPreviewRep) then
