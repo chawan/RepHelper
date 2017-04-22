@@ -28,7 +28,7 @@ If you want to manually install this addon, extract the contents in this directo
 This addon is made to help you reach Exalted with your factions by giving you calculated tips on how to obtain the rep most efficently.
 
 ## Commands
-/rph <COMMANDS>
+/rph help
 
 ## License
 GPLv3: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html ) or see the [license file](https://github.com/chawan/RepHelper/blob/master/LICENSE)
