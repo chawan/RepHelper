@@ -467,7 +467,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddSpell(1353, 1, 8, 5, 1000)
 	-- Alliance Forces
 	-- Silverwing Sentinels 890
-		RPH_AddGeneral(890, 4, 8, "Warsong Gulch flag capture", 100, "Capture flag", "Every time your team captures a flag you gain 100")
+		RPH_AddGeneral(890, 4, 8, "Warsong Gulch flag capture", 100, "Warsong Gulch flag capture", "Every time your team captures a flag you gain 100 reputation")
 		RPH_AddGeneral(890, 4, 8, "Warsong Gulch victory", 100, "Warsong Gulch victory", "Every time your team wins you gain 100 reputation")
 		RPH_AddGeneral(890, 4, 8, "Warsong Gulch loss", 35, "Warsong Gulch loss", "Every time your team lose you gain 35 reputation")
 	-- Stormpike Guard 730
@@ -480,8 +480,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(730, 4, 8, 7026, 2.5, {[17643] = 1})
 		RPH_AddQuest(730, 4, 8, 6781, 2.5, {[17422] = 20})
 	-- The League of Arathor 509
-		RPH_AddInstance(509, 4, 8, 461, 10)
-		RPH_AddInstance(509, 4, 8, 461, 100)
+		RPH_AddGeneral(509, 4, 8, "Arathi Basin collect 100 Resources", 50, "Collect 100 Resources", "For every 100 resources your team collects you gain 50 reputation")
+		RPH_AddGeneral(509, 4, 8, "Arathi Basin win (1500 Resources)", 750, "Arathi Basin win (1500 Resources)", "If your team wins with 1500 resources you will earn a total of 750 reputation")
 	-- Bizmo's Brawlpub 1419
 		RPH_AddQuest(1419, 1, 8, 5, 1)
 	-- Outlands (Burning Crusade)
@@ -1005,8 +1005,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddSpell(1352, 1, 8, 5, 1000)
 	-- Horde Forces
 	-- The Defilers 510
-		RPH_AddInstance(510, 4, 8, 443, 35)
-		RPH_AddInstance(510, 4, 8, 443, 105)
+		RPH_AddGeneral(510, 4, 8, "Arathi Basin collect 100 Resources", 50, "Collect 100 Resources", "For every 100 resources your team collects you gain 50 reputation")
+		RPH_AddGeneral(510, 4, 8, "Arathi Basin win (1500 Resources)", 750, "Arathi Basin win (1500 Resources)", "If your team wins with 1500 resources you will earn a total of 750 reputation")
 	-- Frostwolf Clan 729
 		RPH_AddQuest(729, 4, 8, 7385, 18.75, {[17306] = 5})
 		RPH_AddQuest(729, 4, 8, 6801, 2.5, {[17306] = 1})
@@ -1017,9 +1017,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddQuest(729, 4, 8, 7002, 2.5, {[17642] = 1})
 		RPH_AddQuest(729, 4, 8, 6741, 2.5, {[17422] = 20})
 	-- Warsong Outriders 889
-		RPH_AddGeneral(890, 4, 8, "Warsong Gulch flag capture", 100, "Capture flag", "Every time your team captures a flag you gain 100")
-		RPH_AddGeneral(890, 4, 8, "Warsong Gulch victory", 100, "Warsong Gulch victory", "Every time your team wins you gain 100 reputation")
-		RPH_AddGeneral(890, 4, 8, "Warsong Gulch loss", 35, "Warsong Gulch loss", "Every time your team lose you gain 35 reputation")
+		RPH_AddGeneral(889, 4, 8, "Warsong Gulch flag capture", 100, "Warsong Gulch flag capture", "Every time your team captures a flag you gain 100 reputation")
+		RPH_AddGeneral(889, 4, 8, "Warsong Gulch victory", 100, "Warsong Gulch victory", "Every time your team wins you gain 100 reputation")
+		RPH_AddGeneral(889, 4, 8, "Warsong Gulch loss", 35, "Warsong Gulch loss", "Every time your team lose you gain 35 reputation")
 	-- Brawl'gar Arena 1374
 		RPH_AddQuest(1374, 1, 8, 5, 1)
 	-- 0 Outlands (Burning Crusade)
