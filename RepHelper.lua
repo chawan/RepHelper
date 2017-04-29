@@ -105,6 +105,8 @@ RPH_IsHorde = false
 RPH_IsHeroic=false
 -- Guild Tracking
 RPH_GuildName = nil
+-- Garrison Trading post level 3
+RPH_HasTradingPost = false
 
 ------------------------
 -- _02_ Addon Startup --
@@ -183,6 +185,7 @@ function RPH_OnEvent(self, event, ...)
 		RPH_Main:RegisterEvent("UPDATE_TRADESKILL_RECAST")
 		RPH_Main:RegisterEvent("QUEST_COMPLETE")
 		RPH_Main:RegisterEvent("QUEST_WATCH_UPDATE")
+		RPH_Main:RegisterEvent("GARRISON_UPDATE")
 
 		-- new chat hook system
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_COMBAT_FACTION_CHANGE", RPH_ChatFilter)
@@ -239,7 +242,20 @@ function RPH_OnEvent(self, event, ...)
 			RPH_UpdateList_Update()
 		end
 
+	elseif (event == "GARRISON_UPDATE") then
+		-- Get garrison buildings to check for trading post
+		local garrisonBuildings = C_Garrison.GetBuildings(LE_GARRISON_TYPE_6_0)
+
+		for i, building in pairs(garrisonBuildings) do
+			if building["buildingID"] == 145 then
+				RPH_HasTradingPost = true
+			end
+		end
+		RPH_InitStages = RPH_InitStages + 5
+		RPH:Init()
+		RPH_Main:UnregisterEvent("GARRISON_UPDATE")
 	end
+
 
 end
 
@@ -286,7 +302,7 @@ end
 function RPH:Init()
 	if RPH_InitComplete then return end
 	--RPH:Print("RPH_InitStages ["..tostring(RPH_InitStages).."]")
-	if (RPH_InitStages ~= 15) then return end
+	if (RPH_InitStages ~= 20) then return end
 
 	local version = GetAddOnMetadata("RepHelper", "Version");
 	if (version == nil) then
@@ -749,6 +765,16 @@ function RPH:RGBToColour_perc(a, r, g, b)
 	return string.format("|c%02X%02X%02X%02X", a*255, r*255, g*255, b*255)
 end
 
+function RPH:has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
 ------------------------
 -- _07_ information
 ------------------------
@@ -958,9 +984,28 @@ end
 function RPH:InitFactor(RPH_IsHuman,faction)
 --- Thanks Gwalkmaur for the heads up
 	--RPH:Print("Faction: "..faction);
+	local draenorFactions = {"Council of Exarchs", 
+							"Frostwolf Orcs", 
+							"Wrynn's Vanguard", 
+							"Vol'jin's Spear", 
+							"Sha'tari Defense",  
+							"Laughing Skull Orcs", 
+							"Hand of the Prophet", 
+							"Vol'jin's Headhunters", 
+							"Arakkoa Outcasts", 
+							"Order of the Awakened", 
+							"The Saberstalkers", 
+							"Steamwheedle Preservation Society"}
+
 	local factor=1.0
 	-- Race check
 		if RPH_IsHuman then factor = factor + 0.1 end
+
+	-- WoD Faction trading post bonus
+		if RPH:has_value(draenorFactions, faction) and RPH_HasTradingPost then 
+			factor = factor + 0.2; 
+		end
+
 	-- bonus repgain check
 		local numFactions = GetNumFactions();
 		local factionOffset=0;
