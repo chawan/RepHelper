@@ -1,5 +1,7 @@
 package-as: RepHelper
 
 ignore:
+  - .travis.yml
   - README.md
   - LICENSE
+  - .release/
