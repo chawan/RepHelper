@@ -2554,7 +2554,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	-- Conjurer Margoss 1975
 		-- Insignia reputation tokens
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
-		RPH_AddItems(1975, 1, 8, 500, {[138777] = 1})
+		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
 	
 	-- Dead Factions
 	-- Shen'dralar 809
