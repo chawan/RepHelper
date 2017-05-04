@@ -1,4 +1,4 @@
-# RepHelper
+# RepHelper [![Build Status](https://travis-ci.org/chawan/RepHelper.svg?branch=master)](https://travis-ci.org/chawan/RepHelper)
 A World of Warcraft addon to help you manage your reputation and Factions.
 
 ## History/Base
