@@ -225,7 +225,7 @@ RPH_TXT.elements.tip	= {}
 RPH_TXT.elements.name.RPH_OptionsButton	= RPH_TXT.options
 RPH_TXT.elements.tip.RPH_OptionsButton	= "Aprire una finestra per configurare RepHelper."
 RPH_TXT.elements.name.RPH_OrderByStandingCheckBox	= RPH_TXT.orderByStanding
-RPH_TXT.elements.tip.RPH_OrderByStandingCheckBox	= "Se questa casella non è selezionata, l'elenco fazione viene visualizzata per impostazione predefinita (Blizzard) ordinamento, raggruppate per ordine logico e alfabetico. \r \n \ r \ nSe questa casella è selezionata, l'elenco fazione è ordinato per data. \r \ n\r \ nPer vista i | cFFFAA0A0inactive | r fazioni , deselezionare questa casella e andare in fondo alla lista."
+RPH_TXT.elements.tip.RPH_OrderByStandingCheckBox	= "Se questa casella non è selezionata, l'elenco fazione viene visualizzata per impostazione predefinita (Blizzard) ordinamento, raggruppate per ordine logico e alfabetico. \r \n \r \nSe questa casella è selezionata, l'elenco fazione è ordinato per data. \r \n\r \nPer vista i | cFFFAA0A0inactive | r fazioni , deselezionare questa casella e andare in fondo alla lista."
 	
 RPH_TXT.elements.name.RPH_ShowMobsButton	= RPH_TXT.showMobs
 RPH_TXT.elements.tip.RPH_ShowMobsButton	= "Selezionare questo pulsante per vedere mob si può uccidere per migliorare la vostra reputazione."
