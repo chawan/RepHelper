@@ -1443,6 +1443,7 @@ function RPH_GetFactionInfo(factionIndex)
 	local normMax = barMax-barMin
 	local normCurrent = barValue-barMin
 
+	
 	-- add missing reputation
 	if (RPH_Data.ShowMissing and isHeader and not hasRep and ((normMax-normCurrent)>0)) then
 		name = name.." ("..normMax-normCurrent..")"
@@ -2698,6 +2699,13 @@ function RPH:DumpReputationChangesToChat(initOnly)
 		end
 		-- choose Faction to show
 		SetWatchedFactionIndex(watchIndex)
+		SetWatchingHonorAsXP(false)
+		
+		if (C_ArtifactUI.GetEquippedArtifactInfo()) then
+			SetCVar("showArtifactXPBar", false)
+		end
+		MainMenuBar_UpdateExperienceBars();
+		
 		ReputationFrame_Update(); -- rfl functions
 	end
 end
