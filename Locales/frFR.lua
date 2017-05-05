@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Zéro du compteur de gain séance"
 -- options dialog	
 RPH_TXT.showMissing	= "Voir réputation manquant dans un cadre réputation"
 RPH_TXT.extendDetails	= "Voir prolongée cadre réputation détail"
-RPH_TXT.gainToChat	= "Rédiger les messages détaillés de gain de faction à la fenêtre de chat"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "N'écrivez pas discuter de la réputation de guilde"
 RPH_TXT.suppressOriginalGain	= "Réprimer originales messages de gain de faction"
 RPH_TXT.showPreviewRep	= "Voir réputation qui peut être remis dans un cadre réputation"

@@ -1045,48 +1045,13 @@
 					</OnLeave>				
 				</Scripts>					
 			</CheckButton>						
-									
-			<CheckButton name="RPH_SupressOriginalGainBox" inherits="OptionsCheckButtonTemplate">						
+																				
+			<CheckButton name="RPH_ShowPreviewRepBox" inherits="OptionsCheckButtonTemplate">						
 				<Size x="20" y="20"/>					
 						<Anchors>			
 					<Anchor point="TOPLEFT" relativeTo="RPH_NoGuildGainBox" relativePoint="BOTTOMLEFT">				
 						<Offset x="-20" y="-5"/>			
-								</Anchor>	
-				</Anchors>					
-				<HitRectInsets>					
-					<AbsInset left="0" right="-240" top="0" bottom="0"/>				
-				</HitRectInsets>					
-				<Layers>					
-					<Layer level="ARTWORK">				
-						<FontString name="$parentText" inherits="GameFontNormalSmall">			
-							<Anchors><Anchor point="LEFT" relativePoint="RIGHT"><Offset x="-2" y="0"/></Anchor></Anchors>		
-						</FontString>			
-					</Layer>				
-				</Layers>					
-				<Scripts>					
-					<OnClick>				
-						RPH_Data.SuppressOriginalChat = self:GetChecked()			
-						if ( RPH_Data.SuppressOriginalChat ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
-						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
-						end			
-					</OnClick>				
-					<OnEnter>				
-						RPH_ShowHelpToolTip(self, self:GetName())			
-					</OnEnter>				
-					<OnLeave>				
-						GameTooltip:Hide();			
-					</OnLeave>				
-				</Scripts>					
-			</CheckButton>						
-									
-			<CheckButton name="RPH_ShowPreviewRepBox" inherits="OptionsCheckButtonTemplate">						
-				<Size x="20" y="20"/>					
-						<Anchors>			
-					<Anchor point="TOPLEFT" relativeTo="RPH_SupressOriginalGainBox" relativePoint="BOTTOMLEFT">				
-						<Offset x="0" y="-5"/>			
-								</Anchor>	
+					</Anchor>	
 				</Anchors>					
 				<HitRectInsets>					
 					<AbsInset left="0" right="-240" top="0" bottom="0"/>				

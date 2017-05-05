@@ -67,7 +67,7 @@ RPH_TXT.clearSessionGain	= "분명 세션 이득 카운터"
 -- options dialog	
 RPH_TXT.showMissing	= "평판 구조에서 누락 명성을 보여"
 RPH_TXT.extendDetails	= "확장 명성 세부 프레임을 보여줍니다"
-RPH_TXT.gainToChat	= "채팅 창을 상세 진영 이득 메시지를 작성"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "길드 평판 채팅 쓰지 않는다"
 RPH_TXT.suppressOriginalGain	= "원래 진영 이득 메시지를 억제합니다"
 RPH_TXT.showPreviewRep	= "평판 프레임에서 손으로 할 수있는 평판 표시"

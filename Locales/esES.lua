@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Borrar contador sesión ganancia"
 -- options dialog	
 RPH_TXT.showMissing	= "Mostrar reputación que falta en el marco de la reputación"
 RPH_TXT.extendDetails	= "Mostrar detalles de la trama extendida reputación"
-RPH_TXT.gainToChat	= "Escribir mensajes detallados ganancia facción a la ventana de chat"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "No escriba a chatear reputación gremio"
 RPH_TXT.suppressOriginalGain	= "Reprimir originales mensajes ganancia facción"
 RPH_TXT.showPreviewRep	= "Mostrar reputación que pueden ser entregados en el marco de la reputación"

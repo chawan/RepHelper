@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Очистить счетчик увеличений
 -- options dialog	
 RPH_TXT.showMissing	= "Показывать недостающую репутацию во фрейме репутации"
 RPH_TXT.extendDetails	= "Показывать окно детальной информации о репутации"
-RPH_TXT.gainToChat	= "Писать детальное сообщение повышения репутации в чат"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "Не писать в чат для репутации с гильдией"
 RPH_TXT.suppressOriginalGain	= "Подавлять стандартное сообщение повышения репутации"
 RPH_TXT.showPreviewRep	= "Показывать репутацию, которая может быть получена, в окне репутации"

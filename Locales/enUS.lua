@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Clear session gain counter"
 -- options dialog		
 RPH_TXT.showMissing	= "Show missing reputation in reputation frame"	
 RPH_TXT.extendDetails	= "Show extended reputation detail frame"	
-RPH_TXT.gainToChat	= "Write detailed faction gain messages to chat window"	
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"	
 RPH_TXT.noGuildGain	= "Do not write to chat for guild reputation"	
 RPH_TXT.suppressOriginalGain	= "Supress original faction gain messages"	
 RPH_TXT.showPreviewRep	= "Show reputation that can be handed in in reputation frame"	

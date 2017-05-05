@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Azzera contatore guadagno sessione"
 -- options dialog	
 RPH_TXT.showMissing	= "Mostra reputazione mancante nella cornice reputazione"
 RPH_TXT.extendDetails	= "Mostra estesa reputazione telaio dettaglio"
-RPH_TXT.gainToChat	= "Scrivi dettagliati messaggi guadagno fazione stanno finestra"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "Non scrivere per chattare reputazione gilda"
 RPH_TXT.suppressOriginalGain	= "Sopprimere originali messaggi guadagno fazione"
 RPH_TXT.showPreviewRep	= "Mostra reputazione che può essere consegnata in cornice reputazione"

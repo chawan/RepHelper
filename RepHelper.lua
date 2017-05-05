@@ -325,7 +325,6 @@ function RPH:Init()
 	changed = changed + RPH:InitVariable("ExtendDetails", true)
 	changed = changed + RPH:InitVariable("WriteChatMessage", true)
 	changed = changed + RPH:InitVariable("NoGuildGain", true)
-	changed = changed + RPH:InitVariable("SuppressOriginalChat", true)
 	changed = changed + RPH:InitVariable("ShowPreviewRep", true)
 	changed = changed + RPH:InitVariable("SwitchFactionBar", true)
 	changed = changed + RPH:InitVariable("SilentSwitch", true)
@@ -360,7 +359,6 @@ function RPH:Init()
 	RPH_ExtendDetailsBoxText:SetText(RPH_TXT.extendDetails)
 	RPH_GainToChatBoxText:SetText(RPH_TXT.gainToChat)
 	RPH_NoGuildGainBoxText:SetText(RPH_TXT.noGuildGain)
-	RPH_SupressOriginalGainBoxText:SetText(RPH_TXT.suppressOriginalGain)
 	RPH_ShowPreviewRepBoxText:SetText(RPH_TXT.showPreviewRep)
 	RPH_SwitchFactionBarBoxText:SetText(RPH_TXT.switchFactionBar)
 	RPH_NoGuildSwitchBoxText:SetText(RPH_TXT.noGuildSwitch)
@@ -453,8 +451,6 @@ function RPH_SlashHandler(msg)
 					elseif (wordsLower[1]=="chat") then
 						FD_SH.WriteChatMessage = true
 						FD_SH.NoGuildGain = false
-					elseif (wordsLower[1]=="suppress") then
-						FD_SH.SuppressOriginalChat = true
 					elseif (wordsLower[1]=="preview") then
 						FD_SH.ShowPreviewRep = true
 					elseif (wordsLower[1]=="bar") then
@@ -473,7 +469,6 @@ function RPH_SlashHandler(msg)
 						FD_SH.ExtendDetails = true
 						FD_SH.WriteChatMessage = true
 						FD_SH.NoGuildGain = false
-						FD_SH.SuppressOriginalChat = true
 						FD_SH.ShowPreviewRep = true
 						FD_SH.SwitchFactionBar = true
 						FD_SH.NoGuildSwitch = false
@@ -511,8 +506,6 @@ function RPH_SlashHandler(msg)
 					elseif (wordsLower[1]=="chat") then
 						FD_SH.WriteChatMessage = false
 						FD_SH.NoGuildGain = false
-					elseif (wordsLower[1]=="suppress") then
-						FD_SH.SuppressOriginalChat = false
 					elseif (wordsLower[1]=="preview") then
 						FD_SH.ShowPreviewRep = false
 					elseif (wordsLower[1]=="bar") then
@@ -531,7 +524,6 @@ function RPH_SlashHandler(msg)
 						FD_SH.ExtendDetails = false
 						FD_SH.WriteChatMessage = false
 						FD_SH.NoGuildGain = false
-						FD_SH.SuppressOriginalChat = false
 						FD_SH.ShowPreviewRep = false
 						FD_SH.SwitchFactionBar = false
 						FD_SH.NoGuildSwitch = false
@@ -569,8 +561,6 @@ function RPH_SlashHandler(msg)
 					elseif (wordsLower[1]=="chat") then
 						FD_SH.WriteChatMessage = not FD_SH.WriteChatMessage
 						FD_SH.NoGuildGain = false
-					elseif (wordsLower[1]=="suppress") then
-						FD_SH.SuppressOriginalChat = not FD_SH.SuppressOriginalChat
 					elseif (wordsLower[1]=="preview") then
 						FD_SH.ShowPreviewRep = not FD_SH.ShowPreviewRep
 					elseif (wordsLower[1]=="preview") then
@@ -589,7 +579,6 @@ function RPH_SlashHandler(msg)
 						FD_SH.ExtendDetails = not FD_SH.ExtendDetails
 						FD_SH.WriteChatMessage = not FD_SH.WriteChatMessage
 						FD_SH.NoGuildGain = false
-						FD_SH.SuppressOriginalChat = not FD_SH.SuppressOriginalChat
 						FD_SH.ShowPreviewRep = not FD_SH.ShowPreviewRep
 						FD_SH.SwitchFactionBar = not FD_SH.SwitchFactionBar
 						FD_SH.NoGuildSwitch = false
@@ -788,9 +777,9 @@ function RPH:Help() --xxx
 	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph enable { mobs | quests | instances | items | all }", true)
 	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph disable { mobs | quests | instances | items | all }", true)
 	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph toggle { mobs | quests | instances | items | all }", true)
-	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph enable { missing | details | chat | suppress | paragon }", true)
-	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph disable { missing | details | chat | suppress | paragon}", true)
-	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph toggle { missing | details | chat | suppress | paragon}" , true)
+	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph enable { missing | details | chat | paragon }", true)
+	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph disable { missing | details | chat | paragon}", true)
+	RPH:Print(RPH_Help_COLOUR..RPH_TXT.usage..":|r /rph toggle { missing | details | chat | paragon}" , true)
 end
 ------------------------------------------------------------
 function RPH:About()
@@ -827,7 +816,6 @@ function RPH:Status()
 	RPH:Print("   "..RPH_TXT.statChat..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.WriteChatMessage).."|r", true)
 
 	RPH:Print("   "..RPH_TXT.statNoGuildChat..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.NoGuildGain).."|r", true)
-	RPH:Print("   "..RPH_TXT.statSuppress..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.SuppressOriginalChat).."|r", true)
 	RPH:Print("   "..RPH_TXT.statPreview..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.ShowPreviewRep).."|r", true)
 	RPH:Print("   "..RPH_TXT.statSwitch..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.SwitchFactionBar).."|r", true)
 	RPH:Print("   "..RPH_TXT.statNoGuildSwitch..": "..RPH_Help_COLOUR..RPH:BoolToEnabled(RPH_Data.NoGuildSwitch).."|r", true)
@@ -2705,7 +2693,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
 			SetCVar("showArtifactXPBar", false)
 		end
 		MainMenuBar_UpdateExperienceBars();
-		
+
 		ReputationFrame_Update(); -- rfl functions
 	end
 end
@@ -2747,7 +2735,7 @@ function RPH_ChatFilter(chatFrame, event, ...) -- chatFrame = self
 
 	local msg, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13 = ...;
 	local skip = false
-	if (RPH_Data.SuppressOriginalChat and event) then
+	if (RPH_Data.WriteChatMessage and event) then
 
 		if (event == "CHAT_MSG_COMBAT_FACTION_CHANGE") then
 			skip = true
@@ -3344,7 +3332,6 @@ function RPH_OnShowOptionFrame()
 	RPH_ExtendDetailsBox:SetChecked(RPH_Data.ExtendDetails)
 	RPH_GainToChatBox:SetChecked(RPH_Data.WriteChatMessage)
 	RPH_NoGuildGainBox:SetChecked(RPH_Data.NoGuildGain)
-	RPH_SupressOriginalGainBox:SetChecked(RPH_Data.SuppressOriginalChat)
 	RPH_ShowPreviewRepBox:SetChecked(RPH_Data.ShowPreviewRep)
 	RPH_SwitchFactionBarBox:SetChecked(RPH_Data.SwitchFactionBar)
 	RPH_NoGuildSwitchBox:SetChecked(RPH_Data.NoGuildSwitch)
@@ -3368,7 +3355,6 @@ function RPH_OnLoadOptions(panel)
 	RPH_OptionExtendDetailsCBText:SetText(RPH_TXT.extendDetails)
 	RPH_OptionGainToChatCBText:SetText(RPH_TXT.gainToChat)
 	RPH_OptionNoGuildGainCBText:SetText(RPH_TXT.noGuildGain)
-	RPH_OptionSupressOriginalGainCBText:SetText(RPH_TXT.suppressOriginalGain)
 	RPH_OptionShowPreviewRepCBText:SetText(RPH_TXT.showPreviewRep)
 	RPH_OptionSwitchFactionBarCBText:SetText(RPH_TXT.switchFactionBar)
 	RPH_OptionNoGuildSwitchCBText:SetText(RPH_TXT.noGuildSwitch)
@@ -3384,7 +3370,6 @@ function RPH_OnShowOptions(self)
 		RPH_OptionExtendDetailsCB:SetChecked(RPH_Data.ExtendDetails)
 		RPH_OptionGainToChatCB:SetChecked(RPH_Data.WriteChatMessage)
 		RPH_OptionNoGuildGainCB:SetChecked(RPH_Data.NoGuildGain)
-		RPH_OptionSupressOriginalGainCB:SetChecked(RPH_Data.SuppressOriginalChat)
 		RPH_OptionShowPreviewRepCB:SetChecked(RPH_Data.ShowPreviewRep)
 		RPH_OptionSwitchFactionBarCB:SetChecked(RPH_Data.SwitchFactionBar)
 		RPH_OptionNoGuildSwitchCB:SetChecked(RPH_Data.NoGuildSwitch)
@@ -3400,7 +3385,6 @@ function RPH_OptionsOk()
 		RPH_Data.ExtendDetails = RPH_OptionExtendDetailsCB:GetChecked()
 		RPH_Data.WriteChatMessage = RPH_OptionGainToChatCB:GetChecked()
 		RPH_Data.NoGuildGain = RPH_OptionNoGuildGainCB:GetChecked()
-		RPH_Data.SuppressOriginalChat = RPH_OptionSupressOriginalGainCB:GetChecked()
 		RPH_Data.ShowPreviewRep = RPH_OptionShowPreviewRepCB:GetChecked()
 		RPH_Data.SwitchFactionBar = RPH_OptionSwitchFactionBarCB:GetChecked()
 		RPH_Data.NoGuildSwitch = RPH_OptionNoGuildSwitchCB:GetChecked()

@@ -67,7 +67,7 @@ RPH_TXT.clearSessionGain	= "清除会话增益计数器"
 -- options dialog	
 RPH_TXT.showMissing	= "显示缺少的声誉，声誉框架"
 RPH_TXT.extendDetails	= "显示延长声誉细节框架"
-RPH_TXT.gainToChat	= "写详细的派增益消息，聊天窗口"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "不要写聊天公会声望"
 RPH_TXT.suppressOriginalGain	= "剿原派增益消息"
 RPH_TXT.showPreviewRep	= "显示声誉，可以传世的声誉帧"

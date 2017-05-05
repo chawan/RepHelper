@@ -68,7 +68,7 @@ RPH_TXT.clearSessionGain	= "Zähler für diesmal zurücksetzen"
 -- options dialog	
 RPH_TXT.showMissing	= "Fehlenden Ruf im Ruffenster anzeigen"
 RPH_TXT.extendDetails	= "Erweitertes Detailfenster anzeigen"
-RPH_TXT.gainToChat	= "Detaillierte Rufsteigerungen in den Chat schreiben"
+RPH_TXT.gainToChat	= "Replace original faction gain messages with a more detailed version"
 RPH_TXT.noGuildGain	= "Keinen Chat für Gildenruf"
 RPH_TXT.suppressOriginalGain	= "Originalmeldungen zu Rufsteigerung unterdrücken"
 RPH_TXT.showPreviewRep	= "Rufvorschau im Ruffenster zeigen"
