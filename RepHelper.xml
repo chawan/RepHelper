@@ -344,11 +344,18 @@
 					<OnClick>				
 						if ( self:GetChecked() ) then			
 							PlaySound("igMainMenuOptionCheckBoxOn");		
-							SetWatchedFactionIndex(GetSelectedFaction());		
+							SetWatchedFactionIndex(GetSelectedFaction());
+							SetWatchingHonorAsXP(false);
+
+							if (C_ArtifactUI.GetEquippedArtifactInfo()) then
+								SetCVar("showArtifactXPBar", false);
+							end		
 						else			
 							PlaySound("igMainMenuOptionCheckBoxOff");		
-							SetWatchedFactionIndex(0);		
-						end			
+							SetWatchedFactionIndex(0);
+							SetCVar("showArtifactXPBar", true);		
+						end
+						MainMenuBar_UpdateExperienceBars();			
 						ReputationFrame_Update();			
 					</OnClick>				
 					<OnEnter>				
