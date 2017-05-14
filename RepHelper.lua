@@ -3103,7 +3103,7 @@ function RPH_ReputationDetailFrame_IsShown(faction,flag,flag2,i)
 -- ^ rfl _16_ 2
 end
 -- ^ R_D_F_IS v R_D_F
-function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF)
+function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF, isParagon)
 	local name, description, _, _, _, _, atWarWith, canToggleAtWar, _, _, _, isWatched, _, _, _, _ = GetFactionInfo(faction);
 	local gender = UnitSex("player");
 	RPH:BuildUpdateList()
@@ -3111,7 +3111,11 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 	RPH_ReputationDetailFactionName:SetText(name);
 	RPH_ReputationDetailFactionDescription:SetText(description);
 
-	RPH_ReputationDetailStandingName:SetText(factionStandingtext)
+	if isParagon then
+		RPH_ReputationDetailStandingName:SetText("Paragon")
+	else
+		RPH_ReputationDetailStandingName:SetText(factionStandingtext)
+	end
 	local color = FACTION_BAR_COLORS[colorID]
 	RPH_ReputationDetailStandingName:SetTextColor(color.r, color.g, color.b)
 
@@ -3457,6 +3461,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 -- v rfl SBS 1
 		-- get the info for this Faction
 		local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus = GetFactionInfo(OBS_fi_i);
+		local isParagon
 		factionTitle:SetText(name);
 -- ^ rfl SBS 1
 -- v rfl _16_
@@ -3467,6 +3472,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		local origBarValue = barValue
 
 		if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
+			isParagon = true
         	local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         	paragonFrame.factionID = factionID;
         	paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3605,7 +3611,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 				RPH_ReputationDetailFrame_IsShown(OBS_fi_I,flag,1)
 			end
 			if ( RPH_ReputationDetailFrame:IsVisible() ) then 
-				RPH:Rep_Detail_Frame(OBS_fi_i,standingID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF)
+				RPH:Rep_Detail_Frame(OBS_fi_i,standingID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF, isParagon)
 
 -- ^ rfl SBS 6.2
 -- ^ rfl SBS 6
@@ -3640,6 +3646,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 -- v rfl ORO 1
 	-- get the info for this Faction
 	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus = GetFactionInfo(factionIndex);
+	local isParagon
 	factionTitle:SetText(name);
 -- ^ rfl ORO 1
 -- v rfl ORO 2
@@ -3662,6 +3669,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	local origBarValue = barValue
 
 	if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
+		isParagon = true
         local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         paragonFrame.factionID = factionID;
         paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
@@ -3804,7 +3812,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 			RPH_ReputationDetailFrame_IsShown(factionIndex,flag,2)
 		end
 		if ( RPH_ReputationDetailFrame:IsVisible() ) then 
-			RPH:Rep_Detail_Frame(factionIndex,colorIndex,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext,toBFF) 
+			RPH:Rep_Detail_Frame(factionIndex,colorIndex,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext,toBFF, isParagon) 
 -- ^ rfl ORO 6.1
 -- ^ rfl ORO 6
 -- v rfl _17 start line 4
