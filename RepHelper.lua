@@ -2644,7 +2644,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
 	watchName = nil
 	for factionIndex=1, numFactions, 1 do
 		--name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
-		name, _, standingId, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
+		name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
 
 		if(factionID and C_Reputation.IsFactionParagon(factionID)) then
 			local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
@@ -2668,7 +2668,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
 							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
 						elseif (barValue < RPH_StoredRep[name].rep) then
 							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-							-- decreased rep
+							-- decreased rep	
 						end
 						if (RPH_StoredRep[name].standingID ~= standingID) then
 							RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
@@ -3471,6 +3471,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
         	paragonFrame.factionID = factionID;
         	paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
         	local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+			origBarValue = mod(currentValue, threshold);
         	C_Reputation.RequestFactionParagonPreloadRewardData(factionID);
         	paragonFrame.Glow:SetShown(hasRewardPending);
         	paragonFrame.Check:SetShown(hasRewardPending);
@@ -3665,6 +3666,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
         paragonFrame.factionID = factionID;
         paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
         local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+		origBarValue = mod(currentValue, threshold);
         C_Reputation.RequestFactionParagonPreloadRewardData(factionID);
         paragonFrame.Glow:SetShown(hasRewardPending);
         paragonFrame.Check:SetShown(hasRewardPending);
