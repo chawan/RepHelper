@@ -1867,7 +1867,8 @@ function RPH:BuildUpdateList() --xxx
 	end
 
 	local factionIndex = GetSelectedFaction()
-	local faction, description, standingId, barMin, barMax, barValue = GetFactionInfo(factionIndex)
+	--local faction, description, standingId, barMin, barMax, barValue = GetFactionInfo(factionIndex)
+	local faction, description, standingId, barMin, barMax, barValue, _, _, _, _, _, _, _, factionID, _, _ = GetFactionInfo(factionIndex)
 
 	if (faction) then
 		origFaction = faction
@@ -1876,10 +1877,17 @@ function RPH:BuildUpdateList() --xxx
 		if (RPH_FactionMapping[faction]) then
 			faction = RPH_FactionMapping[faction]
 		end
+
+		if(factionID and C_Reputation.IsFactionParagon(factionID)) then
+			local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+		end
+
 		-- Normalize Values
 		local normMax = barMax - barMin
 		local normCurrent = barValue - barMin
 		local repToNext = barMax - barValue
+
 		if (RPH_FactionGain[oFaction]) then
 			local fg_sid=RPH_FactionGain[oFaction][standingId]
 			if (fg_sid) then
@@ -2629,12 +2637,19 @@ function RPH:DumpReputationChangesToChat(initOnly)
 	local factionIndex, watchIndex, watchedIndex, watchName
 	local name, standingID, barMin, barMax, barValue, isHeader, hasRep
 	local RepRemains
+	local factionID
 
 	watchIndex = 0
 	watchedIndex = 0
 	watchName = nil
 	for factionIndex=1, numFactions, 1 do
-		name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
+		--name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
+		name, _, standingId, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
+
+		if(factionID and C_Reputation.IsFactionParagon(factionID)) then
+			local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
+			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+		end
 
 		--if (not isHeader) then
 		if (not isHeader or hasRep) then
@@ -2734,6 +2749,7 @@ function RPH_ChatFilter(chatFrame, event, ...) -- chatFrame = self
 	]]--
 
 	local msg, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13 = ...;
+
 	local skip = false
 	if (RPH_Data.WriteChatMessage and event) then
 
