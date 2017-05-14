@@ -2454,10 +2454,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 		-- World Quest
 		RPH_AddGeneral(2045, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare World Quests", 75, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare Elite World Quests", 75, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
 		RPH_AddGeneral(2045, 1, 8, "Elite World Quests", 75, "Elite World Quests", "Completing elite world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Epic Elite World Quests", 500, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 500 reputation.")
 		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Completing raid world quests with this faction will grant you 500 reputation.")
 
 	-- Court of Farondis 1900
