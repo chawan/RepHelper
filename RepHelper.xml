@@ -364,7 +364,33 @@
 					</OnEnter>				
 					<OnLeave function="GameTooltip_Hide"/>				
 				</Scripts>					
-			</CheckButton>						
+			</CheckButton>
+			<CheckButton name="RPH_ShowDarkmoonFaireButton" inherits="OptionsCheckButtonTemplate">						
+				<Size x="26" y="26"/><Anchors>					
+					<Anchor point="LEFT" relativeTo="RPH_ReputationDetailMainScreenCheckBoxText" relativePoint="RIGHT">				
+					<Offset x="3" y="0"/></Anchor></Anchors>				
+				<HitRectInsets>					
+					<AbsInset left="0" right="0" top="0" bottom="0"/>				
+				</HitRectInsets>									
+				<Scripts>					
+					<OnClick>				
+						RPH_Data.ShowDarkmoonFaire = self:GetChecked()			
+						if ( RPH_Data.ShowDarkmoonFaire ) then			
+							PlaySound("igMainMenuOptionCheckBoxOn");		
+						else			
+							PlaySound("igMainMenuOptionCheckBoxOff");		
+						end			
+						RPH:BuildUpdateList()			
+						RPH_UpdateList_Update()			
+					</OnClick>				
+					<OnEnter>				
+						RPH_ShowHelpToolTip(self, self:GetName())			
+					</OnEnter>				
+					<OnLeave>				
+						GameTooltip:Hide();			
+					</OnLeave>				
+				</Scripts>					
+			</CheckButton>							
 <!--^ set 4-->									
 <!--v set 5-->									
 			<ScrollFrame name="RPH_UpdateListScrollFrame" inherits="FauxScrollFrameTemplate">						
