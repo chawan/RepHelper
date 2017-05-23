@@ -2451,12 +2451,21 @@ function RPH:Quest_Items(itemsNeed, currentQuestTimesBag, currentQuestTimesBagBa
 		QuestItem = {}
 		QuestItem.name = "James"
 	end
-	if (GetItemCount(item, true)==0) then
+	if (GetItemCount(item, true)==0 and select(2, GetCurrencyInfo(item)) == 0) then
 		-- not enough of this item for quest -> set to 0
 		currentQuestTimesBag = 0
 	else
-		local itemBag = GetItemCount(item)
-		local itemTotal = GetItemCount(item, true)
+		local itemBag = 0
+		local itemTotal = 0
+
+		if (GetItemCount(item, true) == 0) then
+			_, itemBag = GetCurrencyInfo(item)
+			itemTotal = itemBag
+		else
+			itemBag = GetItemCount(item)
+			itemTotal = GetItemCount(item, true)
+		end
+
 		local itemBank = itemTotal - itemBag
 		if ((itemBag >= itemsNeed) and (itemsNeed > 0)) then
 			QuestItem.currentTimesBag = floor(itemBag / itemsNeed)
