@@ -3028,6 +3028,11 @@ function RPH:StandingSort()
 	for i=1,numFactions do
 		local name, description, standingID, _, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus= GetFactionInfo(i);
 
+		if(factionID and C_Reputation.IsFactionParagon(factionID) and RPH_Data.ShowParagonBar) then
+			local currentValue, threshold, _, _ = C_Reputation.GetFactionParagonInfo(factionID);
+			barMax, barValue, standingID = threshold, mod(currentValue, threshold), 9;
+		end
+
 		--if (not isHeader) then only list factions, not Faction groups headers
 		if (not isHeader or hasRep) then
 			if not standings[standingID] then
@@ -3062,7 +3067,7 @@ function RPH:StandingSort()
 	if (not RPH_Collapsed) then
 		RPH_Collapsed = {}
 	end
-	for i=8,1, -1 do
+	for i=9,1, -1 do
 	--for i In pairs(standings) do
 		if RPH:TableSize(standings[i]) then
 			if (standings[i]) then
@@ -3470,7 +3475,9 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		RPH_ReputationFrame_SetRowType(factionRow, isChild, OBS_fi.header, hasRep);
 		factionRow.LFGBonusRepButton:SetShown(false);
 		-- display the standingID as Header
-		if (OBS_fi_i == 8) then
+		if (OBS_fi_i == 9) then
+			factionTitle:SetText("Paragon".." ("..tostring(OBS_fi.size)..")");
+		elseif (OBS_fi_i == 8) then
 			factionTitle:SetText(GetText("FACTION_STANDING_LABEL"..OBS_fi_i, gender).." ("..tostring(OBS_fi.size)..")");
 		else
 			factionTitle:SetText(GetText("FACTION_STANDING_LABEL"..OBS_fi_i, gender).." -> "..GetText("FACTION_STANDING_LABEL"..OBS_fi_i+1, gender).." ("..tostring(OBS_fi.size)..")");
