@@ -1577,6 +1577,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddMob(576, 2, 8, "Ragepaw (Rare)", 50, zone.Felwood)
 		RPH_AddMob(576, 2, 8, "Grizzle Snowpaw (Rare)", 50, zone.Winterspring)
 		RPH_AddMob(576, 2, 8, "High Chief Winterfall", 50, zone.Winterspring)
+	-- TODO: Fix wintersaber quest
 	-- Wintersaber Trainers 589
 		--RPH_AddQuest(589, 4, 8, 29037, 1500)
 		--RPH_AddQuest(589, 4, 8, 29035, 1500)

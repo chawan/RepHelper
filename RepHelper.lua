@@ -126,7 +126,7 @@ function RPH_OnLoad(self)
 	SlashCmdList.RPH = RPH_SlashHandler
 
 	RPH_Orig_GetFactionInfo = GetFactionInfo;  -- api function
-	GetFactionInfo = RPH_GetFactionInfo;  -- api function
+	--GetFactionInfo = RPH_GetFactionInfo;  -- api function
 
 	RPH_Orig_ReputationFrame_Update = ReputationFrame_Update -- rfl function
 	ReputationFrame_Update = RPH_ReputationFrame_Update -- rfl function
