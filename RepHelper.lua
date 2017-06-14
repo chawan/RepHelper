@@ -144,8 +144,6 @@ function RPH_OnLoad(self)
 	--ChatFrame_OnEvent = RPH_ChatFrame_OnEvent
 
 	RPH_Orig_StandingText = ReputationFrameStandingLabel:GetText()
-
-	hooksecurefunc("MainMenuBar_UpdateExperienceBars", RPH_MainMenuBar_UpdateExperienceBars)
 end
 
 ------------------------
@@ -1424,18 +1422,6 @@ end
 -----------------------------------
 -- _10_ New Hook Functions --
 -----------------------------------
-function RPH_MainMenuBar_UpdateExperienceBars(level)
-	local name, _, _, _, _, factionID = GetWatchedFactionInfo()
-	
-	if (factionID and C_Reputation.IsFactionParagon(factionID)) then
-		local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
-		local barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
-		
-		ReputationWatchBar.StatusBar:SetAnimatedValues(barValue, barMin, barMax)
-		ReputationWatchBar.OverlayFrame.Text:SetText(name.." "..barValue.." / "..barMax);
-	end
-end
-
 function RPH_GetFactionInfo(factionIndex)
 
 	-- get original information
