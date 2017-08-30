@@ -1598,12 +1598,12 @@ end
 function RPH_ReputationBar_OnClick(self)
 	-- redo from the main Reputation file
 	if ((ReputationDetailFrame:IsVisible() or RPH_ReputationDetailFrame:IsVisible()) and (GetSelectedFaction() == self.index) ) then
-		PlaySound("igMainMenuOptionCheckBoxOff");
+		PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);
 		ReputationDetailFrame:Hide();
 		RPH_ReputationDetailFrame:Hide();
 	else
 		if (self.hasRep) then
-			PlaySound("igMainMenuOptionCheckBoxOn");
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 			RPH_ReputationDetailFrame:Show();
 			SetSelectedFaction(self.index);
 			ReputationDetailFrame:Hide();

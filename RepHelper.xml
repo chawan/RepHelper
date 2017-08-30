@@ -258,7 +258,7 @@
 <!--^ set 3-->									
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOn");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);			
 						HideParentPanel(self);			
 					</OnClick>				
 				</Scripts>					
@@ -283,9 +283,9 @@
 					<OnClick>				
 						FactionToggleAtWar(GetSelectedFaction());			
 						if ( self:GetChecked() ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update();			
 					</OnClick>				
@@ -316,10 +316,10 @@
 					</OnLoad>				
 					<OnClick>				
 						if ( self:GetChecked() ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 							SetFactionInactive(GetSelectedFaction());		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 							SetFactionActive(GetSelectedFaction());		
 						end			
 					</OnClick>				
@@ -343,7 +343,7 @@
 					</OnLoad>				
 					<OnClick>				
 						if ( self:GetChecked() ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 							SetWatchedFactionIndex(GetSelectedFaction());
 							SetWatchingHonorAsXP(false);
 
@@ -351,7 +351,7 @@
 								SetCVar("showArtifactXPBar", false);
 							end		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 							SetWatchedFactionIndex(0);
 							SetCVar("showArtifactXPBar", true);		
 						end
@@ -376,9 +376,9 @@
 					<OnClick>				
 						RPH_Data.ShowDarkmoonFaire = self:GetChecked()			
 						if ( RPH_Data.ShowDarkmoonFaire ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -475,9 +475,9 @@
 					<OnClick>				
 						RPH_Data.ShowQuests = self:GetChecked()			
 						if ( RPH_Data.ShowQuests ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -511,9 +511,9 @@
 					<OnClick>				
 						RPH_Data.ShowInstances = self:GetChecked()			
 						if ( RPH_Data.ShowInstances ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -547,9 +547,9 @@
 					<OnClick>				
 						RPH_Data.ShowMobs = self:GetChecked()			
 						if ( RPH_Data.ShowMobs ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -583,9 +583,9 @@
 					<OnClick>				
 						RPH_Data.ShowItems = self:GetChecked()			
 						if ( RPH_Data.ShowItems ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -619,9 +619,9 @@
 					<OnClick>				
 						RPH_Data.ShowGeneral = self:GetChecked()			
 						if ( RPH_Data.ShowGeneral ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
@@ -648,7 +648,7 @@
 						RPH_Data.ShowMobs = true			
 						RPH_Data.ShowInstances = true			
 						RPH_Data.ShowItems = true			
-						PlaySound("igMainMenuOptionCheckBoxOn");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
 					</OnClick>				
@@ -673,7 +673,7 @@
 						RPH_Data.ShowMobs = nil			
 						RPH_Data.ShowInstances = nil			
 						RPH_Data.ShowItems = nil			
-						PlaySound("igMainMenuOptionCheckBoxOff");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);			
 						RPH:BuildUpdateList()			
 						RPH_UpdateList_Update()			
 					</OnClick>				
@@ -694,7 +694,7 @@
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOn");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);			
 						RPH_ShowUpdateEntries(true)			
 					</OnClick>				
 					<OnEnter>				
@@ -714,7 +714,7 @@
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOff");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);			
 						RPH_ShowUpdateEntries(false)			
 					</OnClick>				
 					<OnEnter>				
@@ -735,7 +735,7 @@
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOff");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);			
 						RPH:SupressNone(false)			
 					</OnClick>				
 					<OnEnter>				
@@ -755,7 +755,7 @@
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOff");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);			
 						RPH:SupressNone(true)			
 					</OnClick>				
 					<OnEnter>				
@@ -776,7 +776,7 @@
 				</Anchors>					
 				<Scripts>					
 					<OnClick>				
-						PlaySound("igMainMenuOptionCheckBoxOff");			
+						PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);			
 						RPH:ClearSessionGain()			
 					</OnClick>				
 					<OnEnter>				
@@ -813,10 +813,10 @@
 		<Scripts>							
 			<OnClick>						
 				if(RPH_OptionsFrame:IsVisible()) then					
-					PlaySound("igMainMenuOptionCheckBoxOff");				
+					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);				
 					RPH_OptionsFrame:Hide();				
 				else					
-					PlaySound("igMainMenuOptionCheckBoxOn");				
+					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);				
 					ReputationDetailFrame:Hide();				
 					RPH_ReputationDetailFrame:Hide();				
 					RPH_OptionsFrame:Show();				
@@ -846,9 +846,9 @@
 			<OnClick>						
 				RPH_Data.SortByStanding = self:GetChecked()					
 				if ( RPH_Data.SortByStanding ) then					
-					PlaySound("igMainMenuOptionCheckBoxOn");				
+					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);				
 				else					
-					PlaySound("igMainMenuOptionCheckBoxOff");				
+					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);				
 				end					
 				ReputationFrame_Update()					
 			</OnClick>						
@@ -952,9 +952,9 @@
 					<OnClick>				
 						RPH_Data.ShowMissing = self:GetChecked()			
 						if ( RPH_Data.ShowMissing ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end	
 						ReputationFrame_Update()		
 					</OnClick>				
@@ -988,9 +988,9 @@
 					<OnClick>				
 						RPH_Data.ExtendDetails = self:GetChecked()			
 						if ( RPH_Data.ExtendDetails ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 					</OnClick>				
 					<OnEnter>				
@@ -1023,9 +1023,9 @@
 					<OnClick>				
 						RPH_Data.WriteChatMessage = self:GetChecked()			
 						if ( RPH_Data.WriteChatMessage ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 					</OnClick>				
 					<OnEnter>				
@@ -1058,9 +1058,9 @@
 					<OnClick>				
 						RPH_Data.NoGuildGain = self:GetChecked()			
 						if ( RPH_Data.NoGuildGain ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 					</OnClick>				
 					<OnEnter>				
@@ -1093,9 +1093,9 @@
 					<OnClick>				
 						RPH_Data.ShowPreviewRep = self:GetChecked()			
 						if ( RPH_Data.ShowPreviewRep ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update()			
 					</OnClick>				
@@ -1129,9 +1129,9 @@
 					<OnClick>				
 						RPH_Data.SwitchFactionBar = self:GetChecked()			
 						if ( RPH_Data.SwitchFactionBar ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update()			
 					</OnClick>				
@@ -1165,9 +1165,9 @@
 					<OnClick>				
 						RPH_Data.SilentSwitch = self:GetChecked()			
 						if ( RPH_Data.SilentSwitch ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update()			
 					</OnClick>				
@@ -1201,9 +1201,9 @@
 					<OnClick>				
 						RPH_Data.NoGuildSwitch = self:GetChecked()			
 						if ( RPH_Data.NoGuildSwitch ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update()			
 					</OnClick>				
@@ -1237,9 +1237,9 @@
 					<OnClick>				
 						RPH_Data.ShowParagonBar = self:GetChecked()			
 						if ( RPH_Data.ShowParagonBar ) then			
-							PlaySound("igMainMenuOptionCheckBoxOn");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);		
 						else			
-							PlaySound("igMainMenuOptionCheckBoxOff");		
+							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
 						ReputationFrame_Update()			
 					</OnClick>				
