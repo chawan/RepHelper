@@ -12,3 +12,4 @@ content.lua
 mapping.lua
 locale.xml
 RepHelper.xml
+RepHelperSkin.lua

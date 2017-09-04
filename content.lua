@@ -2557,7 +2557,44 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		-- Insignia reputation tokens
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
-	
+
+	-- Army of the Light 2165
+		-- Insignia reputation tokens
+		RPH_AddItems(2165, 1, 8, 250, {[152958] = 1})
+		RPH_AddItems(2165, 1, 8, 750, {[152956] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(2165, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Completing supplies needed world quests with this faction will grant you 25 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Completing Supplies Needed: Astral Glory will grant you 10 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Completing work order world quests with this faction will grant you 25 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Completing Work Order: Astral Glory will grant you 10 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Completing Supplies Work Order: Tears of the Naaru will grant you 10 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Completing Work Order: Lightblood Elixirs will grant you 10 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Army of the Light Emissary", 1500, "Army of the Light Emissary", "Completing 4x Army of the Light world quests while the emissary is available will grant you 1500 rep")
+
+		-- Weekly quests
+		RPH_AddGeneral(2165, 1, 8, "Invasion Onslaught Weekly", 250, "Weekly Quest", "Completing the Invasion Onslaight weekly quest will grant you 250 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplying the Antoran Campaign Weekly", 75, "Weekly Quest", "Completing the Supplying the Antoran Campaign weekly quest will grant you 75 reputation.")
+
+	-- Argussian Reach 2170
+		-- Insignia reputation tokens
+		RPH_AddItems(2170, 1, 8, 250, {[152959] = 1})
+		RPH_AddItems(2170, 1, 8, 750, {[152961] = 1})
+
+		-- World Quest
+		RPH_AddGeneral(2170, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Completing supplies needed world quests with this faction will grant you 25 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Completing Supplies Needed: Astral Glory will grant you 10 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Completing work order world quests with this faction will grant you 25 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Completing Work Order: Astral Glory will grant you 10 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Completing Supplies Work Order: Tears of the Naaru will grant you 10 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Completing Work Order: Lightblood Elixirs will grant you 10 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Argussian Reach Emissary", 1500, "Argussian Reach Emissary", "Completing 4x Argussian Reach world quests while the emissary is available will grant you 1500 rep")
+
+		-- Weekly quests
+		RPH_AddGeneral(2170, 1, 8, "Fuel of a Doomed World Weekly", 250, "Weekly Quest", "Completing the Fuel of a Doomed World weekly quest will grant you 250 reputation.")
+
 	-- Dead Factions
 	-- Shen'dralar 809
 		RPH_AddQuest(809, 1, 8, 6, 1)
