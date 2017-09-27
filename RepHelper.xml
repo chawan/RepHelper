@@ -639,7 +639,7 @@
 				<Size x="80" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
-						<Offset x="290" y="20"/>			
+						<Offset x="300" y="20"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
@@ -664,7 +664,7 @@
 				<Size x="80" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
-						<Offset x="290" y="0"/>			
+						<Offset x="300" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
@@ -771,7 +771,7 @@
 				<Size x="220" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPRIGHT" relativeTo="RPH_SupressNoneGlobalButton" relativePoint="BOTTOMLEFT">				
-						<Offset x="-62" y="0"/>			
+						<Offset x="-72" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
