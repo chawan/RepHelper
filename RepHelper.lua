@@ -3178,8 +3178,10 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 
 	if isFriend then
 		if isCappedFriendship ~= true then
+			color = FACTION_BAR_COLORS[8]
 			RPH:Print("NextThreshold: "..nextFriendThreshold)
 			RPH_ReputationDetailStandingNextValue:SetText("(--> "..RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)..")")
+			RPH_ReputationDetailStandingNextValue:SetTextColor(color.r, color.g, color.b)
 		else
 			RPH_ReputationDetailStandingNextValue:SetText("")
 		end
@@ -3505,7 +3507,11 @@ function RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)
 	if RPH_BFFLabels[factionID] ~= nil then
 		return RPH_BFFLabels[factionID][nextFriendThreshold]
 	else 
-		return RPH_BFFLabels[0][nextFriendThreshold]
+		if RPH_BFFLabels[0][nextFriendThreshold] ~=nil then
+			return RPH_BFFLabels[0][nextFriendThreshold]
+		else
+			return ""
+		end
 	end
 end
 
