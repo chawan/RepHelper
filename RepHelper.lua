@@ -16,20 +16,6 @@ RPH_ToExalted[6] = 21000;	-- working on Honored -> Revered, base offset 21k
 RPH_ToExalted[7] = 0;	-- working on Revered -> Exalted, so no base offset
 RPH_ToExalted[8] = 0;	-- already at Exalted -> no offset
 
-RPH_ToBFF = {}	                    --> Friendship levels:
-RPH_ToBFF["Stranger"] = 33600;	    --> 1 - Stranger: 0-8400
-RPH_ToBFF["Acquaintance"] = 25200;	--> 2 - Acquaintance: 8400-16800
-RPH_ToBFF["Buddy"] = 16800;	        --> 3 - Buddy: 16800-25200
-RPH_ToBFF["Friend"] = 8400;	    --> 4 - Friend: 25200-33600
-RPH_ToBFF["Good Friend"] = 0;	--> 5 - Good Friend: 33600-42000
-RPH_ToBFF["Best Friend"] = 0;	--> 6 - Best Friend: 42000-42999
--- Fisherfriend Corbyn
-RPH_ToBFF["Curiosity"] = 25200 --> Acquaintance
-RPH_ToBFF["Non-Threat"] = 16800 --> Buddy
-RPH_ToBFF["Helpful Friend"] = 0 --> Good Friend
--- Nat Pagle
-RPH_ToBFF["Pal"] = 25200 --> Acquaintance
-
 -- Addon constants
 RPH_NAME = "RepHelper"
 RPH_VNMBR = 6020012	-- Number code for this version
@@ -3179,7 +3165,6 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 	if isFriend then
 		if isCappedFriendship ~= true then
 			color = FACTION_BAR_COLORS[8]
-			RPH:Print("NextThreshold: "..nextFriendThreshold)
 			RPH_ReputationDetailStandingNextValue:SetText("(--> "..RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)..")")
 			RPH_ReputationDetailStandingNextValue:SetTextColor(color.r, color.g, color.b)
 		else
@@ -3486,6 +3471,42 @@ function RPH_OptionsDefault()
 	-- nothing to do
 end
 
+function RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, barValue)
+	local RPH_ToBFF = {}
+	RPH_ToBFF[0] = {}	                    --> Friendship levels:
+	RPH_ToBFF[0]["Stranger"] = 33600;	    --> 1 - Stranger: 0-8400
+	RPH_ToBFF[0]["Acquaintance"] = 25200;	--> 2 - Acquaintance: 8400-16800
+	RPH_ToBFF[0]["Buddy"] = 16800;	        --> 3 - Buddy: 16800-25200
+	RPH_ToBFF[0]["Friend"] = 8400;	    --> 4 - Friend: 25200-33600
+	RPH_ToBFF[0]["Good Friend"] = 0;	--> 5 - Good Friend: 33600-42000
+	RPH_ToBFF[0]["Best Friend"] = 0;	--> 6 - Best Friend: 42000-42999
+	-- Fisher[0][riend Corbyn
+	RPH_ToBFF[2100]["Stranger"] = 33600;	
+	RPH_ToBFF[2100]["Curiosity"] = 25200 --> Acquaintance
+	RPH_ToBFF[2100]["Non-Threat"] = 16800 --> Buddy
+	RPH_ToBFF[2100]["Friend"] = 8400;	 
+	RPH_ToBFF[2100]["Helpful Friend"] = 0 --> Good Friend
+	RPH_ToBFF[2100]["Best Friend"] = 0;
+	-- Nat Pagle
+	RPH_ToBFF[1358] = {}
+	RPH_ToBFF[1358]["Stranger"] = 33600;
+	RPH_ToBFF[1358]["Pal"] = 25200 --> Acquaintance
+	RPH_ToBFF[1358]["Buddy"] = 16800;
+	RPH_ToBFF[1358]["Friend"] = 8400;
+	RPH_ToBFF[1358]["Good Friend"] = 0;
+	RPH_ToBFF[1358]["Best Friend"] = 0;
+
+	if RPH_ToBFF[factionID] ~= nil then
+		return RPH_ToBFF[factionID][factionStandingtext] + barMax - barValue
+	else
+		if RPH_ToBFF[0][factionStandingtext] ~=nil then
+			return RPH_ToBFF[0][factionStandingtext] + barMax - barValue
+		else
+			return 0
+		end
+	end
+end
+
 function RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)
 	-- Add localization
 	local RPH_BFFLabels = {}
@@ -3611,11 +3632,8 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		end
 
 		local toBFF = 0
-		if (isCappedFriendship ~= true and isFriend and RPH_ToBFF[factionStandingtext] ~= nil) then
-			RPH:Print(factionStandingtext);
-			RPH:Print("barMax: "..barMax.." barValue: "..barValue)
-			toBFF = RPH_ToBFF[factionStandingtext] + barMax - barValue;
-			RPH:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+		if (isCappedFriendship ~= true and isFriend) then
+			toBFF = RPH_GetFriendFactionRemaining(factionid, factionStandingtext, barMax, barValue)
 		end
 
 		factionRow.index = OBS_fi_i;
@@ -3811,11 +3829,8 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	end
 
 	local toBFF = 0
-	if (isCappedFriendship ~= true and isFriend and RPH_ToBFF[factionStandingtext] ~= nil) then
-		RPH:Print(factionStandingtext);
-		RPH:Print("barMax: "..barMax.." barValue: "..barValue)
-		toBFF = RPH_ToBFF[factionStandingtext] + barMax - barValue;
-		RPH:Print("toBFF: "..toBFF.." ID: "..factionID.." toBFF: "..toBFF);
+	if (isCappedFriendship ~= true and isFriend) then
+		toBFF = RPH_GetFriendFactionRemaining(factionid, factionStandingtext, barMax, barValue)
 	end
 
 
