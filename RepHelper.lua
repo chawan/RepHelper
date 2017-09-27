@@ -3481,6 +3481,7 @@ function RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, b
 	RPH_ToBFF[0]["Good Friend"] = 0;	--> 5 - Good Friend: 33600-42000
 	RPH_ToBFF[0]["Best Friend"] = 0;	--> 6 - Best Friend: 42000-42999
 	-- Fisher[0][riend Corbyn
+	RPH_ToBFF[2100] = {}
 	RPH_ToBFF[2100]["Stranger"] = 33600;	
 	RPH_ToBFF[2100]["Curiosity"] = 25200 --> Acquaintance
 	RPH_ToBFF[2100]["Non-Threat"] = 16800 --> Buddy
