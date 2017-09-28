@@ -2666,6 +2666,8 @@ function RPH:DumpReputationChangesToChat(initOnly)
 			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
 		end
 
+		 friendID, _, _, _, _, _, friendTextLevel, _, _ = GetFriendshipReputation(factionID)
+
 		--if (not isHeader) then
 		if (not isHeader or hasRep) then
 			if (isWatched) then
@@ -2686,7 +2688,11 @@ function RPH:DumpReputationChangesToChat(initOnly)
 							-- decreased rep	
 						end
 						if (RPH_StoredRep[name].standingID ~= standingID) then
-							RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
+							if friendID == nil then
+								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
+							else 
+								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, friendTextLevel, name))
+							end
 						end
 					end
 				end
