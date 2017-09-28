@@ -21,7 +21,7 @@
 		<Color r="0.5" g="0.5" b="0.5"/>							
 	</Font>								
 	<Button name="RPH_UpdateEntryTemplate" hidden="true" virtual="true">								
-		<Size x="360" y="16"/>							
+		<Size x="430" y="16"/>							
 		<Layers>							
 			<Layer level="OVERLAY">						
 				<!-->Expand/Collaps button<-->					
@@ -37,12 +37,12 @@
 					<Size x="40" y="16"/><Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="40" y="0"/></Anchor></Anchors>				
 				</FontString>					
 				<FontString name="$parentName" inherits="DetailFontWhite" justifyH="LEFT">					
-					<Size x="250" y="16"/>				
+					<Size x="320" y="16"/>				
 					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="80" y="0"/></Anchor></Anchors>				
 				</FontString>					
 				<FontString name="$parentRep" inherits="DetailFontWhite" justifyH="RIGHT">					
 					<Size x="30" y="16"/>				
-					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="330" y="0"/></Anchor></Anchors>				
+					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="400" y="0"/></Anchor></Anchors>				
 				</FontString>					
 				<!-->Common parts for item entries<-->					
 				<FontString name="$parentItemTimes" inherits="DetailFontGrey" justifyH="RIGHT">					
@@ -87,7 +87,7 @@
 									
 <!--v set 1-->									
 	<Frame name="RPH_ReputationDetailFrame" parent="ReputationFrame" enableMouse="true" hidden="true">								
-		<Size x="412" y="520"/>							
+		<Size x="482" y="520"/>							
 		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationFrame" relativePoint="TOPRIGHT"><Offset x="0" y="0"/></Anchor></Anchors>							
 		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">							
 			<BackgroundInsets><AbsInset left="11" right="12" top="12" bottom="11"/></BackgroundInsets>						
@@ -111,7 +111,7 @@
 				</Texture>					
 <!--^ set 1-->									
 				<Texture name="RPH_DetailBg2" file="Interface\PaperDollInfoFrame\UI-Character-Reputation-DetailBackground">					
-					<Size x="278" y="128"/>				
+					<Size x="375" y="128"/>				
 					<Anchors><Anchor point="TOPLEFT" relativeTo="RPH_DetailBg" relativePoint="TOPRIGHT"><Offset x="-70" y="0"/></Anchor></Anchors>				
 				</Texture>					
 				<FontString name="RPH_ReputationDetailStandingName" inherits="GameFontNormalSmall" justifyH="LEFT">					
@@ -217,16 +217,16 @@
 					<Size x="32" y="32"/><Anchors><Anchor point="TOPRIGHT"><Offset x="-6" y="-7"/></Anchor></Anchors>				
 				</Texture>					
 				<Texture name="RPH_ReputationDetailDivider" file="Interface\DialogFrame\UI-DialogBox-Divider">					
-					<Size x="522" y="32"/><Anchors><Anchor point="TOPLEFT"><Offset x="9" y="-131"/></Anchor></Anchors>				
+					<Size x="615" y="32"/><Anchors><Anchor point="TOPLEFT"><Offset x="9" y="-131"/></Anchor></Anchors>				
 				</Texture>					
 <!--^ set 2-->									
 				<Texture name="RPH_ReputationDetailDivider2" file="Interface\DialogFrame\UI-DialogBox-Divider">					
-					<Size x="522" y="32"/><Anchors>				
+					<Size x="615" y="32"/><Anchors>				
 						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="0"/></Anchor></Anchors>				
 				</Texture>					
 				<Texture name="RPH_ReputationDetailDivider3" file="Interface\DialogFrame\UI-DialogBox-Divider">					
-					<Size x="522" y="32"/><Anchors>				
+					<Size x="615" y="32"/><Anchors>				
 						<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">			
 					<Offset x="0" y="-193"/></Anchor></Anchors>				
 				</Texture>					
@@ -394,7 +394,7 @@
 <!--^ set 4-->									
 <!--v set 5-->									
 			<ScrollFrame name="RPH_UpdateListScrollFrame" inherits="FauxScrollFrameTemplate">						
-				<Size x="360" y="208"/><Anchors>					
+				<Size x="430" y="208"/><Anchors>					
 					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider2" relativePoint="BOTTOMLEFT">				
 					<Offset x="5" y="15"/></Anchor></Anchors>				
 				<Scripts>					
@@ -639,7 +639,7 @@
 				<Size x="80" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
-						<Offset x="230" y="20"/>			
+						<Offset x="300" y="20"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
@@ -664,7 +664,7 @@
 				<Size x="80" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPLEFT" relativeTo="RPH_ReputationDetailDivider3" relativePoint="BOTTOMLEFT">				
-						<Offset x="230" y="0"/>			
+						<Offset x="300" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
@@ -771,7 +771,7 @@
 				<Size x="220" y="20" />					
 				<Anchors>					
 					<Anchor point="TOPRIGHT" relativeTo="RPH_SupressNoneGlobalButton" relativePoint="BOTTOMLEFT">				
-						<Offset x="-5" y="0"/>			
+						<Offset x="-72" y="0"/>			
 								</Anchor>	
 				</Anchors>					
 				<Scripts>					
