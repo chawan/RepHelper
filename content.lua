@@ -2558,6 +2558,24 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
 
+	-- Ilyssia of the Waters 2097
+		RPH_AddItems(1975, 1, 8, 75, {[146848] = 1})
+
+	-- Corbyn 2100
+		RPH_AddItems(2100, 1, 8, 75, {[146961] = 1})
+
+	-- Impus 2102
+		RPH_AddItems(2102, 1, 8, 75, {[146963] = 1})
+	
+	-- Sha'leth 2101
+		RPH_AddItems(2101, 1, 8, 75, {[146962] = 1})
+
+	-- Keeper Raynae 2098
+		RPH_AddItems(2090, 1, 8, 75, {[146959] = 1})
+
+	-- Akule Riverhorn 2099
+		RPH_AddItems(2099, 1, 8, 75, {[146960] = 1})
+
 	-- Army of the Light 2165
 		-- Insignia reputation tokens
 		RPH_AddItems(2165, 1, 8, 250, {[152958] = 1})
