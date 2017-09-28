@@ -2559,7 +2559,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
 
 	-- Ilyssia of the Waters 2097
-		RPH_AddItems(1975, 1, 8, 75, {[146848] = 1})
+		RPH_AddItems(2097, 1, 8, 75, {[146848] = 1})
 
 	-- Corbyn 2100
 		RPH_AddItems(2100, 1, 8, 75, {[146961] = 1})
@@ -2571,7 +2571,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddItems(2101, 1, 8, 75, {[146962] = 1})
 
 	-- Keeper Raynae 2098
-		RPH_AddItems(2090, 1, 8, 75, {[146959] = 1})
+		RPH_AddItems(2098, 1, 8, 75, {[146959] = 1})
 
 	-- Akule Riverhorn 2099
 		RPH_AddItems(2099, 1, 8, 75, {[146960] = 1})
