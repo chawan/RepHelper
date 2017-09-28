@@ -3524,6 +3524,14 @@ function RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)
 	RPH_BFFLabels[0][33600] = "Good Friend"
 	RPH_BFFLabels[0][42000] = "Best Friend"
 
+	-- Corbyn
+	RPH_BFFLabels[1358] = {}
+	RPH_BFFLabels[1358][8400] = "Curiosity"
+	RPH_BFFLabels[1358][16800] = "Non-Threat"
+	RPH_BFFLabels[1358][25200] = "Friend"
+	RPH_BFFLabels[1358][33600] = "Helpful Friend"
+	RPH_BFFLabels[1358][42000] = "Best Friend"
+
 	-- Nat Pagle
 	RPH_BFFLabels[1358] = {}
 	RPH_BFFLabels[1358][8400] = "Pal"
