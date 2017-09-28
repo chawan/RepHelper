@@ -2576,6 +2576,9 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	-- Akule Riverhorn 2099
 		RPH_AddItems(2099, 1, 8, 75, {[146960] = 1})
 
+	-- Talons Vengeance 2018
+		RPH_AddItems(2018, 1, 8, 100, {[142363] = 1})
+
 	-- Army of the Light 2165
 		-- Insignia reputation tokens
 		RPH_AddItems(2165, 1, 8, 250, {[152958] = 1})
