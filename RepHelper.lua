@@ -1883,6 +1883,12 @@ function RPH:BuildUpdateList() --xxx
 			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
 		end
 
+		local friendID, _, _, _, _, _, _, _, _ = GetFriendshipReputation(factionID);
+
+		if friendID ~= nil and barMax == 43000 then
+			barMax = 42000
+		end
+
 		-- Normalize Values
 		local normMax = barMax - barMin
 		local normCurrent = barValue - barMin
