@@ -3129,7 +3129,7 @@ function RPH_ReputationDetailFrame_IsShown(faction,flag,flag2,i)
 -- ^ rfl _16_ 2
 end
 -- ^ R_D_F_IS v R_D_F
-function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF, isParagons, isFriend, isCappedFriendship)
+function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,standingID,toExalted,factionStandingtext, toBFF, isParagon, isFriend, isCappedFriendship)
 	local name, description, _, _, _, _, atWarWith, canToggleAtWar, _, _, _, isWatched, _, factionID, _, _ = GetFactionInfo(faction);
 	local friendInfo
 	local friendID, friendRep, friendMaxRep, friendName, friendText, friendTextLevel, nextFriendThreshold
@@ -3196,7 +3196,8 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 
 	if isFriend then
 		if (isCappedFriendship ~= true) then
-			RPH_ReputationDetailStandingToExaltedHeader:SetText(RPH_TXT.toExalted)
+			-- Add to localization file sometime
+			RPH_ReputationDetailStandingToExaltedHeader:SetText("Reputation to max")
 			RPH_ReputationDetailStandingToExaltedValue:SetText(toBFF)
 		else
 			RPH_ReputationDetailStandingToExaltedHeader:SetText("")
@@ -3205,7 +3206,7 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 	else
 		if (standingID <7) then
 			-- Add to localization file sometime
-			RPH_ReputationDetailStandingToExaltedHeader:SetText("Reputation to max")
+			RPH_ReputationDetailStandingToExaltedHeader:SetText(RPH_TXT.toExalted)
 			RPH_ReputationDetailStandingToExaltedValue:SetText(toExalted)
 		else
 			RPH_ReputationDetailStandingToExaltedHeader:SetText("")
