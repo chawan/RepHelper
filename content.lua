@@ -2445,8 +2445,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 	-- Legion Factions
 	-- Armies of Legionfall 2045
 		-- Insignia reputation tokens
-		RPH_AddItems(2045, 1, 8, 250, {[146949] = 1})
-		RPH_AddItems(2045, 1, 8, 750, {[147727] = 1})
+		RPH_AddItems(2045, 1, 8, 250, {[146949] = 1}, {[146950] = 1})
+		RPH_AddItems(2045, 1, 8, 750, {[147727] = 1}, {[152464] = 1})
 
 		-- Building contributions
 		RPH_AddQuest(2045, 1, 8, 46277, 150, {[1342] = 100})
@@ -2464,8 +2464,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
-		RPH_AddItems(1900, 1, 8, 250, {[146937] = 1})
-		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1})
+		RPH_AddItems(1900, 1, 8, 250, {[146937] = 1}, {[146943] = 1})
+		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1}, {[150927] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2480,8 +2480,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Dreamweavers 1883
 		-- Insignia reputation tokens
-		RPH_AddItems(1883, 1, 8, 250, {[146936] = 1})
-		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1})
+		RPH_AddItems(1883, 1, 8, 250, {[146936] = 1}, {[146942] = 1})
+		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1}, {[150926] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1883, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2495,8 +2495,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Highmountain Tribe 1828
 		-- Insignia reputation tokens
-		RPH_AddItems(1828, 1, 8, 250, {[146938] = 1})
-		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1})
+		RPH_AddItems(1828, 1, 8, 250, {[146938] = 1}, {[146944] = 1})
+		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1}, {[150928] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1828, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2511,8 +2511,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- The Nightfallen 1859
 		-- Insignia reputation tokens
-		RPH_AddItems(1859, 1, 8, 250, {[146940] = 1})
-		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1})
+		RPH_AddItems(1859, 1, 8, 250, {[146940] = 1}, {[146946] = 1})
+		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1}, {[150930] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1859, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2526,8 +2526,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- The Wardens 1894
 		-- Insignia reputation tokens
-		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1})
-		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1})
+		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1, {[146945] = 1}})
+		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1}, {[150929] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1894, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2540,8 +2540,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Valarjar 1948
 		-- Insignia reputation tokens
-		RPH_AddItems(1948, 1, 8, 250, {[146935] = 1})
-		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1})
+		RPH_AddItems(1948, 1, 8, 250, {[146935] = 1}, {[146941] = 1})
+		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1}, {[150925] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(1948, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
@@ -2554,7 +2554,6 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 		RPH_AddGeneral(1948, 1, 8, "Valarjar Emissary", 1500, "Valarjar Emissary", "Completing 4x Valarjar world quests while the emissary is available will grant you 1500 rep")
 
 	-- Conjurer Margoss 1975
-		-- Insignia reputation tokens
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
 		RPH_AddItems(1975, 1, 8, 500, {[138777] = 10})
 
@@ -2581,8 +2580,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Army of the Light 2165
 		-- Insignia reputation tokens
-		RPH_AddItems(2165, 1, 8, 250, {[152958] = 1})
-		RPH_AddItems(2165, 1, 8, 750, {[152956] = 1})
+		RPH_AddItems(2165, 1, 8, 250, {[152958] = 1}, {[152957] = 1})
+		RPH_AddItems(2165, 1, 8, 750, {[152956] = 1}, {[152955] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(2165, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")
@@ -2600,8 +2599,8 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- Argussian Reach 2170
 		-- Insignia reputation tokens
-		RPH_AddItems(2170, 1, 8, 250, {[152959] = 1})
-		RPH_AddItems(2170, 1, 8, 750, {[152961] = 1})
+		RPH_AddItems(2170, 1, 8, 250, {[152959] = 1}, {[152960] = 1})
+		RPH_AddItems(2170, 1, 8, 750, {[152961] = 1}, {[152954] = 1})
 
 		-- World Quest
 		RPH_AddGeneral(2170, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")

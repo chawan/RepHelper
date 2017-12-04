@@ -269,6 +269,18 @@ function RPH_OnUpdate(self)
 	end
 end
 
+function RPH:DumpTable(o)
+	if type(o) == 'table' then
+	   local s = '{ '
+	   for k,v in pairs(o) do
+		  if type(k) ~= 'number' then k = '"'..k..'"' end
+		  s = s .. '['..k..'] = ' .. RPH:DumpTable(v) .. ','
+	   end
+	   return s .. '} '
+	else
+	   return tostring(o)
+	end
+end
 
 -------------------------------
 -- _04_ Addon Initialization --
@@ -1282,7 +1294,7 @@ function RPH_AddInstance(faction, from, to, name, rep, heroic)
 	end
 end
 
-function RPH_AddItems(faction, from, to, rep, itemList)
+function RPH_AddItems(faction, from, to, rep, itemList, alternativeItemList)
 
 --[[--	if not faction then return end
 	if not from then return end
@@ -1335,6 +1347,13 @@ function RPH_AddItems(faction, from, to, rep, itemList)
 			add_count.items = {}
 			for item in pairs(itemList) do
 				add_count.items[item] = itemList[item]
+			end
+		end
+
+		if (alternativeItemList) then
+			add_count.alternativeItems = {}
+			for item in pairs(alternativeItemList) do
+				add_count.alternativeItems[item] = alternativeItemList[item]
 			end
 		end
 		RPH:Debug("AddItem: Added items ["..itemString.."] for faction ["..faction.."] and standing [".._G["FACTION_STANDING_LABEL"..standing].."]")
@@ -2152,7 +2171,7 @@ function RPH:BuildUpdateList() --xxx
 									FUL_I.currentTimesBag = currentQuestTimesBag
 									FUL_I.currentRepBag = currentQuestTimesBag * FUL_I.rep
 									RPH_CurrentRepInBag = RPH_CurrentRepInBag + FUL_I.currentRepBag
-									FUL_I.name = FUL_I.originalName
+									--FUL_I.name = FUL_I.originalName
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBag, " ")
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBag))
@@ -2305,10 +2324,28 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, fg_sid_x_d.items[item].."x", RPH:InitItemName(item))
 
 								FUL_II, currentQuestTimesBag, currentQuestTimesBagBank = RPH:Quest_Items(fg_sid_x_d.items[item], currentQuestTimesBag, currentQuestTimesBagBank, FUL_II, item)
+								if fg_sid_x_d.alternativeItems ~= nil then
+									for altItem in pairs(fg_sid_x_d.alternativeItems) do
+										temp_FUL_II, temp_currentQuestTimesBag, temp_currentQuestTimesBagBank = RPH:Quest_Items(fg_sid_x_d.alternativeItems[altItem], -1, -1, FUL_II, altItem)
+
+										if temp_currentQuestTimesBagBank > 0 then
+											if currentQuestTimesBagBank < 0 then
+												currentQuestTimesBagBank = temp_currentQuestTimesBagBank
+											else
+												currentQuestTimesBagBank = currentQuestTimesBagBank + temp_currentQuestTimesBagBank
+											end
+										end
+
+										if temp_currentQuestTimesBag > 0 then
+											currentQuestTimesBag = currentQuestTimesBag + temp_currentQuestTimesBag
+										end
+									end
+								end
 
 								RPH_UpdateList[itemIndex] = FUL_II
 								itemIndex = itemIndex + 1
 							end
+
 							if (currentQuestTimesBag > 0) then
 								FUL_I.highlight = true
 								FUL_I.lowlight = nil
@@ -2321,11 +2358,8 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBag, " ")
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBag))
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBag))
-							else
-								FUL_I.currentTimesBag = nil
-								FUL_I.currentRepBag = nil
-								FUL_I.highlight = nil
 							end
+							
 							if (currentQuestTimesBagBank > 0) then
 								FUL_I.highlight = true
 								FUL_I.lowlight = nil
@@ -2342,12 +2376,9 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBagBank, " ")
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBagBank))
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBagBank))
-							else
-								FUL_I.currentTimesBagBank = nil
-								FUL_I.currentRepBagBank = nil
-								FUL_I.highlight = nil
 							end
-							if ((currentQuestTimesBag == 0) and (currentQuestTimesBagBank)) then
+
+							if ((currentQuestTimesBag == 0) and (currentQuestTimesBagBank > 0 == false)) then
 								FUL_I.highlight = nil
 							end
 
@@ -2469,7 +2500,8 @@ function RPH:Quest_Items(itemsNeed, currentQuestTimesBag, currentQuestTimesBagBa
 			currentQuestTimesBag = 0
 			QuestItem.name = QuestItem.name.." ["..itemBag.."x]"
 		end
-		if itemBank then
+
+		if itemBank > 0 then
 			if ((itemTotal >= itemsNeed) and (itemsNeed > 0)) then
 				QuestItem.name = QuestItem.name..RPH_BAG_BANK_COLOUR.." ["..itemTotal.."x]|r"
 				QuestItem.currentTimesBagBank = floor(itemTotal / itemsNeed)
