@@ -2327,7 +2327,7 @@ function RPH:BuildUpdateList() --xxx
 								if fg_sid_x_d.alternativeItems ~= nil then
 									for altItem in pairs(fg_sid_x_d.alternativeItems) do
 										temp_FUL_II, temp_currentQuestTimesBag, temp_currentQuestTimesBagBank = RPH:Quest_Items(fg_sid_x_d.alternativeItems[altItem], -1, -1, FUL_II, altItem)
-
+										
 										if temp_currentQuestTimesBagBank > 0 then
 											if currentQuestTimesBagBank < 0 then
 												currentQuestTimesBagBank = temp_currentQuestTimesBagBank
@@ -2504,7 +2504,7 @@ function RPH:Quest_Items(itemsNeed, currentQuestTimesBag, currentQuestTimesBagBa
 		if itemBank > 0 then
 			if ((itemTotal >= itemsNeed) and (itemsNeed > 0)) then
 				QuestItem.name = QuestItem.name..RPH_BAG_BANK_COLOUR.." ["..itemTotal.."x]|r"
-				QuestItem.currentTimesBagBank = floor(itemTotal / itemsNeed)
+				QuestItem.currentTimesBagBank = floor(itemBank / itemsNeed)
 				if (currentQuestTimesBagBank == -1) then
 					-- first items for this quest --> take value
 					currentQuestTimesBagBank = QuestItem.currentTimesBagBank
