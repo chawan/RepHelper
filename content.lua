@@ -2526,7 +2526,7 @@ zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
 
 	-- The Wardens 1894
 		-- Insignia reputation tokens
-		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1, {[146945] = 1}})
+		RPH_AddItems(1894, 1, 8, 250, {[146939] = 1}, {[146945] = 1})
 		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1}, {[150929] = 1})
 
 		-- World Quest
