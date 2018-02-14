@@ -348,7 +348,7 @@ function RPH:Init()
 			timeout = 0,
 			whileDead = 1,
 			hideOnEscape = 1,
-			sound = "igQuestFailed",
+			sound = SOUNDKIT.IG_QUEST_LOG_ABANDON_QUEST,
 		};
 		StaticPopup_Show("RPH_CONFIG_CHANGED");
 	end
