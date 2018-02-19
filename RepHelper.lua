@@ -99,6 +99,7 @@ RPH_IsHeroic=false
 RPH_GuildName = nil
 -- Garrison Trading post level 3
 RPH_HasTradingPost = false
+RPH_OnLoadingScreen = false
 
 ------------------------
 -- _02_ Addon Startup --
@@ -111,6 +112,8 @@ function RPH_OnLoad(self)
 	self:RegisterEvent("VARIABLES_LOADED")
 	self:RegisterEvent("PLAYER_ENTERING_WORLD")
 	self:RegisterEvent("PLAYER_LOGIN")
+	self:RegisterEvent("LOADING_SCREEN_ENABLED")
+	self:RegisterEvent("LOADING_SCREEN_DISABLED")
 
 	-- Slash commands for CLI
 	SLASH_RPH1 = "/rephelper"
@@ -143,6 +146,15 @@ end
 ------------------------
 
 function RPH_OnEvent(self, event, ...)
+
+	if (event== "LOADING_SCREEN_ENABLED") then
+		RPH_OnLoadingScreen = true
+	end
+
+	if (event == "LOADING_SCREEN_DISABLED") then
+		RPH_OnLoadingScreen = false
+	end
+
 	local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13 = ...
 	if (event == "ADDON_LOADED") and (arg1 == RPH_NAME) then
 		RPH_Main:UnregisterEvent("ADDON_LOADED")
@@ -1454,63 +1466,65 @@ end
 -- RPH_RepFrame_Up Start
 --- v rfl 1
 function RPH_ReputationFrame_Update() --rfl
-	ReputationFrame.paragonFramesPool:ReleaseAll();
--- v rfl 1.1
-	local numFactions
-	if RPH_Data.SortByStanding then
-		RPH:StandingSort()
-		numFactions = RPH_OBS_numFactions
-	else
--- ^ rfl 1.1
-		numFactions = GetNumFactions();
--- v rfl 1.2
-	end
--- ^ rfl 1.2
-	-- Update scroll frame
-	if ( not FauxScrollFrame_Update(ReputationListScrollFrame, numFactions, NUM_FACTIONS_DISPLAYED, REPUTATIONFRAME_FACTIONHEIGHT ) ) then
-		ReputationListScrollFrameScrollBar:SetValue(0);
-	end
-	local factionOffset = FauxScrollFrame_GetOffset(ReputationListScrollFrame);
--- v rfl 1.3
-	if (RPH_Data.ShowMissing) then
-		ReputationFrameStandingLabel:SetText(RPH_Orig_StandingText.." "..RPH_TXT.missing)
-	else
-		ReputationFrameStandingLabel:SetText(RPH_Orig_StandingText)
-	end
--- ^ rfl 1.3
-	local gender = UnitSex("player");
-	local lfgBonusFactionID = GetLFGBonusFactionID();
-
-	local i;
-	for i=1, NUM_FACTIONS_DISPLAYED, 1 do
-		local factionIndex = factionOffset + i;
-		local factionRow = _G["ReputationBar"..i];
-		local factionBar = _G["ReputationBar"..i.."ReputationBar"];
-		local factionTitle = _G["ReputationBar"..i.."FactionName"];
-		local factionButton = _G["ReputationBar"..i.."ExpandOrCollapseButton"];
-		local factionStanding = _G["ReputationBar"..i.."ReputationBarFactionStanding"];
-		local factionBackground = _G["ReputationBar"..i.."Background"];
--- v rfl 1.4
-		local factionBarPreview = _G["RPH_StatusBar"..i];
--- ^ rfl 1.4
-		if ( factionIndex <= numFactions ) then
--- v rfl _9_ rep Main window
+	if (RPH_OnLoadingScreen == false) then
+		ReputationFrame.paragonFramesPool:ReleaseAll();
+		-- v rfl 1.1
+			local numFactions
 			if RPH_Data.SortByStanding then
-				RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+				RPH:StandingSort()
+				numFactions = RPH_OBS_numFactions
 			else
-				RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+		-- ^ rfl 1.1
+				numFactions = GetNumFactions();
+		-- v rfl 1.2
 			end
--- ^ rfl _9_ Rep Main Window
-		else
-			factionRow:Hide();
+		-- ^ rfl 1.2
+			-- Update scroll frame
+			if ( not FauxScrollFrame_Update(ReputationListScrollFrame, numFactions, NUM_FACTIONS_DISPLAYED, REPUTATIONFRAME_FACTIONHEIGHT ) ) then
+				ReputationListScrollFrameScrollBar:SetValue(0);
+			end
+			local factionOffset = FauxScrollFrame_GetOffset(ReputationListScrollFrame);
+		-- v rfl 1.3
+			if (RPH_Data.ShowMissing) then
+				ReputationFrameStandingLabel:SetText(RPH_Orig_StandingText.." "..RPH_TXT.missing)
+			else
+				ReputationFrameStandingLabel:SetText(RPH_Orig_StandingText)
+			end
+		-- ^ rfl 1.3
+			local gender = UnitSex("player");
+			local lfgBonusFactionID = GetLFGBonusFactionID();
+		
+			local i;
+			for i=1, NUM_FACTIONS_DISPLAYED, 1 do
+				local factionIndex = factionOffset + i;
+				local factionRow = _G["ReputationBar"..i];
+				local factionBar = _G["ReputationBar"..i.."ReputationBar"];
+				local factionTitle = _G["ReputationBar"..i.."FactionName"];
+				local factionButton = _G["ReputationBar"..i.."ExpandOrCollapseButton"];
+				local factionStanding = _G["ReputationBar"..i.."ReputationBarFactionStanding"];
+				local factionBackground = _G["ReputationBar"..i.."Background"];
+		-- v rfl 1.4
+				local factionBarPreview = _G["RPH_StatusBar"..i];
+		-- ^ rfl 1.4
+				if ( factionIndex <= numFactions ) then
+		-- v rfl _9_ rep Main window
+					if RPH_Data.SortByStanding then
+						RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+					else
+						RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+					end
+		-- ^ rfl _9_ Rep Main Window
+				else
+					factionRow:Hide();
+				end
+			end
+			if ( GetSelectedFaction() == 0 ) then
+				ReputationDetailFrame:Hide();
+		-- v rfl 1.5
+				RPH_ReputationDetailFrame:Hide();
+		-- ^ rfl 1.5
+			end
 		end
-	end
-	if ( GetSelectedFaction() == 0 ) then
-		ReputationDetailFrame:Hide();
--- v rfl 1.5
-		RPH_ReputationDetailFrame:Hide();
--- ^ rfl 1.5
-	end
 end
 -- ^ rfl 1
 
@@ -3831,19 +3845,19 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 -- v rfl ORO 4
 	
 	local origBarValue = barValue
-
+	
 	if ( factionID and C_Reputation.IsFactionParagon(factionID) ) then
 		isParagon = true
         local paragonFrame = ReputationFrame.paragonFramesPool:Acquire();
         paragonFrame.factionID = factionID;
         paragonFrame:SetPoint("RIGHT", factionRow, 11, 0);
-        local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
+		local currentValue, threshold, rewardQuestID, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID);
 		origBarValue = mod(currentValue, threshold);
         C_Reputation.RequestFactionParagonPreloadRewardData(factionID);
         paragonFrame.Glow:SetShown(hasRewardPending);
         paragonFrame.Check:SetShown(hasRewardPending);
         paragonFrame:Show();
-      end
+	  end
       local isCapped;
       if (standingID == MAX_REPUTATION_REACTION) then
         isCapped = true;
