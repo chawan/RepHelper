@@ -4,7 +4,7 @@
 			RPH_ToggleConfigWindow()
 		end
 	</Binding>
-	<Binding name="SHOWDETAILS" header="REPHELPER" runOnUp="true">
+	<Binding name="SHOWDETAILS" runOnUp="true">
 		if ( keystate == "down" ) then
 			RPH_ToggleDetailWindow()
 		end
