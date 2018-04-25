@@ -2766,13 +2766,8 @@ function RPH:DumpReputationChangesToChat(initOnly)
 			end
 		end
 		-- choose Faction to show
-		SetWatchedFactionIndex(watchIndex)
-		SetWatchingHonorAsXP(false)
-		
-		if (C_ArtifactUI.GetEquippedArtifactInfo()) then
-			SetCVar("showArtifactXPBar", false)
-		end
-		MainMenuBar_UpdateExperienceBars();
+		SetWatchedFactionIndex(watchIndex)		
+		StatusTrackingBarManager:UpdateBarsShown();
 
 		ReputationFrame_Update(); -- rfl functions
 	end
