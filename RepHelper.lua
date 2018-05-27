@@ -3701,7 +3701,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 
 		local toBFF = 0
 		if (isCappedFriendship ~= true and isFriend) then
-			toBFF = RPH_GetFriendFactionRemaining(factionid, factionStandingtext, barMax, barValue)
+			toBFF = RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, barValue)
 		end
 
 		factionRow.index = OBS_fi_i;
@@ -3898,7 +3898,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 
 	local toBFF = 0
 	if (isCappedFriendship ~= true and isFriend) then
-		toBFF = RPH_GetFriendFactionRemaining(factionid, factionStandingtext, barMax, barValue)
+		toBFF = RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, barValue)
 	end
 
 
