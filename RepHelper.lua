@@ -3531,40 +3531,9 @@ function RPH_OptionsDefault()
 end
 
 function RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, barValue)
-	local RPH_ToBFF = {}
-	RPH_ToBFF[0] = {}	                    --> Friendship levels:
-	RPH_ToBFF[0]["Stranger"] = 33600;	    --> 1 - Stranger: 0-8400
-	RPH_ToBFF[0]["Acquaintance"] = 25200;	--> 2 - Acquaintance: 8400-16800
-	RPH_ToBFF[0]["Buddy"] = 16800;	        --> 3 - Buddy: 16800-25200
-	RPH_ToBFF[0]["Friend"] = 8400;	    --> 4 - Friend: 25200-33600
-	RPH_ToBFF[0]["Good Friend"] = 0;	--> 5 - Good Friend: 33600-42000
-	RPH_ToBFF[0]["Best Friend"] = 0;	--> 6 - Best Friend: 42000-42999
-	-- Fisher[0][riend Corbyn
-	RPH_ToBFF[2100] = {}
-	RPH_ToBFF[2100]["Stranger"] = 33600;	
-	RPH_ToBFF[2100]["Curiosity"] = 25200 --> Acquaintance
-	RPH_ToBFF[2100]["Non-Threat"] = 16800 --> Buddy
-	RPH_ToBFF[2100]["Friend"] = 8400;	 
-	RPH_ToBFF[2100]["Helpful Friend"] = 0 --> Good Friend
-	RPH_ToBFF[2100]["Best Friend"] = 0;
-	-- Nat Pagle
-	RPH_ToBFF[1358] = {}
-	RPH_ToBFF[1358]["Stranger"] = 33600;
-	RPH_ToBFF[1358]["Pal"] = 25200 --> Acquaintance
-	RPH_ToBFF[1358]["Buddy"] = 16800;
-	RPH_ToBFF[1358]["Friend"] = 8400;
-	RPH_ToBFF[1358]["Good Friend"] = 0;
-	RPH_ToBFF[1358]["Best Friend"] = 0;
+	local _, friendRep, friendMaxRep, _, _, _, _, _, _ = GetFriendshipReputation(factionID);
 
-	if RPH_ToBFF[factionID] ~= nil then
-		return RPH_ToBFF[factionID][factionStandingtext] + barMax - barValue
-	else
-		if RPH_ToBFF[0][factionStandingtext] ~=nil then
-			return RPH_ToBFF[0][factionStandingtext] + barMax - barValue
-		else
-			return 0
-		end
-	end
+	return friendMaxRep - friendRep;
 end
 
 function RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold)
