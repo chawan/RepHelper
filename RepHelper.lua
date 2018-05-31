@@ -3532,6 +3532,12 @@ end
 
 function RPH_GetFriendFactionRemaining(factionID, factionStandingtext, barMax, barValue)
 	local _, friendRep, friendMaxRep, _, _, _, _, _, _ = GetFriendshipReputation(factionID);
+	local bodyguards = {1738, 1740, 1733, 1741, 1737, 1736, 1739} 
+
+	-- WoD bodyguards are capped at 20k reputation but GetFriendshipReputation still returns 42k reputation as maximum so we need to check for that and set max to 20k
+	if tContains(bodyguards, factionID) then
+		friendMaxRep = 20000
+	end
 
 	return friendMaxRep - friendRep;
 end
