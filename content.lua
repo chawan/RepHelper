@@ -357,13 +357,14 @@ zone.Vault_of_the_Wardens = 1045		-- Vault of the Wardens
 zone.Violet_Hold = 1066					-- Violet Hold
 zone.Return_to_Karazhan = 1115			-- Return to Karazhan
 zone.Cathedral_of_Eternal_Night = 1146	-- Cathedral of Eternal Night
+zone.Seat_of_The_Triumvirate = 1178		-- Seat of the Triumvirate	
 
 -- Legion Raids
 zone.The_Emerald_Nightmare = 1094		-- The Emerald Nightmare
 zone.Trial_of_Valor = 1114				-- Trial of Valor
 zone.The_Nighthold = 1088				-- The Nighthold
 zone.Tomb_of_Sargeras = 1147			-- Tomb of Sargeras
-
+zone.Antorus_the_Burning_Throne = 1188  -- Antorus, the Burning Throne
 
 	if (RPH_IsAlliance) then
 	-- Aliance Cities
