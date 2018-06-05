@@ -380,8 +380,7 @@
 						else			
 							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 						end			
-						RPH:BuildUpdateList()			
-						RPH_UpdateList_Update()			
+						RPH:ToggleDarkmoonFaireBuff()
 					</OnClick>				
 					<OnEnter>				
 						RPH_ShowHelpToolTip(self, self:GetName())			
@@ -1357,13 +1356,11 @@
 			<Frame name="RPH_OptionEnableMissing" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOP"><Offset y="-10"/></Anchor></Anchors>					
 			</Frame>						
-									
-									
+														
 			<Frame name="RPH_OptionExtendDetails" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionEnableMissing"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
-									
-									
+																
 			<Frame name="RPH_OptionGainToChat" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionExtendDetails"><Offset y="-30"/></Anchor></Anchors>					
 			</Frame>						
@@ -1371,9 +1368,7 @@
 			<Frame name="RPH_OptionNoGuildGain" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionGainToChat"><Offset x="25" y="-20"/></Anchor></Anchors>					
 			</Frame>						
-									
-					
-									
+												
 			<Frame name="RPH_OptionShowPreviewRep" inherits="RPH_SingleOptionTemplate">						
 				<Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="RPH_OptionNoGuildGain"><Offset x="-25" y="-30"/></Anchor></Anchors>					
 			</Frame>						

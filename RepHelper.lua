@@ -433,6 +433,12 @@ function RPH:Init()
 	end
 end
 
+function RPH:ToggleDarkmoonFaireBuff()
+	RPH_FactionGain = {}
+	RPH_InitEnFactionGains()
+	RPH_ReputationFrame_Update()
+end
+
 ------------------------
 -- _05_ Slash Handler --
 ------------------------
@@ -1006,9 +1012,13 @@ function RPH:InitFactor(RPH_IsHuman,faction)
 		if RPH_IsHuman then factor = factor + 0.1 end
 
 	-- WoD Faction trading post bonus
-		if RPH:has_value(draenorFactions, faction) and RPH_HasTradingPost then 
-			factor = factor + 0.2; 
-		end
+	if RPH:has_value(draenorFactions, faction) and RPH_HasTradingPost then 
+		factor = factor + 0.2; 
+	end
+	-- Darkmoon Faire reputation buff setting
+	if RPH_Data.ShowDarkmoonFaire then
+		factor = factor + 0.1
+	end
 
 	-- bonus repgain check
 		local numFactions = GetNumFactions();
@@ -1888,12 +1898,6 @@ function RPH:BuildUpdateList() --xxx
 	RPH_CurrentRepInBagBank = 0
 	RPH_CurrentRepInQuest = 0
 	local index = 1
-	local DMF_Factor = 1
-
-	-- Darkmoon Faire buff toggle is active
-	if RPH_Data.ShowDarkmoonFaire then
-		DMF_Factor = 1.10
-	end
 
 	if (not RPH_ReputationDetailFrame:IsVisible()) then
 		return
@@ -1936,16 +1940,16 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid.instance.count do
 						local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = string.format("%.2f", repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = string.format("%.2f", repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end --zzz
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							local bul_name = RPH:InitMapName(fg_sid_x_d.name)
 							FUL_I.type = RPH_TXT.instanceShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", g_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -1979,15 +1983,15 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid_x.count do
 					local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = ceil(repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.mobShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -2095,15 +2099,15 @@ function RPH:BuildUpdateList() --xxx
 
 					if (showQuest) then
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = ceil(repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.questShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2257,12 +2261,12 @@ function RPH:BuildUpdateList() --xxx
 				end
 				if ((sum > 0) and (count > 1)) then
 					-- add virtual quest to show summary of all quests:
-					local toDo = ceil(repToNext / (DMF_Factor * sum))
+					local toDo = ceil(repToNext / sum)
 					RPH_UpdateList[index] = {}
 					local FUL_I = RPH_UpdateList[index]
 					FUL_I.type = RPH_TXT.questShort
 					FUL_I.times = math.ceil(toDo).."x"
-					FUL_I.rep = string.format("%d", (DMF_Factor * sum))
+					FUL_I.rep = string.format("%d", sum)
 					FUL_I.index = index
 					FUL_I.belongsTo = nil
 					FUL_I.isShown = true
@@ -2288,16 +2292,16 @@ function RPH:BuildUpdateList() --xxx
 				for i = 0, fg_sid_x.count do
 					local fg_sid_x_d=fg_sid_x.data[i]
 					if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-						local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+						local toDo = ceil(repToNext / fg_sid_x_d.rep)
 						if (fg_sid_x_d.limit) then
-							toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+							toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 						end
 						if (fg_sid_x_d.items) then
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.itemsShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2413,16 +2417,16 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid_x.count do
 						local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = string.format("%.2f", repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = string.format("%.2f", repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							-- calculate Number of times to do differently for Guild cap
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.generalShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
