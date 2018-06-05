@@ -435,7 +435,7 @@ end
 
 function RPH:ToggleDarkmoonFaireBuff()
 	RPH_FactionGain = {}
-	RPH_InitEnFactionGains()
+	RPH_InitEnFactionGains(RPH_GuildName)
 	RPH_ReputationFrame_Update()
 end
 
