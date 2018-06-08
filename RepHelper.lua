@@ -60,7 +60,7 @@ RPH_LIMIT_TYPE_Fish = 16
 RPH_Data = {}   -- Data saved between sessions
 -- Initialization
 RPH_Main = nil   -- Main program window
-RPH_InitComplete = nil
+RPH_InitComplete = nil 
 RPH_VarsLoaded = nil
 RPH_InitStages = 0
 RPH_InitCount = 0
@@ -1949,7 +1949,7 @@ function RPH:BuildUpdateList() --xxx
 							local bul_name = RPH:InitMapName(fg_sid_x_d.name)
 							FUL_I.type = RPH_TXT.instanceShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", g_sid_x_d.rep)
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
