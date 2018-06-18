@@ -153,6 +153,7 @@ function RPH_OnEvent(self, event, ...)
 
 	if (event == "LOADING_SCREEN_DISABLED") then
 		RPH_OnLoadingScreen = false
+		RPH:DumpReputationChangesToChat() -- Just to make sure we don't miss printing out any rep gain that occured during the loading screen
 	end
 
 	local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13 = ...
@@ -2697,91 +2698,95 @@ end
 -----------------------------------
 function RPH:DumpReputationChangesToChat(initOnly)
 	if not RPH_StoredRep then RPH_StoredRep = {} end
+	
+	if (RPH_OnLoadingScreen == false) then
+        local numFactions = GetNumFactions();
+        local factionIndex, watchIndex, watchedIndex, watchName
+        local name, standingID, barMin, barMax, barValue, isHeader, hasRep
+        local RepRemains
+        local factionID
 
-	local numFactions = GetNumFactions();
-	local factionIndex, watchIndex, watchedIndex, watchName
-	local name, standingID, barMin, barMax, barValue, isHeader, hasRep
-	local RepRemains
-	local factionID
+        watchIndex = 0
+        watchedIndex = 0
+        watchName = nil
+        for factionIndex=1, numFactions, 1 do
+            --name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
+            name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
 
-	watchIndex = 0
-	watchedIndex = 0
-	watchName = nil
-	for factionIndex=1, numFactions, 1 do
-		--name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
-		name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
+            if(factionID and C_Reputation.IsFactionParagon(factionID)) then
+                local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
+                barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+            end
 
-		if(factionID and C_Reputation.IsFactionParagon(factionID)) then
-			local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
-			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
-		end
+            friendID, _, _, _, _, _, friendTextLevel, _, nextFriendThreshold = GetFriendshipReputation(factionID)
 
-		 friendID, _, _, _, _, _, friendTextLevel, _, _ = GetFriendshipReputation(factionID)
+            --if (not isHeader) then
+            if (not isHeader or hasRep) then
+                if (isWatched) then
+                    watchedIndex = factionIndex
+                end
+                if RPH_StoredRep[name] and not initOnly then
+                    if (RPH_Data.WriteChatMessage) then
+                        if (not RPH_Data.NoGuildGain or name ~= RPH_GuildName) then
+                            local sign=""
+                            if ((barValue-RPH_StoredRep[name].origRep)>0) then
+                                sign = "+"
+                            end
+                            if (barValue > RPH_StoredRep[name].rep) then
+                                -- increased rep
+                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+                                --RPH:Print(RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold))
+                                --RPH:Print(_G["FACTION_STANDING_LABEL"..standingID + 1])
+                            elseif (barValue < RPH_StoredRep[name].rep) then
+                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+                                -- decreased rep
+                            end
+                            if (RPH_StoredRep[name].standingID ~= standingID) then
+                                if friendID == nil then
+                                    RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
+                                else
+                                    RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, friendTextLevel, name))
+                                end
+                            end
+                        end
+                    end
+                    if (RPH_Data.SwitchFactionBar) then
+                        if (not RPH_Data.NoGuildSwitch or name ~= RPH_GuildName) then
+                            if (barValue > RPH_StoredRep[name].rep) then
+                                --RPH:Print("Marking faction ["..tostring(name).."] index ["..tostring(factionIndex).."] for rep watch bar")
+                                watchIndex = factionIndex
+                                watchName = name
+                                --elseif (barValue ~= RPH_StoredRep[name].rep) then
+                                --RPH:Print("Faction ["..tostring(name).."] lost rep")
+                            end
+                        end
+                    end
+                else
+                    RPH_StoredRep[name] = {}
+                    RPH_StoredRep[name].origRep = barValue
+                end
+                RPH_StoredRep[name].standingID = standingID
+                RPH_StoredRep[name].rep = barValue
+            end
+        end
+        if (watchIndex > 0) then
+            if (watchIndex ~= watchedIndex) then
+                if (not RPH_Data.SilentSwitch) then
+                    RPH:Print(RPH_Help_COLOUR..RPH_NAME..":|r "..RPH_TXT.switchBar.." ["..tostring(watchName).."|r]")
+                end
+            end
+            -- choose Faction to show
+            SetWatchedFactionIndex(watchIndex)
+            SetWatchingHonorAsXP(false)
 
-		--if (not isHeader) then
-		if (not isHeader or hasRep) then
-			if (isWatched) then
-				watchedIndex = factionIndex
-			end
-			if RPH_StoredRep[name] and not initOnly then
-				if (RPH_Data.WriteChatMessage) then
-					if (not RPH_Data.NoGuildGain or name ~= RPH_GuildName) then
-						local sign=""
-						if ((barValue-RPH_StoredRep[name].origRep)>0) then
-							sign = "+"
-						end
-						if (barValue > RPH_StoredRep[name].rep) then
-							-- increased rep
-							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-						elseif (barValue < RPH_StoredRep[name].rep) then
-							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-							-- decreased rep	
-						end
-						if (RPH_StoredRep[name].standingID ~= standingID) then
-							if friendID == nil then
-								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
-							else 
-								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, friendTextLevel, name))
-							end
-						end
-					end
-				end
-				if (RPH_Data.SwitchFactionBar) then
-					if (not RPH_Data.NoGuildSwitch or name ~= RPH_GuildName) then
-						if (barValue > RPH_StoredRep[name].rep) then
-							--RPH:Print("Marking faction ["..tostring(name).."] index ["..tostring(factionIndex).."] for rep watch bar")
-							watchIndex = factionIndex
-							watchName = name
-						--elseif (barValue ~= RPH_StoredRep[name].rep) then
-							--RPH:Print("Faction ["..tostring(name).."] lost rep")
-						end
-					end
-				end
-			else
-				RPH_StoredRep[name] = {}
-				RPH_StoredRep[name].origRep = barValue
-			end
-			RPH_StoredRep[name].standingID = standingID
-			RPH_StoredRep[name].rep = barValue
-		end
-	end
-	if (watchIndex > 0) then
-		if (watchIndex ~= watchedIndex) then
-			if (not RPH_Data.SilentSwitch) then
-				RPH:Print(RPH_Help_COLOUR..RPH_NAME..":|r "..RPH_TXT.switchBar.." ["..tostring(watchName).."|r]")
-			end
-		end
-		-- choose Faction to show
-		SetWatchedFactionIndex(watchIndex)
-		SetWatchingHonorAsXP(false)
-		
-		if (C_ArtifactUI.GetEquippedArtifactInfo()) then
-			SetCVar("showArtifactXPBar", false)
-		end
-		MainMenuBar_UpdateExperienceBars();
+            if (C_ArtifactUI.GetEquippedArtifactInfo()) then
+                SetCVar("showArtifactXPBar", false)
+            end
+            MainMenuBar_UpdateExperienceBars();
 
-		ReputationFrame_Update(); -- rfl functions
-	end
+            ReputationFrame_Update(); -- rfl functions
+        end
+    end
 end
 
 function RPH:ClearSessionGain()
