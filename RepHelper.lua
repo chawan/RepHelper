@@ -60,7 +60,7 @@ RPH_LIMIT_TYPE_Fish = 16
 RPH_Data = {}   -- Data saved between sessions
 -- Initialization
 RPH_Main = nil   -- Main program window
-RPH_InitComplete = nil
+RPH_InitComplete = nil 
 RPH_VarsLoaded = nil
 RPH_InitStages = 0
 RPH_InitCount = 0
@@ -153,6 +153,7 @@ function RPH_OnEvent(self, event, ...)
 
 	if (event == "LOADING_SCREEN_DISABLED") then
 		RPH_OnLoadingScreen = false
+		RPH:DumpReputationChangesToChat() -- Just to make sure we don't miss printing out any rep gain that occured during the loading screen
 	end
 
 	local arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13 = ...
@@ -429,6 +430,12 @@ function RPH:Init()
 		end
 
 	end
+end
+
+function RPH:ToggleDarkmoonFaireBuff()
+	RPH_FactionGain = {}
+	RPH_InitEnFactionGains(RPH_GuildName)
+	RPH_ReputationFrame_Update()
 end
 
 ------------------------
@@ -1004,9 +1011,13 @@ function RPH:InitFactor(RPH_IsHuman,faction)
 		if RPH_IsHuman then factor = factor + 0.1 end
 
 	-- WoD Faction trading post bonus
-		if RPH:has_value(draenorFactions, faction) and RPH_HasTradingPost then 
-			factor = factor + 0.2; 
-		end
+	if RPH:has_value(draenorFactions, faction) and RPH_HasTradingPost then 
+		factor = factor + 0.2; 
+	end
+	-- Darkmoon Faire reputation buff setting
+	if RPH_Data.ShowDarkmoonFaire then
+		factor = factor + 0.1
+	end
 
 	-- bonus repgain check
 		local numFactions = GetNumFactions();
@@ -1886,12 +1897,6 @@ function RPH:BuildUpdateList() --xxx
 	RPH_CurrentRepInBagBank = 0
 	RPH_CurrentRepInQuest = 0
 	local index = 1
-	local DMF_Factor = 1
-
-	-- Darkmoon Faire buff toggle is active
-	if RPH_Data.ShowDarkmoonFaire then
-		DMF_Factor = 1.10
-	end
 
 	if (not RPH_ReputationDetailFrame:IsVisible()) then
 		return
@@ -1934,16 +1939,16 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid.instance.count do
 						local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = string.format("%.2f", repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = string.format("%.2f", repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end --zzz
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							local bul_name = RPH:InitMapName(fg_sid_x_d.name)
 							FUL_I.type = RPH_TXT.instanceShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -1977,15 +1982,15 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid_x.count do
 					local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = ceil(repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.mobShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -2093,15 +2098,15 @@ function RPH:BuildUpdateList() --xxx
 
 					if (showQuest) then
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = ceil(repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.questShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2255,12 +2260,12 @@ function RPH:BuildUpdateList() --xxx
 				end
 				if ((sum > 0) and (count > 1)) then
 					-- add virtual quest to show summary of all quests:
-					local toDo = ceil(repToNext / (DMF_Factor * sum))
+					local toDo = ceil(repToNext / sum)
 					RPH_UpdateList[index] = {}
 					local FUL_I = RPH_UpdateList[index]
 					FUL_I.type = RPH_TXT.questShort
 					FUL_I.times = math.ceil(toDo).."x"
-					FUL_I.rep = string.format("%d", (DMF_Factor * sum))
+					FUL_I.rep = string.format("%d", sum)
 					FUL_I.index = index
 					FUL_I.belongsTo = nil
 					FUL_I.isShown = true
@@ -2286,16 +2291,16 @@ function RPH:BuildUpdateList() --xxx
 				for i = 0, fg_sid_x.count do
 					local fg_sid_x_d=fg_sid_x.data[i]
 					if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-						local toDo = ceil(repToNext / (DMF_Factor * fg_sid_x_d.rep))
+						local toDo = ceil(repToNext / fg_sid_x_d.rep)
 						if (fg_sid_x_d.limit) then
-							toDo = ceil((fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+							toDo = ceil((fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 						end
 						if (fg_sid_x_d.items) then
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.itemsShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2411,16 +2416,16 @@ function RPH:BuildUpdateList() --xxx
 					for i = 0, fg_sid_x.count do
 						local fg_sid_x_d=fg_sid_x.data[i]
 						if (not fg_sid_x_d.limit or (normCurrent < fg_sid_x_d.limit)) then
-							local toDo = string.format("%.2f", repToNext / (DMF_Factor * fg_sid_x_d.rep))
+							local toDo = string.format("%.2f", repToNext / fg_sid_x_d.rep)
 							if (fg_sid_x_d.limit) then
-								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / (DMF_Factor * fg_sid_x_d.rep))
+								toDo = string.format("%.2f", (fg_sid_x_d.limit - normCurrent) / fg_sid_x_d.rep)
 							end
 							-- calculate Number of times to do differently for Guild cap
 							RPH_UpdateList[index] = {}
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.generalShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", (DMF_Factor * fg_sid_x_d.rep))
+							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2691,86 +2696,88 @@ end
 -----------------------------------
 function RPH:DumpReputationChangesToChat(initOnly)
 	if not RPH_StoredRep then RPH_StoredRep = {} end
+	
+	if (RPH_OnLoadingScreen == false) then
+        local numFactions = GetNumFactions();
+        local factionIndex, watchIndex, watchedIndex, watchName
+        local name, standingID, barMin, barMax, barValue, isHeader, hasRep
+        local RepRemains
+        local factionID
 
-	local numFactions = GetNumFactions();
-	local factionIndex, watchIndex, watchedIndex, watchName
-	local name, standingID, barMin, barMax, barValue, isHeader, hasRep
-	local RepRemains
-	local factionID
+        watchIndex = 0
+        watchedIndex = 0
+        watchName = nil
+        for factionIndex=1, numFactions, 1 do
+            --name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
+            name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
 
-	watchIndex = 0
-	watchedIndex = 0
-	watchName = nil
-	for factionIndex=1, numFactions, 1 do
-		--name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched = GetFactionInfo(factionIndex)
-		name, _, standingID, barMin, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, _, factionID = GetFactionInfo(factionIndex)
+            if(factionID and C_Reputation.IsFactionParagon(factionID)) then
+                local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
+                barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
+            end
 
-		if(factionID and C_Reputation.IsFactionParagon(factionID)) then
-			local currentValue, threshold = C_Reputation.GetFactionParagonInfo(factionID);
-			barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
-		end
+            friendID, _, _, _, _, _, friendTextLevel, _, nextFriendThreshold = GetFriendshipReputation(factionID)
 
-		 friendID, _, _, _, _, _, friendTextLevel, _, _ = GetFriendshipReputation(factionID)
-
-		--if (not isHeader) then
-		if (not isHeader or hasRep) then
-			if (isWatched) then
-				watchedIndex = factionIndex
-			end
-			if RPH_StoredRep[name] and not initOnly then
-				if (RPH_Data.WriteChatMessage) then
-					if (not RPH_Data.NoGuildGain or name ~= RPH_GuildName) then
-						local sign=""
-						if ((barValue-RPH_StoredRep[name].origRep)>0) then
-							sign = "+"
-						end
-						if (barValue > RPH_StoredRep[name].rep) then
-							-- increased rep
-							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-						elseif (barValue < RPH_StoredRep[name].rep) then
-							RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-							-- decreased rep	
-						end
-						if (RPH_StoredRep[name].standingID ~= standingID) then
-							if friendID == nil then
-								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
-							else 
-								RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, friendTextLevel, name))
-							end
-						end
-					end
-				end
-				if (RPH_Data.SwitchFactionBar) then
-					if (not RPH_Data.NoGuildSwitch or name ~= RPH_GuildName) then
-						if (barValue > RPH_StoredRep[name].rep) then
-							--RPH:Print("Marking faction ["..tostring(name).."] index ["..tostring(factionIndex).."] for rep watch bar")
-							watchIndex = factionIndex
-							watchName = name
-						--elseif (barValue ~= RPH_StoredRep[name].rep) then
-							--RPH:Print("Faction ["..tostring(name).."] lost rep")
-						end
-					end
-				end
-			else
-				RPH_StoredRep[name] = {}
-				RPH_StoredRep[name].origRep = barValue
-			end
-			RPH_StoredRep[name].standingID = standingID
-			RPH_StoredRep[name].rep = barValue
-		end
-	end
-	if (watchIndex > 0) then
-		if (watchIndex ~= watchedIndex) then
-			if (not RPH_Data.SilentSwitch) then
-				RPH:Print(RPH_Help_COLOUR..RPH_NAME..":|r "..RPH_TXT.switchBar.." ["..tostring(watchName).."|r]")
-			end
-		end
-		-- choose Faction to show
-		SetWatchedFactionIndex(watchIndex)		
-		StatusTrackingBarManager:UpdateBarsShown();
-
-		ReputationFrame_Update(); -- rfl functions
-	end
+            --if (not isHeader) then
+            if (not isHeader or hasRep) then
+                if (isWatched) then
+                    watchedIndex = factionIndex
+                end
+                if RPH_StoredRep[name] and not initOnly then
+                    if (RPH_Data.WriteChatMessage) then
+                        if (not RPH_Data.NoGuildGain or name ~= RPH_GuildName) then
+                            local sign=""
+                            if ((barValue-RPH_StoredRep[name].origRep)>0) then
+                                sign = "+"
+                            end
+                            if (barValue > RPH_StoredRep[name].rep) then
+                                -- increased rep
+                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+                                --RPH:Print(RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold))
+                                --RPH:Print(_G["FACTION_STANDING_LABEL"..standingID + 1])
+                            elseif (barValue < RPH_StoredRep[name].rep) then
+                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+                                -- decreased rep
+                            end
+                            if (RPH_StoredRep[name].standingID ~= standingID) then
+                                if friendID == nil then
+                                    RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, _G["FACTION_STANDING_LABEL"..standingID], name))
+                                else
+                                    RPH:Print(RPH_NEW_STANDING_COLOUR..string.format(FACTION_STANDING_CHANGED, friendTextLevel, name))
+                                end
+                            end
+                        end
+                    end
+                    if (RPH_Data.SwitchFactionBar) then
+                        if (not RPH_Data.NoGuildSwitch or name ~= RPH_GuildName) then
+                            if (barValue > RPH_StoredRep[name].rep) then
+                                --RPH:Print("Marking faction ["..tostring(name).."] index ["..tostring(factionIndex).."] for rep watch bar")
+                                watchIndex = factionIndex
+                                watchName = name
+                                --elseif (barValue ~= RPH_StoredRep[name].rep) then
+                                --RPH:Print("Faction ["..tostring(name).."] lost rep")
+                            end
+                        end
+                    end
+                else
+                    RPH_StoredRep[name] = {}
+                    RPH_StoredRep[name].origRep = barValue
+                end
+                RPH_StoredRep[name].standingID = standingID
+                RPH_StoredRep[name].rep = barValue
+            end
+        end
+        if (watchIndex > 0) then
+            if (watchIndex ~= watchedIndex) then
+                if (not RPH_Data.SilentSwitch) then
+                    RPH:Print(RPH_Help_COLOUR..RPH_NAME..":|r "..RPH_TXT.switchBar.." ["..tostring(watchName).."|r]")
+                end
+            end
+            -- choose Faction to show
+            SetWatchedFactionIndex(watchIndex)
+			StatusTrackingBarManager:UpdateBarsShown();
+        end
+    end
 end
 
 function RPH:ClearSessionGain()
