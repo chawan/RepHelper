@@ -3,7 +3,6 @@
 	<Include file="Locales\enUS.lua"/>
     <Include file="Locales\deDE.lua"/>
     <Include file="Locales\esES.lua"/>
-    <Include file="Locales\esMX.lua"/>
     <Include file="Locales\frFR.lua"/>
     <Include file="Locales\itIT.lua"/>
     <Include file="Locales\koKR.lua"/>

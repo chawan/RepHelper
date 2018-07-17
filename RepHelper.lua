@@ -185,7 +185,6 @@ function RPH_OnEvent(self, event, ...)
 		RPH_Main:RegisterEvent("PLAYER_DIFFICULTY_CHANGED")
 		-- to keep list of known skills up to date
 		RPH_Main:RegisterEvent("CHAT_MSG_SKILL")
-		RPH_Main:RegisterEvent("CHAT_MSG_SPELL_TRADESKILLS")
 		RPH_Main:RegisterEvent("SKILL_LINES_CHANGED")
 		RPH_Main:RegisterEvent("UPDATE_TRADESKILL_RECAST")
 		RPH_Main:RegisterEvent("QUEST_COMPLETE")
@@ -235,7 +234,6 @@ function RPH_OnEvent(self, event, ...)
 			--RPH:Print("PLAYER_DIFFICULTY_CHANGED", nil) 
 
 	elseif ( event == "CHAT_MSG_SKILL") or
-		( event == "CHAT_MSG_SPELL_TRADESKILLS") or
 		( event == "SKILL_LINES_CHANGED") or
 		( event == "UPDATE_TRADESKILL_RECAST") then
 		RPH:ExtractSkills()
@@ -2777,14 +2775,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
             end
             -- choose Faction to show
             SetWatchedFactionIndex(watchIndex)
-            SetWatchingHonorAsXP(false)
-
-            if (C_ArtifactUI.GetEquippedArtifactInfo()) then
-                SetCVar("showArtifactXPBar", false)
-            end
-            MainMenuBar_UpdateExperienceBars();
-
-            ReputationFrame_Update(); -- rfl functions
+			StatusTrackingBarManager:UpdateBarsShown();
         end
     end
 end
