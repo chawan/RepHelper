@@ -2775,7 +2775,6 @@ function RPH:DumpReputationChangesToChat(initOnly)
             end
             -- choose Faction to show
             SetWatchedFactionIndex(watchIndex)
-			StatusTrackingBarManager:UpdateBarsShown();
         end
     end
 end

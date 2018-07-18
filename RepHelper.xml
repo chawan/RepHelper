@@ -349,7 +349,6 @@
 							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);		
 							SetWatchedFactionIndex(0);
 						end
-						StatusTrackingBarManager:UpdateBarsShown();
 						ReputationFrame_Update();			
 					</OnClick>				
 					<OnEnter>				
