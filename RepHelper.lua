@@ -863,7 +863,7 @@ function RPH:InitMapName(fimap)
 	elseif not fimap then
 		map = " "
 	else
-		local mapName = GetMapNameByID(fimap);
+		local mapName = C_Map.GetMapInfo(fimap).name
 		map = mapName
 	end
 	--- fpt f_imn	RPH:Printtest(fimap,"","map 2")
