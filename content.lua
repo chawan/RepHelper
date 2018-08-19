@@ -492,11 +492,11 @@ zone.The_Nighthold = 764
 	-- Kurenai 978
 		RPH_AddQuest(978, 4, 8, 10476, 500, {[25433] = 10})
 		RPH_AddQuest(978, 4, 8, 11502, 500)
-		RPH_AddMob(978, 4, 8, RPH_TXT.Mob.BoulderfistOgre, 10, zone.Arathi_Highlands) -- Boulderfist Ogre ID=2562
-		RPH_AddMob(978, 4, 8, "Kil'sorrow Deathsworn, Cultist & Spellbinder", 10, zone.Arathi_Highlands)
-		RPH_AddMob(978, 4, 8, "Murkblood Scavenger", 2, zone.Arathi_Highlands)
-		RPH_AddMob(978, 4, 8, "Murkblood ", 10, zone.Arathi_Highlands)
-		RPH_AddMob(978, 4, 8, "Warmaul non-elite", 10, zone.Arathi_Highlands)
+		RPH_AddMob(978, 4, 8, RPH_TXT.Mob.BoulderfistOgre, 10, zone.Nagrand) -- Boulderfist Ogre ID=2562
+		RPH_AddMob(978, 4, 8, "Kil'sorrow Deathsworn, Cultist & Spellbinder", 10, zone.Nagrand)
+		RPH_AddMob(978, 4, 8, "Murkblood Scavenger", 2, zone.Nagrand)
+		RPH_AddMob(978, 4, 8, "Murkblood ", 10, zone.Nagrand)
+		RPH_AddMob(978, 4, 8, "Warmaul non-elite", 10, zone.Nagrand)
 	-- Northrend (WotLK)
 	-- Alliance Vanguard 1037
 	---- spillover from 1068
@@ -1030,11 +1030,11 @@ zone.The_Nighthold = 764
 	-- The Mag'har 941
 		RPH_AddQuest(941, 4, 8, 10479, 500, {[25433] = 10})
 		RPH_AddQuest(941, 4, 8, 11503, 500)
-		RPH_AddMob(941, 4, 8, "Boulderfist ogres", 10, zone.Arathi_Highlands)
-		RPH_AddMob(941, 4, 8, "Kil'sorrow Deathsworn, Cultist & Spellbinder", 10, zone.Arathi_Highlands)
-		RPH_AddMob(941, 4, 8, "Murkblood Scavenger", 2, zone.Arathi_Highlands)
-		RPH_AddMob(941, 4, 8, "Murkblood ", 10, zone.Arathi_Highlands)
-		RPH_AddMob(941, 4, 8, "Warmaul non-elite", 10, zone.Arathi_Highlands)
+		RPH_AddMob(941, 4, 8, "Boulderfist ogres", 10, zone.Nagrand)
+		RPH_AddMob(941, 4, 8, "Kil'sorrow Deathsworn, Cultist & Spellbinder", 10, zone.Nagrand)
+		RPH_AddMob(941, 4, 8, "Murkblood Scavenger", 2, zone.Nagrand)
+		RPH_AddMob(941, 4, 8, "Murkblood ", 10, zone.Nagrand)
+		RPH_AddMob(941, 4, 8, "Warmaul non-elite", 10, zone.Nagrand)
 	-- Tranquillien 922
 		RPH_AddQuest(922, 4, 8, 9217, 500, {[22641] = 10})
 		RPH_AddQuest(922, 4, 8, 9219, 500, {[22642] = 10})
