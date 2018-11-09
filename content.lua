@@ -2631,26 +2631,25 @@ zone.The_Nighthold = 764
 			
 			-- 7th Legion
 			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2159, 1, 8, "7th Legion", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available will grant you 1500 rep")
-
+			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available will grant you 1500 rep")
 		end
 
 		if (RPH_IsHorde) then
 			-- Zandalari Empire
 			RPH_AddGeneral(2103, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire", 1500, "Zandalari Empire Emissary", "Completing 4x Zandalari Empire world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire Emissary", 1500, "Zandalari Empire Emissary", "Completing 4x Zandalari Empire world quests while the emissary is available will grant you 1500 rep")
 
 			-- Talanji's Expedition
 			RPH_AddGeneral(2156, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition", 1500, "Talanji's Expedition Emissary", "Completing 4x Talanji's Expedition world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition Emissary", 1500, "Talanji's Expedition Emissary", "Completing 4x Talanji's Expedition world quests while the emissary is available will grant you 1500 rep")
 		
 			-- Voldunai
 			RPH_AddGeneral(2158, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2158, 1, 8, "Voldunai", 1500, "Voldunai Emissary", "Completing 4x Voldunai world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2158, 1, 8, "Voldunai Emissary", 1500, "Voldunai Emissary", "Completing 4x Voldunai world quests while the emissary is available will grant you 1500 rep")
 
 			-- The Honorbound
 			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2157, 1, 8, "The Honorbound", 1500, "The Honorbound Emissary", "Completing 4x The Honorbound world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Completing 4x The Honorbound world quests while the emissary is available will grant you 1500 rep")
 		end
 	-- Dead Factions
 	-- Shen'dralar 809
