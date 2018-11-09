@@ -2605,6 +2605,53 @@ zone.The_Nighthold = 764
 		-- Weekly quests
 		RPH_AddGeneral(2170, 1, 8, "Fuel of a Doomed World Weekly", 250, "Weekly Quest", "Completing the Fuel of a Doomed World weekly quest will grant you 250 reputation.")
 
+	-- Battle for Azeroth
+
+	-- Champions of Azeroth
+		RPH_AddGeneral(2164, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+		RPH_AddGeneral(2164, 1, 8, "Champions of Azeroth Emissary", 1500, "Champions of Azeroth Emissary", "Completing 4x Champions of Azeroth world quests while the emissary is available will grant you 1500 rep")
+	
+	-- Tortollan Seekers
+		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers", 175, "World Quests", "Completing world quests with this faction will grant you 175 reputation")
+		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers Emissary", 1500, "Tortollan Seekers Emissary", "Completing 3x Tortollan Seekers world quests while the emissary is available will grant you 1500 rep")
+		
+
+		if (RPH_IsAlliance) then
+			-- Proudmoore Admiralty
+			RPH_AddGeneral(2160, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2160, 1, 8, "Proudmoore Admiralty Emissary", 1500, "Proudmoore Admiralty Emissary", "Completing 4x Proudmoore Admiralty world quests while the emissary is available will grant you 1500 rep")
+
+			-- Order of Embers
+			RPH_AddGeneral(2161, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2161, 1, 8, "Order of Embers Emissary", 1500, "Order of Embers Emissary", "Completing 4x Order of Embers world quests while the emissary is available will grant you 1500 rep")
+		
+			-- Storm's Wake
+			RPH_AddGeneral(2162, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2162, 1, 8, "Storm's Wake Emissary", 1500, "Storm's Wake Emissary", "Completing 4x Storm's Wake world quests while the emissary is available will grant you 1500 rep")
+			
+			-- 7th Legion
+			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2159, 1, 8, "7th Legion", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available will grant you 1500 rep")
+
+		end
+
+		if (RPH_IsHorde) then
+			-- Zandalari Empire
+			RPH_AddGeneral(2103, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire", 1500, "Zandalari Empire Emissary", "Completing 4x Zandalari Empire world quests while the emissary is available will grant you 1500 rep")
+
+			-- Talanji's Expedition
+			RPH_AddGeneral(2156, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition", 1500, "Talanji's Expedition Emissary", "Completing 4x Talanji's Expedition world quests while the emissary is available will grant you 1500 rep")
+		
+			-- Voldunai
+			RPH_AddGeneral(2158, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2158, 1, 8, "Voldunai", 1500, "Voldunai Emissary", "Completing 4x Voldunai world quests while the emissary is available will grant you 1500 rep")
+
+			-- The Honorbound
+			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
+			RPH_AddGeneral(2157, 1, 8, "The Honorbound", 1500, "The Honorbound Emissary", "Completing 4x The Honorbound world quests while the emissary is available will grant you 1500 rep")
+		end
 	-- Dead Factions
 	-- Shen'dralar 809
 		RPH_AddQuest(809, 1, 8, 6, 1)
