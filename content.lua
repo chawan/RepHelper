@@ -2632,6 +2632,7 @@ zone.The_Nighthold = 764
 			-- 7th Legion
 			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
 			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2159, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Completing any warfront contribution quest when available will grant you 150 reputation")
 		end
 
 		if (RPH_IsHorde) then
@@ -2650,6 +2651,7 @@ zone.The_Nighthold = 764
 			-- The Honorbound
 			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
 			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Completing 4x The Honorbound world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2157, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Completing any warfront contribution quest when available will grant you 150 reputation")
 		end
 	-- Dead Factions
 	-- Shen'dralar 809
