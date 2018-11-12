@@ -864,8 +864,8 @@ zone.The_Nighthold = 764
 		RPH_AddMob(1731, 1, 8, "Darktide Machinist/Windstalker at Darktide Roost", 8, zone.Shadowmoon_Valley);
 		-- Wrynn's Vanguard 1682
 		RPH_AddItems(1682, 1, 8, 1000, {[128315] = 1})
-		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
-		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
+		RPH_AddGeneral(1682, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Kill the enemy faction leader to gain 2500 reputation")
+		RPH_AddGeneral(1682, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Win a bonus objective to gain 500 reputation")
 		RPH_AddQuest(1682, 1, 8, 35927, 2500, {[112015] = 1})
 		RPH_AddQuest(1682, 1, 8, 35942, 2500, {[112113] = 1})
 		RPH_AddQuest(1682, 1, 8, 35941, 2500, {[112120] = 1})
@@ -1389,8 +1389,8 @@ zone.The_Nighthold = 764
 		-- Vol'jin's Spear 1681
 		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
 		RPH_AddItems(1681, 1, 8, 1000, {[128315] = 1})
-		RPH_AddGeneral(1681, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Killing the enemy faction leader will grant you 2500 reputation")
-		RPH_AddGeneral(1681, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Winning a bonus objective will grant you 500 reputation")
+		RPH_AddGeneral(1681, 1, 8, "Kill enemy faction leader", 2500, "Kill enemy faction leader", "Kill the enemy faction leader to gain 2500 reputation")
+		RPH_AddGeneral(1681, 1, 8, "Win a bonus objective", 500, "Win a bonus objective", "Win a bonus objective to gain 500 reputation")
 		RPH_AddQuest(1681, 1, 8, 36884, 2500, {[112119] = 1})
 		RPH_AddQuest(1681, 1, 8, 36041, 2500, {[112121] = 1})
 		RPH_AddQuest(1681, 1, 8, 36033, 2500, {[112124] = 1})
@@ -2444,13 +2444,13 @@ zone.The_Nighthold = 764
 		RPH_AddQuest(2045, 1, 8, 46735, 150, {[1342] = 100})
 
 		-- World Quest
-		RPH_AddGeneral(2045, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Rare World Quests", 75, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Rare Elite World Quests", 75, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Elite World Quests", 75, "Elite World Quests", "Completing elite world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Legionfall Dungeon World Quest", 250, "Legionfall Dungeon World Quest", "Completing dungeon world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "World Boss World Quest", 500, "World Boss World Quest", "Completing world boss world quests with this faction will grant you 500 reputation.")
-		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Completing raid world quests with this faction will grant you 500 reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare World Quests", 75, "Rare World Quests", "Complete rare world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Rare Elite World Quests", 75, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Elite World Quests", 75, "Elite World Quests", "Complete elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Legionfall Dungeon World Quest", 250, "Legionfall Dungeon World Quest", "Complete dungeon world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "World Boss World Quest", 500, "World Boss World Quest", "Complete world boss world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Complete raid world quests with this faction to gain reputation.")
 
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
@@ -2458,15 +2458,15 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1900, 1, 8, 1500, {[147410] = 1}, {[150927] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Elite World Quests", 250, "Elite World Quests", "Completing elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1900, 1, 8, "Court of Farondins Emissary", 1500, "Court of Farondins Emissary", "Completing 4x Court of Farondis world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1900, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Complete PvP world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Elite World Quests", 250, "Elite World Quests", "Complete elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1900, 1, 8, "Court of Farondins Emissary", 1500, "Court of Farondins Emissary", "Complete 4x Court of Farondis world quests while the emissary is available to gain reputation")
 
 	-- Dreamweavers 1883
 		-- Insignia reputation tokens
@@ -2474,14 +2474,14 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1883, 1, 8, 1500, {[147411] = 1}, {[150926] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1883, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1883, 1, 8, "Dreamweavers Emissary", 1500, "Dreamweavers Emissary", "Completing 4x Dreamweavers world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1883, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Complete PvP world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1883, 1, 8, "Dreamweavers Emissary", 1500, "Dreamweavers Emissary Emissary", "Complete 4x Dreamweavers world quests while the emissary is available to gain reputation")
 
 	-- Highmountain Tribe 1828
 		-- Insignia reputation tokens
@@ -2489,15 +2489,15 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1828, 1, 8, 1500, {[147412] = 1}, {[150928] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1828, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Epic World Quest", 75, "Epic World Quests", "Completing Normal world quests with this faction will grant you 75-350 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1828, 1, 8, "Highmountain Tribe Emissary", 1500, "Highmountain Tribe Emissary", "Completing 4x Highmountain Tribe world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1828, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Complete PvP world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Epic World Quest", 75, "Epic World Quests", "Complete epic world quests with this faction to gain 75-350 reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1828, 1, 8, "Highmountain Tribe Emissary", 1500, "Highmountain Tribe Emissary", "Complete 4x Highmountain Tribe world quests while the emissary is available to gain reputation")
 
 	-- The Nightfallen 1859
 		-- Insignia reputation tokens
@@ -2505,14 +2505,14 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1859, 1, 8, 750, {[147413] = 1}, {[150930] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1859, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150-250 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250-350 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Epic Elite World Quests", 500, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 500 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Dungeon World Quests", 500, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 500 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Raid World Quests", 500, "Raid World Quests", "Completing Raid world quests with this faction will grant you 500 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1859, 1, 8, "The Nightfallen Emissary", 1500, "The Nightfallen Emissary", "Completing 4x Nightfallen world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1859, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain 150-250 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain 250-350 reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Epic Elite World Quests", 500, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Dungeon World Quests", 500, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Raid World Quests", 500, "Raid World Quests", "Complete Raid world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1859, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completework order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1859, 1, 8, "The Nightfallen Emissary", 1500, "The Nightfallen Emissary", "Complete 4x Nightfallen world quests while the emissary is available to gain reputation")
 
 	-- The Wardens 1894
 		-- Insignia reputation tokens
@@ -2520,13 +2520,13 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1894, 1, 8, 1500, {[147415] = 1}, {[150929] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1894, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "Epic Elite World Quests", 350, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 350 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250-500 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1894, 1, 8, "The Wardens Emissary", 1500, "The Wardens Emissary", "Completing 4x Wardens world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1894, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Epic Elite World Quests", 350, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain 250-500 reputation.")
+		RPH_AddGeneral(1894, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1894, 1, 8, "The Wardens Emissary", 1500, "The Wardens Emissary", "Complete 4x Wardens world quests while the emissary is available to gain reputation")
 
 	-- Valarjar 1948
 		-- Insignia reputation tokens
@@ -2534,14 +2534,14 @@ zone.The_Nighthold = 764
 		RPH_AddItems(1948, 1, 8, 1500, {[147414] = 1}, {[150925] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(1948, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Completing Normal world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Completing PvP world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Completing rare world quests with this faction will grant you 150-250 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Completing rare elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Completing epic elite world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Completing dungeon world quests with this faction will grant you 250-500 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Completing work order world quests with this faction will grant you 250 reputation.")
-		RPH_AddGeneral(1948, 1, 8, "Valarjar Emissary", 1500, "Valarjar Emissary", "Completing 4x Valarjar world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(1948, 1, 8, "Normal World Quest", 75, "Normal World Quests", "Complete Normal world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1948, 1, 8, "PvP World Quest", 75, "PvP World Quests", "Complete PvP world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Rare World Quests", 150, "Rare World Quests", "Complete rare world quests with this faction to gain 150-250 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Rare Elite World Quests", 250, "Rare Elite World Quests", "Complete rare elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Epic Elite World Quests", 250, "Epic Elite World Quests", "Complete epic elite world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Dungeon World Quests", 250, "Dungeon World Quests", "Complete dungeon world quests with this faction to gain 250-500 reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Work Order World Quests", 250, "Work Order World Quests", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(1948, 1, 8, "Valarjar Emissary", 1500, "Valarjar Emissary", "Complete 4x Valarjar world quests while the emissary is available to gain reputation")
 
 	-- Conjurer Margoss 1975
 		RPH_AddItems(1975, 1, 8, 50, {[138777] = 1})
@@ -2574,18 +2574,18 @@ zone.The_Nighthold = 764
 		RPH_AddItems(2165, 1, 8, 750, {[152956] = 1}, {[152955] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(2165, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Completing supplies needed world quests with this faction will grant you 25 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Completing Supplies Needed: Astral Glory will grant you 10 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Completing work order world quests with this faction will grant you 25 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Completing Work Order: Astral Glory will grant you 10 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Completing Supplies Work Order: Tears of the Naaru will grant you 10 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Completing Work Order: Lightblood Elixirs will grant you 10 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Army of the Light Emissary", 1500, "Army of the Light Emissary", "Completing 4x Army of the Light world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(2165, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Complete supplies needed world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Complete Supplies Needed: Astral Glory to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Complete Work Order: Astral Glory to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Complete Supplies Work Order: Tears of the Naaru to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Complete Work Order: Lightblood Elixirs to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Army of the Light Emissary", 1500, "Army of the Light Emissary", "Complete 4x Army of the Light world quests while the emissary is available to gain reputation")
 
 		-- Weekly quests
-		RPH_AddGeneral(2165, 1, 8, "Invasion Onslaught Weekly", 250, "Weekly Quest", "Completing the Invasion Onslaight weekly quest will grant you 250 reputation.")
-		RPH_AddGeneral(2165, 1, 8, "Supplying the Antoran Campaign Weekly", 75, "Weekly Quest", "Completing the Supplying the Antoran Campaign weekly quest will grant you 75 reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Invasion Onslaught Weekly", 250, "Weekly Quest", "Complete the Invasion Onslaight weekly quest to gain reputation.")
+		RPH_AddGeneral(2165, 1, 8, "Supplying the Antoran Campaign Weekly", 75, "Weekly Quest", "Complete the Supplying the Antoran Campaign weekly quest to gain reputation.")
 
 	-- Argussian Reach 2170
 		-- Insignia reputation tokens
@@ -2593,65 +2593,67 @@ zone.The_Nighthold = 764
 		RPH_AddItems(2170, 1, 8, 750, {[152961] = 1}, {[152954] = 1})
 
 		-- World Quest
-		RPH_AddGeneral(2170, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Completing supplies needed world quests with this faction will grant you 25 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Completing Supplies Needed: Astral Glory will grant you 10 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Completing work order world quests with this faction will grant you 25 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Completing Work Order: Astral Glory will grant you 10 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Completing Supplies Work Order: Tears of the Naaru will grant you 10 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Completing Work Order: Lightblood Elixirs will grant you 10 reputation.")
-		RPH_AddGeneral(2170, 1, 8, "Argussian Reach Emissary", 1500, "Argussian Reach Emissary", "Completing 4x Argussian Reach world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(2170, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Supplies Needed World Quest", 25, "Supplies Needed World Quest", "Complete supplies needed world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Supplies Needed: Astral Glory", 10, "Supplies Needed: Astral Glory", "Complete Supplies Needed: Astral Glory to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order World Quest", 25, "Work Order World Quest", "Complete work order world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Astral Glory", 10, "Work Order: Astral Glory", "Complete Work Order: Astral Glory to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Tears of the Naaru", 10, "Work Order: Tears of the Naaru", "Complete Supplies Work Order: Tears of the Naaru to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Work Order: Lightblood Elixirs", 10, "Work Order: Lightblood Elixirs", "Complete Work Order: Lightblood Elixirs to gain reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Argussian Reach Emissary", 1500, "Argussian Reach Emissary", "Complete 4x Argussian Reach world quests while the emissary is available to gain reputation")
 
 		-- Weekly quests
-		RPH_AddGeneral(2170, 1, 8, "Fuel of a Doomed World Weekly", 250, "Weekly Quest", "Completing the Fuel of a Doomed World weekly quest will grant you 250 reputation.")
+		RPH_AddGeneral(2170, 1, 8, "Fuel of a Doomed World Weekly", 250, "Weekly Quest", "Complete the Fuel of a Doomed World weekly quest to gain reputation.")
 
 	-- Battle for Azeroth
 
 	-- Champions of Azeroth
-		RPH_AddGeneral(2164, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-		RPH_AddGeneral(2164, 1, 8, "Champions of Azeroth Emissary", 1500, "Champions of Azeroth Emissary", "Completing 4x Champions of Azeroth world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(2164, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2164, 1, 8, "Champions of Azeroth Emissary", 1500, "Champions of Azeroth Emissary", "Complete 4x Champions of Azeroth world quests while the emissary is available to gain reputation")
 	
 	-- Tortollan Seekers
-		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers", 175, "World Quests", "Completing world quests with this faction will grant you 175 reputation")
-		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers Emissary", 1500, "Tortollan Seekers Emissary", "Completing 3x Tortollan Seekers world quests while the emissary is available will grant you 1500 rep")
+		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers", 175, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers Emissary", 1500, "Tortollan Seekers Emissary", "Complete 3x Tortollan Seekers world quests while the emissary is available to gain reputation")
 		
 
 		if (RPH_IsAlliance) then
 			-- Proudmoore Admiralty
-			RPH_AddGeneral(2160, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2160, 1, 8, "Proudmoore Admiralty Emissary", 1500, "Proudmoore Admiralty Emissary", "Completing 4x Proudmoore Admiralty world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2160, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2160, 1, 8, "Proudmoore Admiralty Emissary", 1500, "Proudmoore Admiralty Emissary", "Complete 4x Proudmoore Admiralty world quests while the emissary is available to gain reputation")
 
 			-- Order of Embers
-			RPH_AddGeneral(2161, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2161, 1, 8, "Order of Embers Emissary", 1500, "Order of Embers Emissary", "Completing 4x Order of Embers world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2161, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2161, 1, 8, "Order of Embers Emissary", 1500, "Order of Embers Emissary", "Complete 4x Order of Embers world quests while the emissary is available to gain reputation")
 		
 			-- Storm's Wake
-			RPH_AddGeneral(2162, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2162, 1, 8, "Storm's Wake Emissary", 1500, "Storm's Wake Emissary", "Completing 4x Storm's Wake world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2162, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2162, 1, 8, "Storm's Wake Emissary", 1500, "Storm's Wake Emissary", "Complete 4x Storm's Wake world quests while the emissary is available to gain reputation")
 			
 			-- 7th Legion
-			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available will grant you 1500 rep")
-			RPH_AddGeneral(2159, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Completing any warfront contribution quest when available will grant you 150 reputation")
+			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Alliance to gain reputation")
 		end
 
 		if (RPH_IsHorde) then
 			-- Zandalari Empire
-			RPH_AddGeneral(2103, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire Emissary", 1500, "Zandalari Empire Emissary", "Completing 4x Zandalari Empire world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2103, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire Emissary", 1500, "Zandalari Empire Emissary", "Complete 4x Zandalari Empire world quests while the emissary is available to gain reputation")
 
 			-- Talanji's Expedition
-			RPH_AddGeneral(2156, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition Emissary", 1500, "Talanji's Expedition Emissary", "Completing 4x Talanji's Expedition world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2156, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition Emissary", 1500, "Talanji's Expedition Emissary", "Complete 4x Talanji's Expedition world quests while the emissary is available to gain reputation")
 		
 			-- Voldunai
-			RPH_AddGeneral(2158, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2158, 1, 8, "Voldunai Emissary", 1500, "Voldunai Emissary", "Completing 4x Voldunai world quests while the emissary is available will grant you 1500 rep")
+			RPH_AddGeneral(2158, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2158, 1, 8, "Voldunai Emissary", 1500, "Voldunai Emissary", "Complete 4x Voldunai world quests while the emissary is available to gain reputation")
 
 			-- The Honorbound
-			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Completing world quests with this faction will grant you 75 reputation")
-			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Completing 4x The Honorbound world quests while the emissary is available will grant you 1500 rep")
-			RPH_AddGeneral(2157, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Completing any warfront contribution quest when available will grant you 150 reputation")
+			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Complete 4x The Honorbound world quests while the emissary is available to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Horde to gain reputation")
 		end
 	-- Dead Factions
 	-- Shen'dralar 809
