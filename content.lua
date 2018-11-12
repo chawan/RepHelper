@@ -2451,6 +2451,7 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(2045, 1, 8, "Legionfall Dungeon World Quest", 250, "Legionfall Dungeon World Quest", "Complete dungeon world quests with this faction to gain reputation.")
 		RPH_AddGeneral(2045, 1, 8, "World Boss World Quest", 500, "World Boss World Quest", "Complete world boss world quests with this faction to gain reputation.")
 		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Complete raid world quests with this faction to gain reputation.")
+		RPH_AddGeneral(2045, 1, 8, "Armies of Legionfall Emissary", 1500, "Armies of Legionfall Emissary", "Complete 4x Armies of Legionfall world quests while the emissary is available to gain reputation")
 
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
