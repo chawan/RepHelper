@@ -2638,10 +2638,12 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2162, 1, 8, "Storm's Wake Emissary", 1500, "Storm's Wake Emissary", "Complete 4x Storm's Wake world quests while the emissary is available to gain reputation")
 			
 			-- 7th Legion
-			RPH_AddGeneral(2159, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "World Quests 75 rep", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "World Quests 150 rep", 150, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Alliance to gain reputation")
+			RPH_AddGeneral(2159, 1, 8, "Call to Arms Quest", 75, "Call to Arms Quest", "Complete Call to Arms quest to gain reputation")
 
 			-- Waveblade Ankoan
 			RPH_AddGeneral(2400, 1, 8, "Waveblade Ankoan World Quests", 75, "Waveblade Ankoan Emissary", "Complete Waveblade Ankoan world quests to gain reputation")
@@ -2667,10 +2669,13 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2158, 1, 8, "Voldunai Emissary", 1500, "Voldunai Emissary", "Complete 4x Voldunai world quests while the emissary is available to gain reputation")
 
 			-- The Honorbound
-			RPH_AddGeneral(2157, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "World Quests 75 rep", 75, "World Quests", "Complete world quests with this faction to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "World Quests 150 rep", 150, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Complete 4x The Honorbound world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Horde to gain reputation")
+			RPH_AddGeneral(2157, 1, 8, "Call to Arms Quest", 75, "Call to Arms Quest", "Complete Call to Arms quest to gain reputation")
+
 
 			-- The Unshackled
 			RPH_AddGeneral(2373, 1, 8, "The Unshackled World Quests", 75, "The Unshackled Emissary", "Complete The Unshackled world quests to gain reputation")
