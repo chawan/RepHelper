@@ -2615,6 +2615,13 @@ zone.The_Nighthold = 764
 	-- Tortollan Seekers
 		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers", 175, "World Quests", "Complete world quests with this faction to gain reputation")
 		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers Emissary", 1500, "Tortollan Seekers Emissary", "Complete 3x Tortollan Seekers world quests while the emissary is available to gain reputation")
+	
+	-- Rustbolt Resistance
+		RPH_AddGeneral(2391, 1, 8, "Daily World Quest", 850, "Daily World Quest", "Complete the daily world quest to gain reputation with this faction")
+		RPH_AddGeneral(2391, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
+		RPH_AddGeneral(2391, 1, 8, "PVP Daily Quest", 200, "Daily PVP Quest", "Complete a PVP daily quest to gain reputation with this faction")
+		RPH_AddGeneral(2391, 1, 8, "Daily Quests 75 rep", 75, "Daily Quests", "Daily quests that provide 75 reputation")
+		RPH_AddGeneral(2391, 1, 8, "Daily Quests 150 rep", 150, "Daily Quests", "Daily quests that provide 150 reputation")
 		
 
 		if (RPH_IsAlliance) then
@@ -2635,6 +2642,15 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Alliance to gain reputation")
+
+			-- Waveblade Ankoan
+			RPH_AddGeneral(2400, 1, 8, "Waveblade Ankoan World Quests", 75, "Waveblade Ankoan Emissary", "Complete Waveblade Ankoan world quests to gain reputation")
+			RPH_AddGeneral(2400, 1, 8, "Waveblade Ankoan Emissary", 1500, "Waveblade Ankoan Emissary", "Complete 4x Waveblade Ankoan world quests while the emissary is available to gain reputation")
+			RPH_AddGeneral(2400, 1, 8, "Laboratory of Mardivas Weekly", 500, "Laboratory of Mardivas Weekly", "Complete the Laboratory of Mardivas weekly quest to gain reputation")
+			RPH_AddGeneral(2400, 1, 8, "Battle for Nazjatar PVP World Quest", 500, "Battle for Nazjatar PVP World Quest", "Complete the Battle for Nazjatar PVP world quest to gain reputation")
+			RPH_AddGeneral(2400, 1, 8, "Summons from the Depths event", 150, "Summons from the Depths event", "Complete the Summons from the Depths event to have a chance at gaining reputation")
+			RPH_AddGeneral(2400, 1, 8, "Bounties / Requisition Quests", 50, "Bountes / Requisition Quets", "Complete bounties and requisition quests to gain reputation")
+			RPH_AddItems(2400, 1, 8, 150, {[170152] = 1})
 		end
 
 		if (RPH_IsHorde) then
@@ -2655,6 +2671,15 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Complete 4x The Honorbound world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "Warfront Contribution Quests", 150, "Warfront Contribution Quests", "Complete any warfront contribution quest when available to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "Island Expeditions Weekly", 1500, "Island Expeditions Weekly", "Complete the Island Expeditions weekly Azerite for the Horde to gain reputation")
+
+			-- The Unshackled
+			RPH_AddGeneral(2373, 1, 8, "The Unshackled World Quests", 75, "The Unshackled Emissary", "Complete The Unshackled world quests to gain reputation")
+			RPH_AddGeneral(2373, 1, 8, "The Unshackled Emissary", 1500, "The Unshackled Emissary", "Complete 4x The Unshackled world quests while the emissary is available to gain reputation")
+			RPH_AddGeneral(2373, 1, 8, "Laboratory of Mardivas Weekly", 500, "Laboratory of Mardivas Weekly", "Complete the Laboratory of Mardivas weekly quest to gain reputation")
+			RPH_AddGeneral(2373, 1, 8, "Battle for Nazjatar PVP World Quest", 500, "Battle for Nazjatar PVP World Quest", "Complete the Battle for Nazjatar PVP world quest to gain reputation")
+			RPH_AddGeneral(2373, 1, 8, "Summons from the Depths event", 150, "Summons from the Depths event", "Complete the Summons from the Depths event to have a chance at gaining reputation")
+			RPH_AddGeneral(2373, 1, 8, "Bounties / Requisition Quests", 50, "Bountes / Requisition Quets", "Complete bounties and requisition quests to gain reputation")
+			RPH_AddItems(2373, 1, 8, 150, {[170152] = 1})
 		end
 	-- Dead Factions
 	-- Shen'dralar 809
