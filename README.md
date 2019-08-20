@@ -27,7 +27,7 @@ Issues are still handled in this repository.
 Contributions/Suggestions and bug reports/fixes to the addon are always welcome, to contribute you can make a [pull request](https://github.com/chawan/RepHelper/pulls) or simply open a [new issue](https://github.com/chawan/RepHelper/issues/).
 
 ## Installation
-The easiest way to install this addon is via the [Twitch App](https://twitch.tv/downloads) by either searching in the client, or via the [Curse website](https://www.curseforge.com/wow/addons/rephelper)  
+The easiest way to install this addon is via the [Twitch App](https://twitch.tv/downloads) by either searching in the client, or via the [Curse website](https://curseforge.com/wow/addons/rephelper)  
 If you want to manually install this addon, extract the contents in this directory: PATH\World of Warcraft\\\_retail\_\\Interface\AddOns\
 
 ## Features
