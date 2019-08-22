@@ -9,7 +9,10 @@ install:
   - eval $(luarocks path --bin)
   - luarocks install --local luacheck
 
-script: /home/travis/.luarocks/bin/luacheck . --no-color -qo "011"
+before_script:
+- /home/travis/.luarocks/bin/luacheck . --no-color -qo "011"
+
+script: curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash
 
 notifications:
   email:
@@ -20,3 +23,7 @@ cache:
   apt: true
   directories:
     - $HOME/.luarocks
+
+branches:
+  only:
+  - /^\d+\.\d+\.\d+(\.\d+)?(-\S*)?$/

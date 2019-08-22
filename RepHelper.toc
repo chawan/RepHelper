@@ -8,6 +8,8 @@
 ## SavedVariables: RPH_Data
 ## SavedVariablesPerCharacter: RPH_Suppressed
 
+## X-Curse-Project-ID: 265375
+
 content.lua
 mapping.lua
 locale.xml
