@@ -2716,7 +2716,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
                 barMin, barMax, barValue = 0, threshold, mod(currentValue, threshold);
             end
 
-            friendID, _, _, _, _, _, friendTextLevel, _, nextFriendThreshold = GetFriendshipReputation(factionID)
+            local friendID, _, _, _, _, _, friendTextLevel, _, nextFriendThreshold = GetFriendshipReputation(factionID)
 
             --if (not isHeader) then
             if (not isHeader or hasRep) then
@@ -2731,13 +2731,24 @@ function RPH:DumpReputationChangesToChat(initOnly)
                                 sign = "+"
                             end
                             if (barValue > RPH_StoredRep[name].rep) then
-                                -- increased rep
-                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-                                --RPH:Print(RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold))
-                                --RPH:Print(_G["FACTION_STANDING_LABEL"..standingID + 1])
-                            elseif (barValue < RPH_StoredRep[name].rep) then
-                                RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
-                                -- decreased rep
+                                -- increased rep					
+								if (friendID ~= nil and nextFriendThreshold ~= nil) then
+									-- If the faction is a friend faction and not at max rank get the next standing text
+									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.statsNextStanding, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold),barMax-barValue))
+								elseif (friendID == nil and standingID < 8) then
+									-- If not a friend faction and below max rank use the format (Total: %s%d, Left to %s: %d) if not use the normal format (Total: %s%d, Left: %d)
+									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.statsNextStanding, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, _G["FACTION_STANDING_LABEL"..standingID + 1],barMax-barValue))
+								else
+									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+								end
+							elseif (barValue < RPH_StoredRep[name].rep) then
+								-- decreased rep
+								if (standingID > 1 and friendID == nil) then
+									-- Only use the new format (Total: %s%d, Left to %s: %d) if we are above the lowest rank, otherwise use the normal format (Total: %s%d, Left: %d)
+									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.statsNextStanding, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, _G["FACTION_STANDING_LABEL"..standingID - 1], barMax-barValue))
+								else
+                                	RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
+								end
                             end
                             if (RPH_StoredRep[name].standingID ~= standingID) then
                                 if friendID == nil then

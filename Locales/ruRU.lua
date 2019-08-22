@@ -157,6 +157,8 @@ RPH_TXT.toExalted	= "Нужно до превознесения"
 RPH_TXT.toBestFriend = "Reputation to best friend"
 -- to chat	
 RPH_TXT.stats	= " (Всего: %s%d, Осталось: %d)"
+RPH_TXT.statsNextStanding = " (Total: %s%d, Left to %s: %d)"
+
 -- config changed	
 RPH_TXT.configQuestion	= "Некоторые (новые) настройки были включены. Это происходит только 1 раз для каждой настройки. Рекомендуется убедиться, что новые настройки RepHelper'а Вас удовлетворяют."
 RPH_TXT.showConfig	= "Посмотреть настройки"

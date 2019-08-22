@@ -157,6 +157,7 @@ RPH_TXT.toExalted	= "Ruf bis Ehrfürchtig"
 RPH_TXT.toBestFriend = "Reputation to best friend"
 -- to chat	
 RPH_TXT.stats	= " (Gesamt: %s%d, übrig: %d)"
+RPH_TXT.statsNextStanding = " (Total: %s%d, Left to %s: %d)"
 -- config changed	
 RPH_TXT.configQuestion	= "Einige (neue) Einstellungen wurden gesetzt. Dies wird pro Einstellung nur einmal gemacht. Es ist empfohlen, die RepHelper-Optionen zu prüfen."
 RPH_TXT.showConfig	= "Zeige Optionen"

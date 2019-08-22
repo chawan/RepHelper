@@ -158,6 +158,8 @@ RPH_TXT.toExalted	= "Reputation to exalted"
 RPH_TXT.toBestFriend = "Reputation to best friend"
 -- to chat		
 RPH_TXT.stats	= " (Total: %s%d, Left: %d)"	
+RPH_TXT.statsNextStanding = " (Total: %s%d, Left to %s: %d)"
+
 -- config changed		
 RPH_TXT.configQuestion	= "Some (new) settings were enabled. This is only done once for a setting. It is recommended that you verify the RepHelper options."	
 RPH_TXT.showConfig	= "View config"	
