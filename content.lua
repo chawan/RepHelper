@@ -2623,6 +2623,14 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(2391, 1, 8, "Daily Quests 75 rep", 75, "Daily Quests", "Daily quests that provide 75 reputation")
 		RPH_AddGeneral(2391, 1, 8, "Daily Quests 150 rep", 150, "Daily Quests", "Daily quests that provide 150 reputation")
 		
+		RPH_AddQuest(2045, 1, 8, 46735, 150, {[1342] = 100})
+	-- Rajanji
+		RPH_AddQuest(2415, 1, 8, 57008, 500)
+		RPH_AddQuest(2415, 1, 8, 57728, 500)
+		RPH_AddQuest(2415, 1, 8, 56064, 1500)
+		RPH_AddGeneral(2415, 1, 8, "Daily Quests 125 rep", 125, "Daily Quests", "Daily quests that provide 125 reputation")
+		RPH_AddGeneral(2415, 1, 8, "Threat objectives 50-75 rep", 50, "Threat Objectives", "Completing threat objectives marked by a skull or crossed swords on the minimap provide 50-75 reputation.")
+		RPH_AddGeneral(2415, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
 
 		if (RPH_IsAlliance) then
 			-- Proudmoore Admiralty 
