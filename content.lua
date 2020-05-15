@@ -2657,6 +2657,12 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2400, 1, 8, "Summons from the Depths event", 150, "Summons from the Depths event", "Complete the Summons from the Depths event to have a chance at gaining reputation")
 			RPH_AddGeneral(2400, 1, 8, "Bounties / Requisition Quests", 50, "Bountes / Requisition Quets", "Complete bounties and requisition quests to gain reputation")
 			RPH_AddItems(2400, 1, 8, 150, {[170152] = 1})
+
+			-- Honeyback Hive
+			RPH_AddItems(2395, 1, 8, 20, {[168822] = 1}) -- Thin Jelly
+			RPH_AddItems(2395, 1, 8, 80, {[168825] = 1}) -- Rich Jelly
+			RPH_AddItems(2395, 1, 8, 160, {[168828] = 1}) -- Royal Jelly
+			RPH_AddMob(2395, 1, 8, "Honey Smasher (Daily)", 500)
 		end
 
 		if (RPH_IsHorde) then
