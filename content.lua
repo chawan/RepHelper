@@ -2632,6 +2632,14 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(2415, 1, 8, "Threat objectives 50-75 rep", 50, "Threat Objectives", "Completing threat objectives marked by a skull or crossed swords on the minimap provide 50-75 reputation.")
 		RPH_AddGeneral(2415, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
 
+	-- Uldum Accord
+		RPH_AddQuest(2417, 1, 8, 55350, 500)
+		RPH_AddQuest(2417, 1, 8, 56308, 500)
+		RPH_AddQuest(2417, 1, 8, 57157, 1500)
+		RPH_AddGeneral(2417, 1, 8, "Daily Quests 125 rep", 125, "Daily Quests", "Daily quests that provide 125 reputation")
+		RPH_AddGeneral(2417, 1, 8, "Threat objectives 50-75 rep", 50, "Threat Objectives", "Completing threat objectives marked by a skull or crossed swords on the minimap provide 50-75 reputation.")
+		RPH_AddGeneral(2417, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
+
 		if (RPH_IsAlliance) then
 			-- Proudmoore Admiralty 
 			RPH_AddGeneral(2160, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
