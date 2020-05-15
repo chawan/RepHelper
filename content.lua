@@ -2663,6 +2663,7 @@ zone.The_Nighthold = 764
 			RPH_AddItems(2395, 1, 8, 80, {[168825] = 1}) -- Rich Jelly
 			RPH_AddItems(2395, 1, 8, 160, {[168828] = 1}) -- Royal Jelly
 			RPH_AddMob(2395, 1, 8, "Honey Smasher (Daily)", 500)
+			RPH_AddGeneral(2395, 1, 8, "Harvester Event rare mob quest drop (Weekly)", 750, "Harvester Event rare mob quest drop", "Quest items have a chance to drop from a harvester event if the event has a relevant rare.")
 		end
 
 		if (RPH_IsHorde) then
