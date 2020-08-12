@@ -927,7 +927,7 @@ function RPH:InitItemName(fiitem,amt)
 	end
 
 	if not item_name then
-		item_name=GetCurrencyInfo(fiitem)
+		item_name=C_CurrencyInfo.GetCurrencyInfo(fiitem)
 	end
 
 	if not item_name then
@@ -2140,7 +2140,7 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I.lowlight = nil
 
 								-- check if this quest is known
-								local entries, quests = GetNumQuestLogEntries()
+								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
 									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
 									if (title and not header) then
@@ -2222,7 +2222,7 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I.lowlight = nil
 
 								-- check if this quest is known and/or completed
-								local entries, quests = GetNumQuestLogEntries()
+								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
 									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
 									if (title and not header) then
@@ -2479,15 +2479,15 @@ function RPH:Quest_Items(itemsNeed, currentQuestTimesBag, currentQuestTimesBagBa
 		QuestItem = {}
 		QuestItem.name = "James"
 	end
-	if (GetItemCount(item, true)==0 and select(2, GetCurrencyInfo(item)) == 0) then
+	if (GetItemCount(item, true)==0 and C_CurrencyInfo.GetCurrencyInfo(item) == nil) then
 		-- not enough of this item for quest -> set to 0
 		currentQuestTimesBag = 0
 	else
 		local itemBag = 0
 		local itemTotal = 0
 
-		if (GetItemCount(item, true) == 0) then
-			_, itemBag = GetCurrencyInfo(item)
+		if (GetItemCount(item, true) == 0) then -- If GetItemCount is 0 then this is a currency and not a item
+			itemBag = C_CurrencyInfo.GetCurrencyInfo(item).quantity
 			itemTotal = itemBag
 		else
 			itemBag = GetItemCount(item)
