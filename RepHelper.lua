@@ -246,7 +246,7 @@ function RPH_OnEvent(self, event, ...)
 
 	elseif (event == "GARRISON_UPDATE") then
 		-- Get garrison buildings to check for trading post
-		local garrisonBuildings = C_Garrison.GetBuildings(LE_GARRISON_TYPE_6_0)
+		local garrisonBuildings = C_Garrison.GetBuildings(Enum.GarrisonType.Type_6_0)
 
 		for i, building in pairs(garrisonBuildings) do
 			if building["buildingID"] == 145 then
@@ -1582,7 +1582,6 @@ function RPH_ReputationFrame_SetRowType(factionRow, isChild, isHeader, hasRep)
 		factionLeftTexture:SetTexCoord(0.765625, 1.0, 0.046875, 0.28125);
 		factionRightTexture:SetTexCoord(0.0, 0.15234375, 0.390625, 0.625);
 		factionBar:SetWidth(99);
-		factionRow.LFGBonusRepButton:SetPoint("RIGHT", factionButton, "LEFT", 0, 1);
 	else
 		factionRow:SetPoint("LEFT", ReputationFrame, "LEFT", 29, 0);
 		factionTitle:SetWidth(160);
@@ -1595,7 +1594,6 @@ function RPH_ReputationFrame_SetRowType(factionRow, isChild, isHeader, hasRep)
 		factionLeftTexture:SetTexCoord(0.7578125, 1.0, 0.0, 0.328125);
 		factionRightTexture:SetTexCoord(0.0, 0.1640625, 0.34375, 0.671875);
 		factionBar:SetWidth(101)
-		factionRow.LFGBonusRepButton:SetPoint("RIGHT", factionBackground, "LEFT", -2, 0);
 	end
 	if ( (hasRep) or (not isHeader) ) then
 		factionStanding:Show();
@@ -3598,7 +3596,6 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 
 	if (OBS_fi.header) then
 		RPH_ReputationFrame_SetRowType(factionRow, isChild, OBS_fi.header, hasRep);
-		factionRow.LFGBonusRepButton:SetShown(false);
 		-- display the standingID as Header
 		if (OBS_fi_i == 9) then
 			factionTitle:SetText("Paragon".." ("..tostring(OBS_fi.size)..")");
