@@ -927,7 +927,11 @@ function RPH:InitItemName(fiitem,amt)
 	end
 
 	if not item_name then
-		item_name=C_CurrencyInfo.GetCurrencyInfo(fiitem)
+		item = C_CurrencyInfo.GetCurrencyInfo(fiitem)
+		
+		if item then
+			item_name = item.name
+		end
 	end
 
 	if not item_name then
@@ -2142,8 +2146,8 @@ function RPH:BuildUpdateList() --xxx
 								-- check if this quest is known
 								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
-									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
-									if (title and not header) then
+									local title = C_QuestLog.GetTitleForLogIndex(z)
+									if (title) then
 										if string.find(string.lower(bul_name), string.lower(title)) then
 											-- this quest matches
 											FUL_I.lowlight = true
@@ -2224,8 +2228,8 @@ function RPH:BuildUpdateList() --xxx
 								-- check if this quest is known and/or completed
 								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
-									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
-									if (title and not header) then
+									local title = C_QuestLog.GetTitleForLogIndex(z)
+									if (title) then
 										if string.find(string.lower(bul_name), string.lower(title)) then
 											-- this quest matches
 											if (complete) then
