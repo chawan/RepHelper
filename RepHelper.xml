@@ -86,14 +86,12 @@
 	</Button>								
 									
 <!--v set 1-->									
-	<Frame name="RPH_ReputationDetailFrame" parent="ReputationFrame" enableMouse="true" hidden="true">								
+	<Frame name="RPH_ReputationDetailFrame" parent="ReputationFrame" enableMouse="true" hidden="true" inherits="BackdropTemplate">								
 		<Size x="482" y="520"/>							
-		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationFrame" relativePoint="TOPRIGHT"><Offset x="0" y="0"/></Anchor></Anchors>							
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">							
-			<BackgroundInsets><AbsInset left="11" right="12" top="12" bottom="11"/></BackgroundInsets>						
-			<TileSize><AbsValue val="32"/></TileSize>						
-			<EdgeSize><AbsValue val="32"/></EdgeSize>						
-		</Backdrop>							
+		<Anchors><Anchor point="TOPLEFT" relativeTo="ReputationFrame" relativePoint="TOPRIGHT"><Offset x="0" y="0"/></Anchor></Anchors>	
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global" />
+		</KeyValues>												
 		<Layers>							
 			<Layer level="ARTWORK">						
 				<FontString name="RPH_ReputationDetailFactionName" inherits="GameFontNormal" justifyH="LEFT">					
@@ -863,24 +861,16 @@
 		</Scripts>							
 	</FontString>								
 									
-	<Frame name="RPH_OptionsFrame" hidden="true" parent="ReputationFrame">								
+	<Frame name="RPH_OptionsFrame" hidden="true" parent="ReputationFrame" inherits="BackdropTemplate">								
 		<Size x="450" y="350" />							
 		<Anchors>							
 			<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">						
 				<Offset x="0" y="0" />					
 			</Anchor>						
-		</Anchors>							
-		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">							
-			<BackgroundInsets>						
-				<AbsInset left="11" right="12" top="12" bottom="11" />					
-			</BackgroundInsets>						
-			<TileSize>						
-				<AbsValue val="32" />					
-			</TileSize>						
-			<EdgeSize>						
-				<AbsValue val="32" />					
-			</EdgeSize>						
-		</Backdrop>							
+		</Anchors>
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" type="global" />
+		</KeyValues>													
 		<Layers>							
 			<Layer level="ARTWORK">						
 				<!-->Title box<-->					

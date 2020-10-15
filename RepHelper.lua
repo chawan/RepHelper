@@ -176,7 +176,6 @@ function RPH_OnEvent(self, event, ...)
 		RPH:Init()
 		RPH_Main:UnregisterEvent("PLAYER_ENTERING_WORLD")
 		RPH_Main:RegisterEvent("UPDATE_FACTION") --rfl
-		RPH_Main:RegisterEvent("LFG_BONUS_FACTION_ID_UPDATED") --rfl
 		-- to keep item list up to date
 		RPH_Main:RegisterEvent("BAG_UPDATE")
 		RPH_Main:RegisterEvent("BANKFRAME_OPENED")
@@ -247,7 +246,7 @@ function RPH_OnEvent(self, event, ...)
 
 	elseif (event == "GARRISON_UPDATE") then
 		-- Get garrison buildings to check for trading post
-		local garrisonBuildings = C_Garrison.GetBuildings(LE_GARRISON_TYPE_6_0)
+		local garrisonBuildings = C_Garrison.GetBuildings(Enum.GarrisonType.Type_6_0)
 
 		for i, building in pairs(garrisonBuildings) do
 			if building["buildingID"] == 145 then
@@ -928,7 +927,11 @@ function RPH:InitItemName(fiitem,amt)
 	end
 
 	if not item_name then
-		item_name=GetCurrencyInfo(fiitem)
+		item = C_CurrencyInfo.GetCurrencyInfo(fiitem)
+		
+		if item then
+			item_name = item.name
+		end
 	end
 
 	if not item_name then
@@ -1457,7 +1460,7 @@ end
 function RPH_GetFactionInfo(factionIndex)
 
 	-- get original information
-	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus = RPH_Orig_GetFactionInfo(factionIndex)
+	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain = RPH_Orig_GetFactionInfo(factionIndex)
 
 	-- Normalize Values to within standing
 	local normMax = barMax-barMin
@@ -1470,7 +1473,7 @@ function RPH_GetFactionInfo(factionIndex)
 	end
 
 	-- return Values
-	return name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus;
+	return name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain;
 end
 -- RPH_RepFrame_Up Start
 --- v rfl 1
@@ -1501,7 +1504,6 @@ function RPH_ReputationFrame_Update() --rfl
 			end
 		-- ^ rfl 1.3
 			local gender = UnitSex("player");
-			local lfgBonusFactionID = GetLFGBonusFactionID();
 		
 			local i;
 			for i=1, NUM_FACTIONS_DISPLAYED, 1 do
@@ -1518,9 +1520,9 @@ function RPH_ReputationFrame_Update() --rfl
 				if ( factionIndex <= numFactions ) then
 		-- v rfl _9_ rep Main window
 					if RPH_Data.SortByStanding then
-						RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+						RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
 					else
-						RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+						RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
 					end
 		-- ^ rfl _9_ Rep Main Window
 				else
@@ -1584,7 +1586,6 @@ function RPH_ReputationFrame_SetRowType(factionRow, isChild, isHeader, hasRep)
 		factionLeftTexture:SetTexCoord(0.765625, 1.0, 0.046875, 0.28125);
 		factionRightTexture:SetTexCoord(0.0, 0.15234375, 0.390625, 0.625);
 		factionBar:SetWidth(99);
-		factionRow.LFGBonusRepButton:SetPoint("RIGHT", factionButton, "LEFT", 0, 1);
 	else
 		factionRow:SetPoint("LEFT", ReputationFrame, "LEFT", 29, 0);
 		factionTitle:SetWidth(160);
@@ -1597,7 +1598,6 @@ function RPH_ReputationFrame_SetRowType(factionRow, isChild, isHeader, hasRep)
 		factionLeftTexture:SetTexCoord(0.7578125, 1.0, 0.0, 0.328125);
 		factionRightTexture:SetTexCoord(0.0, 0.1640625, 0.34375, 0.671875);
 		factionBar:SetWidth(101)
-		factionRow.LFGBonusRepButton:SetPoint("RIGHT", factionBackground, "LEFT", -2, 0);
 	end
 	if ( (hasRep) or (not isHeader) ) then
 		factionStanding:Show();
@@ -2144,10 +2144,10 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I.lowlight = nil
 
 								-- check if this quest is known
-								local entries, quests = GetNumQuestLogEntries()
+								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
-									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
-									if (title and not header) then
+									local title = C_QuestLog.GetTitleForLogIndex(z)
+									if (title) then
 										if string.find(string.lower(bul_name), string.lower(title)) then
 											-- this quest matches
 											FUL_I.lowlight = true
@@ -2226,10 +2226,10 @@ function RPH:BuildUpdateList() --xxx
 								FUL_I.lowlight = nil
 
 								-- check if this quest is known and/or completed
-								local entries, quests = GetNumQuestLogEntries()
+								local entries, quests = C_QuestLog.GetNumQuestLogEntries()
 								for z=1,entries do
-									local title,level,tag,group,header,collapsed,complete,daily = GetQuestLogTitle(z)
-									if (title and not header) then
+									local title = C_QuestLog.GetTitleForLogIndex(z)
+									if (title) then
 										if string.find(string.lower(bul_name), string.lower(title)) then
 											-- this quest matches
 											if (complete) then
@@ -2483,15 +2483,15 @@ function RPH:Quest_Items(itemsNeed, currentQuestTimesBag, currentQuestTimesBagBa
 		QuestItem = {}
 		QuestItem.name = "James"
 	end
-	if (GetItemCount(item, true)==0 and select(2, GetCurrencyInfo(item)) == 0) then
+	if (GetItemCount(item, true)==0 and C_CurrencyInfo.GetCurrencyInfo(item) == nil) then
 		-- not enough of this item for quest -> set to 0
 		currentQuestTimesBag = 0
 	else
 		local itemBag = 0
 		local itemTotal = 0
 
-		if (GetItemCount(item, true) == 0) then
-			_, itemBag = GetCurrencyInfo(item)
+		if (GetItemCount(item, true) == 0) then -- If GetItemCount is 0 then this is a currency and not a item
+			itemBag = C_CurrencyInfo.GetCurrencyInfo(item).quantity
 			itemTotal = itemBag
 		else
 			itemBag = GetItemCount(item)
@@ -3067,12 +3067,12 @@ end	--]]--
 -----------------------------------
 -- ^ rfl 2.7 v ptr
 function RPH:StandingSort()
--- del	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus;
+-- del	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain;
 	local standings = {}
 	local numFactions = GetNumFactions();
 
 	for i=1,numFactions do
-		local name, description, standingID, _, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus= GetFactionInfo(i);
+		local name, description, standingID, _, barMax, barValue, _, _, isHeader, _, hasRep, isWatched, isChild, factionID, hasBonusRepGain= GetFactionInfo(i);
 
 		if(factionID and C_Reputation.IsFactionParagon(factionID) and RPH_Data.ShowParagonBar) then
 			local currentValue, threshold, _, _ = C_Reputation.GetFactionParagonInfo(factionID);
@@ -3592,7 +3592,7 @@ end
 --------------------------
 -- _20_ rep Main window
 --------------------------
-function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground, lfgBonusFactionID)
+function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
 -- v rfl SBS set 2 start
 
 	local OBS_fi = RPH_Entries[factionIndex]
@@ -3600,7 +3600,6 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 
 	if (OBS_fi.header) then
 		RPH_ReputationFrame_SetRowType(factionRow, isChild, OBS_fi.header, hasRep);
-		factionRow.LFGBonusRepButton:SetShown(false);
 		-- display the standingID as Header
 		if (OBS_fi_i == 9) then
 			factionTitle:SetText("Paragon".." ("..tostring(OBS_fi.size)..")");
@@ -3625,7 +3624,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 	else
 -- v rfl SBS 1
 		-- get the info for this Faction
-		local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus = GetFactionInfo(OBS_fi_i);
+		local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain = GetFactionInfo(OBS_fi_i);
 		local isParagon
 		factionTitle:SetText(name);
 -- ^ rfl SBS 1
@@ -3724,17 +3723,7 @@ function RPH:SortByStanding(i,factionIndex,factionRow,factionBar,factionBarPrevi
 		local color = FACTION_BAR_COLORS[standingID];
 		factionBar:SetStatusBarColor(color.r, color.g, color.b);
 		factionBar.BonusIcon:SetShown(hasBonusRepGain);
-		factionRow.LFGBonusRepButton.factionID = factionID;
-		factionRow.LFGBonusRepButton:SetShown(canBeLFGBonus);
-		factionRow.LFGBonusRepButton:SetChecked(lfgBonusFactionID == factionID);
-		factionRow.LFGBonusRepButton:SetEnabled(lfgBonusFactionID ~= factionID);
-		if ( showLFGPulse and not SHOWED_LFG_PULSE and not lfgBonusFactionID ) then
-        	factionRow.LFGBonusRepButton.Glow:Show();
-        	factionRow.LFGBonusRepButton.GlowAnim:Play();
-    	else
-        	factionRow.LFGBonusRepButton.Glow:Hide();
-        	factionRow.LFGBonusRepButton.GlowAnim:Stop();
-    	end
+
 -- ^ rfl SBS 5
 		local previewValue = 0
 		if (RPH_Data.ShowPreviewRep) then
@@ -3797,7 +3786,7 @@ end
 
 
 -- ^ rfl SBS
-function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground,lfgBonusFactionID)
+function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPreview,factionTitle,factionButton,factionStanding,factionBackground)
 -- v rfl ORO set 2 start
 
 
@@ -3808,7 +3797,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 
 -- v rfl ORO 1
 	-- get the info for this Faction
-	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain, canBeLFGBonus = GetFactionInfo(factionIndex);
+	local name, description, standingID, barMin, barMax, barValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild, factionID, hasBonusRepGain = GetFactionInfo(factionIndex);
 	local isParagon
 	factionTitle:SetText(name);
 -- ^ rfl ORO 1
@@ -3922,18 +3911,7 @@ function RPH:OriginalRepOrder(i,factionIndex,factionRow,factionBar,factionBarPre
 	local color = FACTION_BAR_COLORS[colorIndex];
 	factionBar:SetStatusBarColor(color.r, color.g, color.b);
 	factionBar.BonusIcon:SetShown(hasBonusRepGain);
-	factionRow.LFGBonusRepButton.factionID = factionID;
-	factionRow.LFGBonusRepButton:SetShown(canBeLFGBonus);
-	factionRow.LFGBonusRepButton:SetChecked(lfgBonusFactionID == factionID);
-	factionRow.LFGBonusRepButton:SetEnabled(lfgBonusFactionID ~= factionID);
 
-	if ( showLFGPulse and not SHOWED_LFG_PULSE and not lfgBonusFactionID ) then
-        factionRow.LFGBonusRepButton.Glow:Show();
-        factionRow.LFGBonusRepButton.GlowAnim:Play();
-    else
-        factionRow.LFGBonusRepButton.Glow:Hide();
-        factionRow.LFGBonusRepButton.GlowAnim:Stop();
-    end
 -- ^ rfl ORO 5
 	local previewValue = 0
 	if (RPH_Data.ShowPreviewRep) then
