@@ -783,8 +783,9 @@
 									
 									
 <!--> ============================================================================================================== <-->									
-	<Button name="RPH_OptionsButton" parent="ReputationFrame" inherits="BrowserButtonTemplate">								
-		<Size x="27" y="27" />							
+	<Button name="RPH_OptionsButton" parent="ReputationFrame" >	
+		<Size x="26" y="26" />							
+		<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>	
 		<Anchors>							
 			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" >						
 				<Offset x="-2" y="-22" />					
@@ -800,7 +801,21 @@
 				</Texture>
 			</Layer>					
 		</Layers>							
-		<Scripts>							
+		<Scripts>			
+			<OnMouseDown>	
+				local point, relativeTo, relativePoint, x, y = self.Icon:GetPoint(1);	
+				self.origX = x;	
+				self.origY = y;	
+				self.Icon:SetPoint(point, relativeTo, relativePoint, x-1, y-1);	
+			</OnMouseDown>	
+			<OnMouseUp>	
+				local point, relativeTo, relativePoint = self.Icon:GetPoint(1);	
+				self.Icon:SetPoint(point, relativeTo, relativePoint, self.origX, self.origY);	
+			</OnMouseUp>	
+			<OnHide>	
+				local point, relativeTo, relativePoint = self.Icon:GetPoint(1);	
+				self.Icon:SetPoint(point, relativeTo, relativePoint, self.origX, self.origY);	
+			</OnHide>				
 			<OnClick>						
 				if(RPH_OptionsFrame:IsVisible()) then					
 					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);				
