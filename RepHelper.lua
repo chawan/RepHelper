@@ -943,7 +943,7 @@ end
 function RPH:Quest_Names(questIndex)
 
 		RPH_HiddenQuestTooltip:SetOwner(WorldFrame, ANCHOR_NONE)
-		RPH_HiddenQuestTooltip:SetHyperlink(format("quest:%d", questIndex))
+		RPH_HiddenQuestTooltip:SetHyperlink(format("quest:%g", questIndex))
 
 		local quest = RPH_HiddenQuestTooltipTextLeft1:GetText()
 		RPH_HiddenQuestTooltip:Hide()
@@ -1948,7 +1948,7 @@ function RPH:BuildUpdateList() --xxx
 							local bul_name = RPH:InitMapName(fg_sid_x_d.name)
 							FUL_I.type = RPH_TXT.instanceShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
+							FUL_I.rep = string.format("%g", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -1990,7 +1990,7 @@ function RPH:BuildUpdateList() --xxx
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.mobShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
+							FUL_I.rep = string.format("%g", fg_sid_x_d.rep)
 							FUL_I.hasList = false
 							FUL_I.listShown = nil
 							FUL_I.index = index
@@ -2106,7 +2106,7 @@ function RPH:BuildUpdateList() --xxx
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.questShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
+							FUL_I.rep = string.format("%g", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2191,8 +2191,8 @@ function RPH:BuildUpdateList() --xxx
 									--FUL_I.name = FUL_I.originalName
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBag, " ")
-									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBag))
-									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBag))
+									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%g", FUL_I.currentTimesBag))
+									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%g", FUL_I.currentRepBag))
 								else
 									FUL_I.currentTimesBag = nil
 									FUL_I.currentRepBag = nil
@@ -2208,8 +2208,8 @@ function RPH:BuildUpdateList() --xxx
 									RPH_CurrentRepInBagBank = RPH_CurrentRepInBagBank + FUL_I.currentRepBagBank
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBagBank, " ")
-									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBagBank))
-									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBagBank))
+									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%g", FUL_I.currentTimesBagBank))
+									FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%g", FUL_I.currentRepBagBank))
 								else
 									FUL_I.currentTimesBagBank = nil
 									FUL_I.currentRepBagBank = nil
@@ -2241,7 +2241,7 @@ function RPH:BuildUpdateList() --xxx
 
 												FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 												FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.questCompleted, " ")
-												FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepQuest))
+												FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%g", FUL_I.currentRepQuest))
 											else
 												FUL_I.lowlight = true
 												FUL_I.name = FUL_I.name..RPH_QUEST_ACTIVE_COLOUR.." ("..RPH_TXT.active..")|r"
@@ -2265,7 +2265,7 @@ function RPH:BuildUpdateList() --xxx
 					local FUL_I = RPH_UpdateList[index]
 					FUL_I.type = RPH_TXT.questShort
 					FUL_I.times = math.ceil(toDo).."x"
-					FUL_I.rep = string.format("%d", sum)
+					FUL_I.rep = string.format("%g", sum)
 					FUL_I.index = index
 					FUL_I.belongsTo = nil
 					FUL_I.isShown = true
@@ -2300,7 +2300,7 @@ function RPH:BuildUpdateList() --xxx
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.itemsShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
+							FUL_I.rep = string.format("%g", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2373,8 +2373,8 @@ function RPH:BuildUpdateList() --xxx
 
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBag, " ")
-								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBag))
-								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBag))
+								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%g", FUL_I.currentTimesBag))
+								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%g", FUL_I.currentRepBag))
 							end
 							
 							if (currentQuestTimesBagBank > 0) then
@@ -2391,8 +2391,8 @@ function RPH:BuildUpdateList() --xxx
 
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, " ", " ")
 								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.inBagBank, " ")
-								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%d", FUL_I.currentTimesBagBank))
-								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%d", FUL_I.currentRepBagBank))
+								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.turnIns, string.format("%g", FUL_I.currentTimesBagBank))
+								FUL_I_TD[x], x = RPH:Update_Tooltip(x, RPH_TXT.reputation, string.format("%g", FUL_I.currentRepBagBank))
 							end
 
 							if ((currentQuestTimesBag == 0) and (currentQuestTimesBagBank > 0 == false)) then
@@ -2425,7 +2425,7 @@ function RPH:BuildUpdateList() --xxx
 							local FUL_I = RPH_UpdateList[index]
 							FUL_I.type = RPH_TXT.generalShort
 							FUL_I.times = math.ceil(toDo).."x"
-							FUL_I.rep = string.format("%d", fg_sid_x_d.rep)
+							FUL_I.rep = string.format("%g", fg_sid_x_d.rep)
 							FUL_I.index = index
 							FUL_I.belongsTo = nil
 							FUL_I.isShown = true
@@ -2736,7 +2736,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
 									-- If the faction is a friend faction and not at max rank get the next standing text
 									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.statsNextStanding, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, RPH_GetFriendFactionStandingLabel(factionID, nextFriendThreshold),barMax-barValue))
 								elseif (friendID == nil and standingID < 8) then
-									-- If not a friend faction and below max rank use the format (Total: %s%d, Left to %s: %d) if not use the normal format (Total: %s%d, Left: %d)
+									-- If not a friend faction and below max rank use the format (Total: %s%g, Left to %s: %g) if not use the normal format (Total: %s%g, Left: %g)
 									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.statsNextStanding, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, _G["FACTION_STANDING_LABEL"..standingID + 1],barMax-barValue))
 								else
 									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_INCREASED..RPH_TXT.stats, name, barValue-RPH_StoredRep[name].rep, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
@@ -2744,7 +2744,7 @@ function RPH:DumpReputationChangesToChat(initOnly)
 							elseif (barValue < RPH_StoredRep[name].rep) then
 								-- decreased rep
 								if (standingID > 1 and friendID == nil) then
-									-- Only use the new format (Total: %s%d, Left to %s: %d) if we are above the lowest rank, otherwise use the normal format (Total: %s%d, Left: %d)
+									-- Only use the new format (Total: %s%g, Left to %s: %g) if we are above the lowest rank, otherwise use the normal format (Total: %s%g, Left: %g)
 									RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.statsNextStanding, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, _G["FACTION_STANDING_LABEL"..standingID - 1], barMax-barValue))
 								else
                                 	RPH:Print(RPH_NEW_REP_COLOUR..string.format(FACTION_STANDING_DECREASED..RPH_TXT.stats, name, RPH_StoredRep[name].rep-barValue, sign, barValue-RPH_StoredRep[name].origRep, barMax-barValue))
@@ -3225,7 +3225,7 @@ function RPH:Rep_Detail_Frame(faction,colorID,barValue,barMax,origBarValue,stand
 	RPH_ReputationDetailStandingBagBankValue:SetText(RPH_CurrentRepInBagBank)
 	RPH_ReputationDetailStandingQuestsValue:SetText(RPH_CurrentRepInQuest)
 	if (RPH_StoredRep and RPH_StoredRep[name] and RPH_StoredRep[name].origRep) then
-		RPH_ReputationDetailStandingGainedValue:SetText(string.format("%d", origBarValue-RPH_StoredRep[name].origRep))
+		RPH_ReputationDetailStandingGainedValue:SetText(string.format("%g", origBarValue-RPH_StoredRep[name].origRep))
 	else
 		RPH_ReputationDetailStandingGainedValue:SetText("")
 	end
