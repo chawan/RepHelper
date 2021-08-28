@@ -41,8 +41,8 @@
 					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="80" y="0"/></Anchor></Anchors>				
 				</FontString>					
 				<FontString name="$parentRep" inherits="DetailFontWhite" justifyH="RIGHT">					
-					<Size x="30" y="16"/>				
-					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="400" y="0"/></Anchor></Anchors>				
+					<Size x="50" y="16"/>				
+					<Anchors><Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="380" y="0"/></Anchor></Anchors>				
 				</FontString>					
 				<!-->Common parts for item entries<-->					
 				<FontString name="$parentItemTimes" inherits="DetailFontGrey" justifyH="RIGHT">					
