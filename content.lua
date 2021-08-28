@@ -161,6 +161,14 @@ zone.Frostwall = 585
 zone.Frostfire_Ridge = 525
 zone.Nagrand_WoD = 550
 
+--Shadowlands
+zone.The_Maw = 1543
+zone.Maldraxxus = 1536
+zone.Bastion = 1533
+zone.Ardenweald = 1565
+zone.Revendreth = 1525
+zone.Korthia = 1961
+
 -- Battlegrounds
 zone.Temple_of_Kotmogu = 417
 zone.Alterac_Valley = 91
@@ -353,6 +361,8 @@ zone.Trial_of_Valor = 806
 zone.Antorus_the_Burning_Throne = 909
 zone.The_Nighthold = 764
 
+-- Shadowlands Dungeons
+zone.Halls_of_Atonement = 1663
 
 
 	if (RPH_IsAlliance) then
@@ -472,8 +482,11 @@ zone.The_Nighthold = 764
 	-- The League of Arathor 509
 		RPH_AddGeneral(509, 4, 8, "Arathi Basin collect 100 Resources", 50, "Collect 100 Resources", "For every 100 resources your team collects you gain 50 reputation")
 		RPH_AddGeneral(509, 4, 8, "Arathi Basin win (1500 Resources)", 750, "Arathi Basin win (1500 Resources)", "If your team wins with 1500 resources you will earn a total of 750 reputation")
-	-- Bizmo's Brawlpub 1419
-		RPH_AddQuest(1419, 1, 8, 5, 1)
+	-- Bizmo's Brawlpub 1419 (S1), 1691 (S2), 2011 (S3), 2371 (S4)
+		RPH_AddGeneral(1419, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(1691, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(2011, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(2371, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
 	-- Outlands (Burning Crusade)
 	-- Honor Hold 946
 		RPH_AddInstance(946, 4, 5, zone.Hellfire_Ramparts, 600, false)
@@ -725,7 +738,8 @@ zone.The_Nighthold = 764
 		RPH_AddQuest(1177, 4, 8, 28689, 250)
 	-- Mist of Pandaria
 	-- Pearlfin Jinyu 1242
-		RPH_AddQuest(1242, 1, 8, 5, 1)
+		RPH_AddQuest(1242, 1, 8, 29905, 1)
+		RPH_AddQuest(1242, 1, 8, 29906, 1)
 	-- Operation: Shieldwall 1376
 		RPH_AddQuest(1376, 1, 8, 32643, 400)
 	---- Lion's Landing
@@ -1010,8 +1024,11 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(889, 4, 8, "Warsong Gulch flag capture", 100, "Warsong Gulch flag capture", "Every time your team captures a flag you gain 100 reputation")
 		RPH_AddGeneral(889, 4, 8, "Warsong Gulch victory", 100, "Warsong Gulch victory", "Every time your team wins you gain 100 reputation")
 		RPH_AddGeneral(889, 4, 8, "Warsong Gulch loss", 35, "Warsong Gulch loss", "Every time your team lose you gain 35 reputation")
-	-- Brawl'gar Arena 1374
-		RPH_AddQuest(1374, 1, 8, 5, 1)
+	-- Brawl'gar Arena 1374(S1), 1690(S2), 2010(S3), 2372(S4)
+		RPH_AddGeneral(1374, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(1690, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(2010, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
+		RPH_AddGeneral(2372, 1, 8, "Complete 4 Fights per Rank", 250, "Complete 4 Fights per Rank", "For every 4 fights completed, increase rank up to Max Rank")
 	-- 0 Outlands (Burning Crusade)
 	-- Thrallmar 947
 		RPH_AddInstance(947, 4, 5, zone.Hellfire_Ramparts, 600, false)
@@ -1569,10 +1586,12 @@ zone.The_Nighthold = 764
 		RPH_AddMob(576, 2, 8, "High Chief Winterfall", 50, zone.Winterspring)
 	-- TODO: Fix wintersaber quest
 	-- Wintersaber Trainers 589
-		--RPH_AddQuest(589, 4, 8, 29037, 1500)
-		--RPH_AddQuest(589, 4, 8, 29035, 1500)
-		--RPH_AddQuest(589, 4, 8, 29038, 1500)
-		--RPH_AddQuest(589, 4, 8, 29040, 1500)
+		RPH_AddQuest(589, 1, 4, 29032, 3000)
+		RPH_AddQuest(589, 4, 6, 29037, 1500)
+		RPH_AddQuest(589, 4, 6, 29035, 1500)
+		RPH_AddQuest(589, 4, 6, 29038, 1500)
+		RPH_AddQuest(589, 4, 6, 29040, 1500)
+		RPH_AddQuest(589, 5, 8, 29034, 42999)
 	-- Raid_Factions
 	-- Ashtongue Deathsworn 1012
 		RPH_AddInstance(1012, 4, 8, zone.Black_Temple, 8000)
@@ -2423,14 +2442,30 @@ zone.The_Nighthold = 764
 		RPH_AddQuest(1850, 1, 8, 39582, 1500, {[124099] = 100})
 	end
 
-	RPH_AddMob(1850, 1, 8, "Blackfang Hunter", 25, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Blackfang Prowler", 25, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Blackfang Savage", 25, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Blackfang Shaman", 25, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Soulslicer (Rare elite)", 500, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Gloomtalon (Rare elite)", 500, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "Krell the Serene (Rare elite)", 500, ZONE.Tanaan_Jungle)
-	RPH_AddMob(1850, 1, 8, "The Blackfang (Rare elite)", 500, ZONE.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Hunter", 25, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Prowler", 25, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Savage", 25, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Blackfang Shaman", 25, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Soulslicer (Rare elite)", 500, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Gloomtalon (Rare elite)", 500, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "Krell the Serene (Rare elite)", 500, zone.Tanaan_Jungle)
+	RPH_AddMob(1850, 1, 8, "The Blackfang (Rare elite)", 500, zone.Tanaan_Jungle)
+	
+	-- Barracks Bodyguards Leorajh 1741, Vivianne 1739, Tormmok 1736, Defender Illona 1738, Aeda Brightdawn 1740, Delvar Ironfist 1733, Talonprist Ishaal 1737
+		if RPH_IsHorde then
+		RPH_AddGeneral(1740, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1739, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1741, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1736, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1737, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+	end
+		if RPH_IsAlliance then
+		RPH_AddGeneral(1733, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1738, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1741, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1736, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+		RPH_AddGeneral(1737, 1, 8, "Draenor Mobs", 10, "Draenor Mobs", "Killing mobs in Draenor while having this bodyguard active")
+	end
 
 	-- Legion Factions
 	-- Armies of Legionfall 2045
@@ -2608,15 +2643,15 @@ zone.The_Nighthold = 764
 
 	-- Battle for Azeroth
 
-	-- Champions of Azeroth
+	-- Champions of Azeroth 2164
 		RPH_AddGeneral(2164, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 		RPH_AddGeneral(2164, 1, 8, "Champions of Azeroth Emissary", 1500, "Champions of Azeroth Emissary", "Complete 4x Champions of Azeroth world quests while the emissary is available to gain reputation")
 	
-	-- Tortollan Seekers
+	-- Tortollan Seekers 2163
 		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers", 175, "World Quests", "Complete world quests with this faction to gain reputation")
 		RPH_AddGeneral(2163, 1, 8, "Tortollan Seekers Emissary", 1500, "Tortollan Seekers Emissary", "Complete 3x Tortollan Seekers world quests while the emissary is available to gain reputation")
 	
-	-- Rustbolt Resistance
+	-- Rustbolt Resistance 2391
 		RPH_AddGeneral(2391, 1, 8, "Daily World Quest", 850, "Daily World Quest", "Complete the daily world quest to gain reputation with this faction")
 		RPH_AddGeneral(2391, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
 		RPH_AddGeneral(2391, 1, 8, "PVP Daily Quest", 200, "Daily PVP Quest", "Complete a PVP daily quest to gain reputation with this faction")
@@ -2624,7 +2659,7 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(2391, 1, 8, "Daily Quests 150 rep", 150, "Daily Quests", "Daily quests that provide 150 reputation")
 		
 		RPH_AddQuest(2045, 1, 8, 46735, 150, {[1342] = 100})
-	-- Rajanji
+	-- Rajanji 2415
 		RPH_AddQuest(2415, 1, 8, 57008, 500)
 		RPH_AddQuest(2415, 1, 8, 57728, 500)
 		RPH_AddQuest(2415, 1, 8, 56064, 1500)
@@ -2632,31 +2667,262 @@ zone.The_Nighthold = 764
 		RPH_AddGeneral(2415, 1, 8, "Threat objectives 50-75 rep", 50, "Threat Objectives", "Completing threat objectives marked by a skull or crossed swords on the minimap provide 50-75 reputation.")
 		RPH_AddGeneral(2415, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
 
-	-- Uldum Accord
+	-- Uldum Accord 2417
 		RPH_AddQuest(2417, 1, 8, 55350, 500)
 		RPH_AddQuest(2417, 1, 8, 56308, 500)
 		RPH_AddQuest(2417, 1, 8, 57157, 1500)
 		RPH_AddGeneral(2417, 1, 8, "Daily Quests 125 rep", 125, "Daily Quests", "Daily quests that provide 125 reputation")
 		RPH_AddGeneral(2417, 1, 8, "Threat objectives 50-75 rep", 50, "Threat Objectives", "Completing threat objectives marked by a skull or crossed swords on the minimap provide 50-75 reputation.")
 		RPH_AddGeneral(2417, 1, 8, "Daily Pet Battle World Quest", 75, "Daily Pet Battle", "Complete the daily pet battle world quest to gain reputation with this faction")
+	
+	--Shadowlands
+	
+	-- Court of Harvesters 2413
+		RPH_AddGeneral(2413, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2413, 1, 8, "Venthyr Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
+		RPH_AddGeneral(2413, 1, 8, "Rare Revendreth Calling", 1500, "Complete Rare Revendreth Calling", "Calling rewards Blue quality cache")
+		RPH_AddGeneral(2413, 1, 8, "Epic Revendreth Calling", 2000, "Complete Epic Revendreth Calling", "Calling rewards Purple quality cache")
+		
+	-- Court of Night 2464
+		RPH_AddQuest(2464, 1, 8, 62081, 750)
+		RPH_AddQuest(2464, 1, 8, 62224, 750)
+		RPH_AddQuest(2464, 1, 8, 62188, 750)
+		RPH_AddQuest(2464, 1, 8, 62155, 750)
+		RPH_AddQuest(2464, 1, 8, 61950, 750)
+		RPH_AddQuest(2464, 1, 8, 61875, 750)
+		RPH_AddQuest(2464, 1, 8, 61985, 750)
+		RPH_AddQuest(2464, 1, 8, 62160, 750)
+		RPH_AddQuest(2464, 1, 8, 61968, 750)
+		RPH_AddQuest(2464, 1, 8, 62057, 750)
+		RPH_AddQuest(2464, 1, 8, 62068, 1000)
+		RPH_AddQuest(2464, 1, 8, 61717, 1000)
+		RPH_AddQuest(2464, 1, 8, 62051, 1000)
+		RPH_AddQuest(2464, 1, 8, 61394, 1000)
+		
+		
+	-- Death's Advance 2470
+		RPH_AddGeneral(2470, 1, 8, "Korthia Dailes", 125, "Complete Korthia Dailies")
+		RPH_AddGeneral(2470, 1, 8, "Maw World Quest", 200, "World Quests", "Complete Maw world quests")
+		RPH_AddGeneral(2470, 1, 8, "Maw Assault", 350, "Complete Covenant Maw Assault", "Complete assault in the Maw")
+		RPH_AddQuest(2470, 1, 8, 63949, 750)
+		
+	-- Marasmius 2463 (Night Fae Only) Will not work until Blizz adds rep to Faction tab
+		-- RPH_AddQuest(2463, 1, 8, 62615, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62614, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62611, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62610, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62608, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62607, 350)
+		-- RPH_AddQuest(2463, 1, 8, 62606, 350)
+		-- RPH_AddQuest(2463, 1, 8, 60175, 350)
+		-- RPH_AddQuest(2463, 1, 8, 57455, 500)
+		-- RPH_AddQuest(2463, 1, 8, 57458, 500)
+		-- RPH_AddQuest(2463, 1, 8, 57459, 500)
+		-- RPH_AddQuest(2463, 1, 8, 57463, 500)
+		-- RPH_AddQuest(2463, 1, 8, 57583, 500)
+		-- RPH_AddQuest(2463, 1, 8, 60153, 500)
+		-- RPH_AddQuest(2463, 1, 8, 62382, 500)
+		-- RPH_AddQuest(2463, 1, 8, 62296, 500)
+		-- RPH_AddQuest(2463, 1, 8, 62453, 500)
+		-- RPH_AddQuest(2463, 1, 8, 60188, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62263, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62400, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62417, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62459, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62465, 650)
+		-- RPH_AddQuest(2463, 1, 8, 62466, 650)
+		
+	-- Stitchmasters 2462
+		RPH_AddQuest(2462, 1, 8, 58525, 750)
+		RPH_AddQuest(2462, 1, 8, 61511, 750)
+		RPH_AddQuest(2462, 1, 8, 57634, 750)
+		RPH_AddQuest(2462, 1, 8, 60237, 750)
+		RPH_AddQuest(2462, 1, 8, 58432, 750)
+		RPH_AddQuest(2462, 1, 8, 60765, 750)
+		RPH_AddQuest(2462, 1, 8, 56470, 750)
+		RPH_AddQuest(2462, 1, 8, 60291, 750)
+		RPH_AddQuest(2462, 1, 8, 60340, 750)
+		RPH_AddQuest(2462, 1, 8, 62213, 750)
+		RPH_AddQuest(2462, 1, 8, 59043, 750)
+		RPH_AddQuest(2462, 1, 8, 62276, 750)
+		RPH_AddQuest(2462, 1, 8, 60342, 750)
+		RPH_AddQuest(2462, 1, 8, 58992, 750)
+		RPH_AddQuest(2462, 1, 8, 62194, 750)
+		RPH_AddQuest(2462, 1, 8, 59293, 750)
+		RPH_AddQuest(2462, 1, 8, 62407, 750)
+		RPH_AddQuest(2462, 1, 8, 61510, 750)
+		RPH_AddQuest(2462, 1, 8, 62244, 750)
+		RPH_AddQuest(2462, 1, 8, 61522, 750)
+		RPH_AddQuest(2462, 1, 8, 61523, 750)
+		RPH_AddQuest(2462, 1, 8, 62261, 750)
+		RPH_AddQuest(2462, 1, 8, 58515, 750)
+		RPH_AddQuest(2462, 1, 8, 62256, 750)
+		RPH_AddQuest(2462, 1, 8, 61509, 750)
+		RPH_AddQuest(2462, 1, 8, 62217, 750)
+		RPH_AddQuest(2462, 1, 8, 62195, 750)
+		RPH_AddQuest(2462, 1, 8, 62232, 750)
+		RPH_AddQuest(2462, 1, 8, 61996, 750)
+		RPH_AddQuest(2462, 1, 8, 62294, 750)
+		RPH_AddQuest(2462, 1, 8, 62216, 750)
+		RPH_AddQuest(2462, 1, 8, 62041, 750)
+		RPH_AddQuest(2462, 1, 8, 59126, 750)
+		
+	-- The Archivists' Codex 2472
+		RPH_AddGeneral(2472, 1, 8, "Cataloged Research", 1, "Cataloged Research", "Vendor Turn in 1 rep per 2 Research")
+		RPH_AddItems(2472, 1, 8, 1, {[186685] = 2})
+		RPH_AddItems(2472, 1, 8, 4, {[187322] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187457] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187324] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187323] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187460] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187458] = 1})
+		RPH_AddItems(2472, 1, 8, 4, {[187459] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187465] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187327] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187463] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187325] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187326] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187462] = 1})
+		RPH_AddItems(2472, 1, 8, 24, {[187478] = 1})
+		RPH_AddItems(2472, 1, 8, 50, {[187336] = 1})
+		RPH_AddItems(2472, 1, 8, 50, {[187466] = 1})
+		RPH_AddItems(2472, 1, 8, 50, {[187332] = 1})
+		RPH_AddItems(2472, 1, 8, 50, {[187328] = 1})
+		RPH_AddItems(2472, 1, 8, 50, {[187334] = 1})
+		RPH_AddItems(2472, 1, 8, 75, {[187330] = 1})
+		RPH_AddItems(2472, 1, 8, 75, {[187329] = 1})
+		RPH_AddItems(2472, 1, 8, 75, {[187467] = 1})
+		RPH_AddItems(2472, 1, 8, 75, {[187331] = 1})
+		RPH_AddItems(2472, 1, 8, 150, {[187311] = 1})
+		RPH_AddItems(2472, 1, 8, 150, {[187333] = 1})
+		RPH_AddItems(2472, 1, 8, 150, {[187350] = 1})
+		RPH_AddItems(2472, 1, 8, 150, {[187335] = 1})
 
+		
+		
+	-- The Ascended 2407
+		RPH_AddGeneral(2407, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2407, 1, 8, "Kyrian Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
+		RPH_AddGeneral(2407, 1, 8, "Rare Bastion Calling", 1500, "Complete Rare Bastion Calling", "Calling rewards Blue quality cache")
+		RPH_AddGeneral(2407, 1, 8, "Epic Bastion Calling", 2000, "Complete Epic Bastion Calling", "Calling rewards Purple quality cache")
+		
+	-- The Avowed 2439
+		RPH_AddMob(2439, 5, 8, "Inquisitor", 50, zone.Revendreth)
+		RPH_AddMob(2439, 5, 8, "High Inquisitor", 100, zone.Revendreth)
+		RPH_AddMob(2439, 5, 8, "Grand Inquisitor", 200, zone.Revendreth)
+		RPH_AddInstance(2439, 1, 6, zone.Halls_of_Atonement, 750, false)
+		
+	-- The Undying Army 2410
+		RPH_AddGeneral(2410, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2410, 1, 8, "Maldraxxus Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
+		RPH_AddGeneral(2410, 1, 8, "Rare Maldraxxus Calling", 1500, "Complete Rare Maldraxxus Calling", "Calling rewards Blue quality cache")
+		RPH_AddGeneral(2410, 1, 8, "Epic Maldraxxus Calling", 2000, "Complete Epic Maldraxxus Calling", "Calling rewards Purple quality cache")
+		
+	-- The Wild Hunt 2465
+		RPH_AddGeneral(2465, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2465, 1, 8, "Night Fae Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
+		RPH_AddGeneral(2465, 1, 8, "Rare Ardenweald Calling", 1500, "Complete Rare Ardenweald Calling", "Calling rewards Blue quality cache")
+		RPH_AddGeneral(2465, 1, 8, "Epic Ardenweald Calling", 2000, "Complete Epic Ardenweald Calling", "Calling rewards Purple quality cache")
+		
+	-- Ve'nari 2432
+		RPH_AddMob(2432, 1, 8, "Adjutant Dekaris", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Orophea", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Soulforger Rhovus", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Conjured Death", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Eternas the Tormentor", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Obolos <Prime Collector>", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Yero the Skittish", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Nascent Devourer", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Darklord Taraxis", 80, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Silent Soulstalker", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Stygian Stonecrusher", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Deadsoul Hatcher", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Screaming Shade", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Relic Breaker Krelva", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Consumption", 80, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Borr-Geth", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Ekphoras, Herald of Grief", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Apholeias, Herald of Loss", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Talaporas, Herald of Pain", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Eketra <The Impaler>", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Morguliax <Lord of Decapitation>", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Ikras the Devourer", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Shadeweaver Zeris", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Dolos <Death's Knife>", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Thanassos <Death's Voice>", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Exos, Herald of Dominion ", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Darithis the Bleak", 100, zone.The_Maw)
+		RPH_AddMob(2432, 1, 8, "Consumption (Rare Elite)", 100, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Observer Yorik", 100, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Yarxhov the Pillager", 100, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Towering Exterminator", 150, zone.Korthia)
+		RPH_AddMob(2432, 1, 8, "Soul Fragment", 150, zone.Korthia)
+		RPH_AddQuest(2432, 1, 8, 63050, 75)
+		RPH_AddQuest(2432, 1, 8, 63166, 75)
+		RPH_AddQuest(2432, 1, 8, 60732, 75)
+		RPH_AddQuest(2432, 1, 8, 63062, 75)
+		RPH_AddQuest(2432, 1, 8, 63100, 75)
+		RPH_AddQuest(2432, 1, 8, 63039, 75)
+		RPH_AddQuest(2432, 1, 8, 63043, 75)
+		RPH_AddQuest(2432, 1, 8, 63047, 75)
+		RPH_AddQuest(2432, 1, 8, 63179, 75)
+		RPH_AddQuest(2432, 1, 8, 63031, 75)
+		RPH_AddQuest(2432, 1, 8, 60775, 75)
+		RPH_AddQuest(2432, 1, 8, 61088, 75)
+		RPH_AddQuest(2432, 1, 8, 60622, 75)
+		RPH_AddQuest(2432, 1, 8, 61079, 75)
+		RPH_AddQuest(2432, 1, 8, 60646, 75)
+		RPH_AddQuest(2432, 1, 8, 60762, 75)
+		RPH_AddQuest(2432, 1, 8, 61104, 75)
+		RPH_AddQuest(2432, 1, 8, 61103, 75)
+		RPH_AddQuest(2432, 1, 8, 61075, 75)
+		RPH_AddQuest(2432, 1, 8, 61765, 75)
+		RPH_AddQuest(2432, 1, 8, 62234, 75)
+		RPH_AddQuest(2432, 1, 8, 62214, 75)
+		RPH_AddQuest(2432, 1, 8, 63072, 75)
+		RPH_AddQuest(2432, 1, 8, 62239, 75)
+		RPH_AddQuest(2432, 1, 8, 63069, 75)
+		RPH_AddQuest(2432, 1, 8, 64541, 1000)
+		RPH_AddGeneral(2432, 1, 8, "Drifting Sorrow (The Maw)", 40, "Special encounter", "Located at /way 32, 21")
+		RPH_AddGeneral(2432, 1, 8, "Razkazzar (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Huwerath (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Agonix (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Akros (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Sanngror the Torturer (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Skittering Broodmother (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Odalrik (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Dath Rezara (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Dartanos (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Orrholyn (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Soulsmith Yol-Mattar (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Cyrixia (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Krala (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Malevolent Stygia (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Houndmaster Vasanok (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Valis the Cruel (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Stygian Incinerator (The Maw)", 40, "Special encounter")
+		RPH_AddGeneral(2432, 1, 8, "Tormentors of Torghast (The Maw)", 200, "Complete Totementors of Torghast Weekly", "Can only be completed once a week")
+		RPH_AddGeneral(2432, 1, 8, "Wrath of the Jailer (The Maw)", 250, "Complete Wrath of the Jailer Weekly", "Can only be completed once a week")
+		RPH_AddGeneral(2432, 1, 8, "Beastwarren Hunt Boss (The Maw)", 525, "Complete Beastwarren Event", "Can be completed twice a week, Tuesday 11am EST & Friday 11pm EST")
+
+		
 		if (RPH_IsAlliance) then
-			-- Proudmoore Admiralty 
+			-- Proudmoore Admiralty 2160
 			RPH_AddGeneral(2160, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2160, 1, 8, "Proudmoore Admiralty Emissary", 1500, "Proudmoore Admiralty Emissary", "Complete 4x Proudmoore Admiralty world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2160, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 
-			-- Order of Embers
+			-- Order of Embers 2161
 			RPH_AddGeneral(2161, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2161, 1, 8, "Order of Embers Emissary", 1500, "Order of Embers Emissary", "Complete 4x Order of Embers world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2161, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 		
-			-- Storm's Wake
+			-- Storm's Wake 2162
 			RPH_AddGeneral(2162, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2162, 1, 8, "Storm's Wake Emissary", 1500, "Storm's Wake Emissary", "Complete 4x Storm's Wake world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2162, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 			
-			-- 7th Legion
+			-- 7th Legion 2159
 			RPH_AddGeneral(2159, 1, 8, "World Quests 75 rep", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "World Quests 150 rep", 150, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "7th Legion Emissary", 1500, "7th Legion Emissary", "Completing 4x 7th Legion world quests while the emissary is available to gain reputation")
@@ -2665,7 +2931,7 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2159, 1, 8, "Call to Arms Quest", 75, "Call to Arms Quest", "Complete Call to Arms quest to gain reputation")
 			RPH_AddGeneral(2159, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 
-			-- Waveblade Ankoan
+			-- Waveblade Ankoan 2400
 			RPH_AddGeneral(2400, 1, 8, "Waveblade Ankoan World Quests", 75, "Waveblade Ankoan Emissary", "Complete Waveblade Ankoan world quests to gain reputation")
 			RPH_AddGeneral(2400, 1, 8, "Waveblade Ankoan Emissary", 1500, "Waveblade Ankoan Emissary", "Complete 4x Waveblade Ankoan world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2400, 1, 8, "Laboratory of Mardivas Weekly", 500, "Laboratory of Mardivas Weekly", "Complete the Laboratory of Mardivas weekly quest to gain reputation")
@@ -2674,7 +2940,7 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2400, 1, 8, "Bounties / Requisition Quests", 50, "Bountes / Requisition Quets", "Complete bounties and requisition quests to gain reputation")
 			RPH_AddItems(2400, 1, 8, 150, {[170152] = 1})
 
-			-- Honeyback Hive
+			-- Honeyback Hive 2395
 			RPH_AddItems(2395, 1, 8, 20, {[168822] = 1}) -- Thin Jelly
 			RPH_AddItems(2395, 1, 8, 80, {[168825] = 1}) -- Rich Jelly
 			RPH_AddItems(2395, 1, 8, 160, {[168828] = 1}) -- Royal Jelly
@@ -2683,22 +2949,22 @@ zone.The_Nighthold = 764
 		end
 
 		if (RPH_IsHorde) then
-			-- Zandalari Empire
+			-- Zandalari Empire 2103
 			RPH_AddGeneral(2103, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2103, 1, 8, "Zandalari Empire Emissary", 1500, "Zandalari Empire Emissary", "Complete 4x Zandalari Empire world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2103, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 
-			-- Talanji's Expedition
+			-- Talanji's Expedition 2156
 			RPH_AddGeneral(2156, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2156, 1, 8, "Talanji's Expedition Emissary", 1500, "Talanji's Expedition Emissary", "Complete 4x Talanji's Expedition world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2156, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 		
-			-- Voldunai
+			-- Voldunai 2158
 			RPH_AddGeneral(2158, 1, 8, "World Quests", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2158, 1, 8, "Voldunai Emissary", 1500, "Voldunai Emissary", "Complete 4x Voldunai world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2158, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 
-			-- The Honorbound
+			-- The Honorbound 2157
 			RPH_AddGeneral(2157, 1, 8, "World Quests 75 rep", 75, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "World Quests 150 rep", 150, "World Quests", "Complete world quests with this faction to gain reputation")
 			RPH_AddGeneral(2157, 1, 8, "The Honorbound Emissary", 1500, "The Honorbound Emissary", "Complete 4x The Honorbound world quests while the emissary is available to gain reputation")
@@ -2708,7 +2974,7 @@ zone.The_Nighthold = 764
 			RPH_AddGeneral(2157, 1, 8, "Naga Attack! World Quest", 150, "Naga Attack! World Quest", "Complete the Naga Attack! world quest to gain reputation")
 
 
-			-- The Unshackled
+			-- The Unshackled 2373
 			RPH_AddGeneral(2373, 1, 8, "The Unshackled World Quests", 75, "The Unshackled Emissary", "Complete The Unshackled world quests to gain reputation")
 			RPH_AddGeneral(2373, 1, 8, "The Unshackled Emissary", 1500, "The Unshackled Emissary", "Complete 4x The Unshackled world quests while the emissary is available to gain reputation")
 			RPH_AddGeneral(2373, 1, 8, "Laboratory of Mardivas Weekly", 500, "Laboratory of Mardivas Weekly", "Complete the Laboratory of Mardivas weekly quest to gain reputation")
@@ -2720,20 +2986,20 @@ zone.The_Nighthold = 764
 	-- Dead Factions
 	-- Shen'dralar 809
 		RPH_AddQuest(809, 1, 8, 6, 1)
-	-- Gelkis Clan Centaur 92
-		RPH_AddQuest(92, 1, 8, 6, 1)
-	-- Magram Clan Centaur 93
-		RPH_AddQuest(93, 1, 8, 6, 1)
+	-- Gelkis Clan Centaur 92 (1 quest rewards exalted with both)
+		RPH_AddQuest(92, 1, 8, 14394, 1)
+	-- Magram Clan Centaur 93 (1 quest rewards exalted with both)
+		RPH_AddQuest(93, 1, 8, 14394, 1)
 	-- Zandalar Tribe 270
 		RPH_AddQuest(270, 1, 8, 6, 1)
 	-- The Brewmasters 1351
 		RPH_AddQuest(1351, 1, 8, 6, 1)
 	-- 0 guildName
-	if (guildName and guildCapBase) then
-		RPH_AddQuest(guildName, 4, 8, 8, 125)
-	end
+		RPH_AddQuest(1168, 4, 8, 8, 125)
+	-- if (guildName and guildCapBase) then
+		-- RPH_AddQuest(guildName, 4, 8, 8, 125)
+	-- end
 ---	local preGC = collectgarbage("count")
 	collectgarbage("collect")
 ---	print("Collected " .. (preGC-collectgarbage("count")) .. " kB of garbage RPH");
 end
-
