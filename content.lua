@@ -1718,8 +1718,7 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddQuest(933, 5, 8, 10308, 250)
 		RPH_AddQuest(933, 6, 8, 10971, 250)
 		RPH_AddQuest(933, 7, 8, 10973, 500)
-		RPH_AddQuest(933, 4, 8, 99, 250)
-		RPH_AddQuest(933, 4, 8, 99, 350)
+		RPH_AddGeneral(933, 4, 8, "Netherstorm Zone Quests", 250)
 		-- Timewalking Commendation
 		RPH_AddItems(933, 1, 8, 500, {[129945] = 1})
 	-- Shattrath City
@@ -1809,10 +1808,9 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddQuest(1106, 4, 8, 13811, 325)
 	end
 	-- Kirin Tor 1090
-		RPH_AddQuest(1090, 4, 8, 99, 250, "nil", RPH_LIMIT_TYPE_Cook)
-		RPH_AddQuest(1090, 4, 8, 99, 250, "nil", RPH_LIMIT_TYPE_Fish)
-		RPH_AddQuest(1090, 4, 8, 99, 50, "nil", RPH_LIMIT_TYPE_Jewel)
-		RPH_AddQuest(1090, 4, 8, 99, 125)
+		RPH_AddGeneral(1090, 4, 8, "Northrend Dalaran Cooking Daily", 150, "Northrend Dalaran Cooking Daily", "Complete the Northrend Dalaran Cooking Daily")
+		RPH_AddGeneral(1090, 4, 8, "Northrend Dalaran Fishing Daily", 250, "Northrend Dalaran Fishing Daily", "Complete the Northrend Dalaran Fishing Daily")
+		RPH_AddGeneral(1090, 4, 8, "Northrend Dalaran Jewelcrafting Daily", 25, "Northrend Dalaran Jewelcrafting Dialy", "Complete the Northrend Dalaran Jewelcrafting Daily")
 		RPH_AddQuest(1090, 4, 8, 14203, 325)
 		RPH_AddQuest(1090, 4, 8, 13845, 325)
 		RPH_AddItems(1090, 4, 8, 520, {[43950] = 1})
@@ -2148,12 +2146,9 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddQuest(1337, 1, 8, 32659, 400)
 	-- Order of the Cloud Serpent 1271
 		RPH_AddItems(1271, 1, 8, 1000, {[86592] = 1})
+		RPH_AddItems(1271, 4, 8, 500, {[89155] = 1})
 		-- Timewalking Commendation
 		RPH_AddItems(1271, 1, 8, 300, {[143942] = 1})
-		RPH_AddQuest(1271, 4, 8, 99, 780)
-		RPH_AddQuest(1271, 4, 8, 99, 780)
-		RPH_AddQuest(1271, 4, 8, 99, 780)
-		RPH_AddQuest(1271, 4, 8, 99, 780)
 	------ Jenova Longeye - Main Quests
 		RPH_AddQuest(1271, 1, 8, 30149, 125)
 		RPH_AddQuest(1271, 1, 8, 30147, 125)
@@ -2194,13 +2189,13 @@ zone.Halls_of_Atonement = 1663
 	-- Shang Xi's Academy 1216
 		RPH_AddQuest(1216, 1, 8, 5, 1)
 	-- The Black Prince 1359
-		RPH_AddQuest(1359, 1, 8, 5, 1)
+		RPH_AddGeneral(1359, 1, 8, "Timeless Isle Celestial World Boss", 500, "Timeless Isle Celestial World Boss", "Complete Timless Isle Celestial world boss once a week")
 		RPH_AddMob(1359, 1, 7, "Granite Quilen", 10)
 		RPH_AddMob(1359, 1, 7, "Shao-Tien Marauder", 10)
 		RPH_AddMob(1359, 1, 7, "Kor'thik Warcaller", 100)
 		RPH_AddMob(1359, 1, 7, "Rare Mobs", 400, "928")
 	-- The Lorewalkers 1345
-		RPH_AddQuest(1345, 1, 8, 5, 1)
+		RPH_AddGeneral(1345, 1, 8, "Scroll Quests", 4100, "Complete all scroll quests", "Complete all the scroll quests collected within Pandaria. Each scroll is tied to an achievement, finishing the achievement will have quest item mailed")
 	-- The Anglers (group)
 	-- The Anglers 1302
 		RPH_AddQuest(1302, 1, 8, 30613, 500)
@@ -2420,7 +2415,7 @@ zone.Halls_of_Atonement = 1663
 	-- Steamwheedle Preservation Society 1711
 	RPH_AddItems(1711, 1, 8, 1000, {[128315] = 1})
 	RPH_AddQuest(1711, 1, 8, 35147, 250, {[118099] = 20})
-	RPH_AddQuest(1711, 1, 8, 35125, 350, {[118100] = 1})
+	RPH_AddQuest(1711, 1, 8, 37125, 350, {[118100] = 1})
 	RPH_AddQuest(1711, 1, 8, 37210, 500, {[118654] = 1})
 	RPH_AddQuest(1711, 1, 8, 37211, 500, {[118655] = 1})
 	RPH_AddQuest(1711, 1, 8, 37221, 500, {[118656] = 1})
@@ -2489,7 +2484,10 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddGeneral(2045, 1, 8, "World Boss World Quest", 500, "World Boss World Quest", "Complete world boss world quests with this faction to gain reputation.")
 		RPH_AddGeneral(2045, 1, 8, "Raid World Quests", 500, "Epic Elite World Quests", "Complete raid world quests with this faction to gain reputation.")
 		RPH_AddGeneral(2045, 1, 8, "Armies of Legionfall Emissary", 1500, "Armies of Legionfall Emissary", "Complete 4x Armies of Legionfall world quests while the emissary is available to gain reputation")
-
+	
+	--Chromie
+		RPH_AddGeneral(2135, 1, 8, "Run Chromie Scenarios In Dragonblite", 3000, "Complete Chromie Scenarios", "Complete Chromie time scenarios in Dragonblight")
+		
 	-- Court of Farondis 1900
 		-- Insignia reputation tokens
 		RPH_AddItems(1900, 1, 8, 250, {[146937] = 1}, {[146943] = 1})
@@ -2681,9 +2679,12 @@ zone.Halls_of_Atonement = 1663
 	
 	-- Court of Harvesters 2413
 		RPH_AddGeneral(2413, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2413, 1, 8, "A Valuable Find Dungeon Quest", 500, "Complete a Valuable Find Dungeon Quest", "Weekly quest from Ta'lan the Antiquary in Oribos")
+		RPH_AddGeneral(2413, 1, 8, "Trading Favors Dungeon Quest", 500, "Complete Trading Favors Dungeon Quest", "Weekly quest from Finder Ta'sul in Oribos")
 		RPH_AddGeneral(2413, 1, 8, "Venthyr Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
 		RPH_AddGeneral(2413, 1, 8, "Rare Revendreth Calling", 1500, "Complete Rare Revendreth Calling", "Calling rewards Blue quality cache")
 		RPH_AddGeneral(2413, 1, 8, "Epic Revendreth Calling", 2000, "Complete Epic Revendreth Calling", "Calling rewards Purple quality cache")
+		
 		
 	-- Court of Night 2464
 		RPH_AddQuest(2464, 1, 8, 62081, 750)
@@ -2804,9 +2805,12 @@ zone.Halls_of_Atonement = 1663
 		
 	-- The Ascended 2407
 		RPH_AddGeneral(2407, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2407, 1, 8, "A Valuable Find Dungeon Quest", 500, "Complete a Valuable Find Dungeon Quest", "Weekly quest from Ta'lan the Antiquary in Oribos")
+		RPH_AddGeneral(2407, 1, 8, "Trading Favors Dungeon Quest", 500, "Complete Trading Favors Dungeon Quest", "Weekly quest from Finder Ta'sul in Oribos")
 		RPH_AddGeneral(2407, 1, 8, "Kyrian Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
 		RPH_AddGeneral(2407, 1, 8, "Rare Bastion Calling", 1500, "Complete Rare Bastion Calling", "Calling rewards Blue quality cache")
 		RPH_AddGeneral(2407, 1, 8, "Epic Bastion Calling", 2000, "Complete Epic Bastion Calling", "Calling rewards Purple quality cache")
+		
 		
 	-- The Avowed 2439
 		RPH_AddMob(2439, 5, 8, "Inquisitor", 50, zone.Revendreth)
@@ -2816,15 +2820,21 @@ zone.Halls_of_Atonement = 1663
 		
 	-- The Undying Army 2410
 		RPH_AddGeneral(2410, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2410, 1, 8, "A Valuable Find Dungeon Quest", 500, "Complete a Valuable Find Dungeon Quest", "Weekly quest from Ta'lan the Antiquary in Oribos")
+		RPH_AddGeneral(2410, 1, 8, "Trading Favors Dungeon Quest", 500, "Complete Trading Favors Dungeon Quest", "Weekly quest from Finder Ta'sul in Oribos")
 		RPH_AddGeneral(2410, 1, 8, "Maldraxxus Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
 		RPH_AddGeneral(2410, 1, 8, "Rare Maldraxxus Calling", 1500, "Complete Rare Maldraxxus Calling", "Calling rewards Blue quality cache")
 		RPH_AddGeneral(2410, 1, 8, "Epic Maldraxxus Calling", 2000, "Complete Epic Maldraxxus Calling", "Calling rewards Purple quality cache")
 		
+		
 	-- The Wild Hunt 2465
 		RPH_AddGeneral(2465, 1, 8, "World Quests", 125, "World Quests", "Complete world quests with this faction to gain reputation")
+		RPH_AddGeneral(2465, 1, 8, "A Valuable Find Dungeon Quest", 500, "Complete a Valuable Find Dungeon Quest", "Weekly quest from Ta'lan the Antiquary in Oribos")
+		RPH_AddGeneral(2465, 1, 8, "Trading Favors Dungeon Quest", 500, "Complete Trading Favors Dungeon Quest", "Weekly quest from Finder Ta'sul in Oribos")
 		RPH_AddGeneral(2465, 1, 8, "Night Fae Assault", 1000, "Complete Bi-Weekly Maw Assault", "Assault in the maw. Only one assault we be active at a time")
 		RPH_AddGeneral(2465, 1, 8, "Rare Ardenweald Calling", 1500, "Complete Rare Ardenweald Calling", "Calling rewards Blue quality cache")
 		RPH_AddGeneral(2465, 1, 8, "Epic Ardenweald Calling", 2000, "Complete Epic Ardenweald Calling", "Calling rewards Purple quality cache")
+		
 		
 	-- Ve'nari 2432
 		RPH_AddMob(2432, 1, 8, "Adjutant Dekaris", 80, zone.The_Maw)
@@ -2989,9 +2999,9 @@ zone.Halls_of_Atonement = 1663
 	-- Shen'dralar 809
 		RPH_AddQuest(809, 1, 8, 6, 1)
 	-- Gelkis Clan Centaur 92 (1 quest rewards exalted with both)
-		RPH_AddQuest(92, 1, 8, 14394, 1)
+		RPH_AddQuest(92, 1, 8, 14394, 10000000)
 	-- Magram Clan Centaur 93 (1 quest rewards exalted with both)
-		RPH_AddQuest(93, 1, 8, 14394, 1)
+		RPH_AddQuest(93, 1, 8, 14394, 10000000)
 	-- Zandalar Tribe 270
 		RPH_AddQuest(270, 1, 8, 6, 1)
 	-- The Brewmasters 1351
