@@ -906,6 +906,15 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddGeneral(1847, 1, 8, "Lion's Watch command table random daily quest", 500, "Lion's Watch command table random daily quest", "Random daily that awards 500 reputation")
 		RPH_AddQuest(1847, 1, 8, 39574, 250)
 		RPH_AddGeneral(1847, 1, 8, "Vindicator Krethos random daily quest", 250, "Vindicator Krethos random daily quest", "Random daily that awards 250 reputation")
+		
+			-- TODO: Fix wintersaber quest
+	-- Wintersaber Trainers 589
+		RPH_AddQuest(589, 1, 4, 29032, 3000)
+		RPH_AddQuest(589, 4, 6, 29037, 1500)
+		RPH_AddQuest(589, 4, 6, 29035, 1500)
+		RPH_AddQuest(589, 4, 6, 29038, 1500)
+		RPH_AddQuest(589, 4, 6, 29040, 1500)
+		RPH_AddQuest(589, 5, 8, 29034, 42999)
 	end
 	if (RPH_IsHorde) then
 	-- Hord Cities
@@ -1584,14 +1593,7 @@ zone.Halls_of_Atonement = 1663
 		RPH_AddMob(576, 2, 8, "Ragepaw (Rare)", 50, zone.Felwood)
 		RPH_AddMob(576, 2, 8, "Grizzle Snowpaw (Rare)", 50, zone.Winterspring)
 		RPH_AddMob(576, 2, 8, "High Chief Winterfall", 50, zone.Winterspring)
-	-- TODO: Fix wintersaber quest
-	-- Wintersaber Trainers 589
-		RPH_AddQuest(589, 1, 4, 29032, 3000)
-		RPH_AddQuest(589, 4, 6, 29037, 1500)
-		RPH_AddQuest(589, 4, 6, 29035, 1500)
-		RPH_AddQuest(589, 4, 6, 29038, 1500)
-		RPH_AddQuest(589, 4, 6, 29040, 1500)
-		RPH_AddQuest(589, 5, 8, 29034, 42999)
+
 	-- Raid_Factions
 	-- Ashtongue Deathsworn 1012
 		RPH_AddInstance(1012, 4, 8, zone.Black_Temple, 8000)
@@ -2995,11 +2997,11 @@ zone.Halls_of_Atonement = 1663
 	-- The Brewmasters 1351
 		RPH_AddQuest(1351, 1, 8, 6, 1)
 	-- 0 guildName
-		RPH_AddQuest(1168, 4, 8, 8, 125)
-	-- if (guildName and guildCapBase) then
-		-- RPH_AddQuest(guildName, 4, 8, 8, 125)
-	-- end
+		RPH_AddGeneral(1168, 1, 8, "All non-gray quest turn ins", 125, "Gain reputation by doing this quest", "Complete any non-gray quests")
+		RPH_AddGeneral(1168, 1, 8, "With Renown Tabard", 250, "Gain reputation by doing this quest", "Complete any non-gray quests")
+		
 ---	local preGC = collectgarbage("count")
 	collectgarbage("collect")
 ---	print("Collected " .. (preGC-collectgarbage("count")) .. " kB of garbage RPH");
 end
+
